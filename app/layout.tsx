@@ -36,11 +36,11 @@ export const metadata: Metadata = {
 		title: "Olutunmise Adeniji | FrontEnd Developer",
 		description:
 			"FrontEnd specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
-		url: "",
+		url: "https://olutunmise.vercel.app",
 		siteName: "Olutunmise Adeniji",
 		images: [
 			{
-				url: "",
+				url: "https://olutunmise.vercel.app/og.png",
 				width: 1400,
 				height: 700,
 				alt: "Olutunmise Adeniji - Web & Frontend Developer in Nigeria",
