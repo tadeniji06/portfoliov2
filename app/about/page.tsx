@@ -77,11 +77,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/hero.png", 
+        url: "/hero.jpg", 
         width: 1200,
         height: 630,
         alt: "Olutunmise Adeniji - Full-Stack Developer",
-        type: "image/jpeg",
+        type: "image/jpg",
       }
     ],
   },
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     title: "About Olutunmise Adeniji | Full-Stack Developer",
     description: "21-year-old full-stack developer from Lagos, Nigeria. Specializing in React, Next.js, TypeScript, and modern web development.",
     creator: "@tade_niji06", 
-    images: ["/hero.png"],
+    images: ["/hero.jpg"],
   },
   
   // Additional metadata

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 		"Full-stack developer in Nigeria building websites, web apps, mobile apps, and Web3 products. Expert in React, Next.js, Tailwind, and blockchain-ready solutions.",
 
 	icons: {
-		icon: "/og.png",
+		icon: "/icon.svg",
 	},
 	keywords: [
 		"Website Developer Nigeria",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 		siteName: "Olutunmise Adeniji",
 		images: [
 			{
-				url: "https://olutunmise.vercel.app/og.png",
+				url: "https://olutunmise.vercel.app/hero.jpg",
 				width: 1400,
 				height: 700,
 				alt: "Olutunmise Adeniji - Web & Frontend Developer in Nigeria",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 		title: "Olutunmise Adeniji | FrontEnd Developer in Nigeria",
 		description:
 			"FrontEnd specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
-		images: ["/og.png"],
+		images: ["/hero.jpg"],
 		creator: "@tade_niji06",
 		site: "@tade_niji06",
 	},
