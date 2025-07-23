@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
+import ClarityScript from "@/components/Clarity";
 
 export const metadata: Metadata = {
 	title: "Olutunmise Adeniji | Software Developer",
@@ -70,9 +71,9 @@ export const metadata: Metadata = {
 			"max-snippet": -1,
 		},
 	},
-	 //  verification: {
-  //   google: "XpPKNsaiTXMfAdrPjPZK4qweSagtFgpYD-S2ESxwa-U",
-  // },
+	//  verification: {
+	//   google: "XpPKNsaiTXMfAdrPjPZK4qweSagtFgpYD-S2ESxwa-U",
+	// },
 };
 
 export default function RootLayout({
@@ -86,6 +87,7 @@ export default function RootLayout({
 				<Header />
 				{children}
 				<Footer />
+				<ClarityScript />
 			</body>
 		</html>
 	);
