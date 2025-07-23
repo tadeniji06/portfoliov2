@@ -112,9 +112,9 @@ export const metadata: Metadata = {
     },
   },
   
-  // verification: {
-  //   google: "your-google-verification-code",
-  // },
+  verification: {
+    google: "XpPKNsaiTXMfAdrPjPZK4qweSagtFgpYD-S2ESxwa-U",
+  },
   
   // Additional structured data
   other: {
