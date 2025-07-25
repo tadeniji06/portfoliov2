@@ -43,8 +43,8 @@ export const metadata: Metadata = {
 		images: [
 			{
 				url: "https://olutunmise.vercel.app/hero.jpg",
-				width: 1400,
-				height: 700,
+				width: 700,
+				height: 300,
 				alt: "Olutunmise Adeniji - Web & Frontend Developer in Nigeria",
 			},
 		],

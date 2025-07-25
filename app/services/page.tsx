@@ -53,8 +53,8 @@ export const metadata: Metadata = {
 		images: [
 			{
 				url: "/hero.jpg", // You'll need to create this image
-				width: 1200,
-				height: 630,
+				width: 600,
+				height: 250,
 				alt: "Olutunmise Adeniji's Software Development Projects Portfolio",
 			},
 		],

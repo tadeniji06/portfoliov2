@@ -52,8 +52,8 @@ export const metadata: Metadata = {
 		images: [
 			{
 				url: "/hero.jpg", // You'll need to create this image
-				width: 1200,
-				height: 630,
+				width: 800,
+				height: 300,
 				alt: "Olutunmise Adeniji's Tech Journey Timeline",
 			},
 		],

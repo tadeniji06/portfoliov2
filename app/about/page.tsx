@@ -78,8 +78,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/hero.jpg", 
-        width: 1200,
-        height: 630,
+        width: 600,
+        height: 250,
         alt: "Olutunmise Adeniji - Full-Stack Developer",
         type: "image/jpg",
       }
