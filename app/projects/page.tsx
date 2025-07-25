@@ -66,7 +66,7 @@ export const metadata: Metadata = {
 			"Projects | Olutunmise Adeniji - Quality Software Development Portfolio",
 		description:
 			"Curating my best software development projects for Portfolio V2. Quality over quantity! 🚀 Check out my current work at olutunmise.netlify.app",
-		creator: "@your_twitter_handle", // Replace with your actual Twitter handle
+		creator: "@tade_niji06", // Replace with your actual Twitter handle
 		images: ["/hero.jpg"], // Same image as OpenGraph
 	},
 	alternates: {
@@ -79,7 +79,6 @@ export const metadata: Metadata = {
 		"portfolio:focus": "Full Stack Development",
 		"portfolio:technologies":
 			"React, Next.js, TypeScript, Node.js, MongoDB",
-		"portfolio:v1": "https://olutunmise.netlify.app",
 		"article:author": "Olutunmise Adeniji",
 		"article:section": "Software Development",
 		"article:tag":
