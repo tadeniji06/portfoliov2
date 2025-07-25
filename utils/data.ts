@@ -15,6 +15,10 @@ export const headerLinks = [
 		title: "Projects",
 		link: "/projects",
 	},
+		{
+		title: "Services",
+		link: "/services",
+	},
 	{
 		title: "Blog",
 		link: "/blog",
