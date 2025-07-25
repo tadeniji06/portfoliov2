@@ -44,9 +44,9 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: "website",
 		locale: "en_US",
-		url: "https://olutunmise.vercel.app/projects",
+		url: "https://olutunmise.vercel.app/services",
 		title:
-			"Projects | Olutunmise Adeniji - Quality Software Development Portfolio",
+			"Services | Olutunmise Adeniji - Quality Software Development Portfolio",
 		description:
 			"Discover my carefully curated software development projects including OLUTEE TECH HUB, e-commerce solutions, and modern web applications. Quality over quantity approach to showcase impactful work.",
 		siteName: "Olutunmise Adeniji Portfolio",
@@ -62,14 +62,14 @@ export const metadata: Metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title:
-			"Projects | Olutunmise Adeniji - Quality Software Development Portfolio",
+			"Services | Olutunmise Adeniji - Quality Software Development Portfolio",
 		description:
 			"Curating my best software development projects for Portfolio V2. Quality over quantity! 🚀 Check out my current work at olutunmise.netlify.app",
 		creator: "@tade_niji06", // Replace with your actual Twitter handle
 		images: ["/hero.jpg"], // Same image as OpenGraph
 	},
 	alternates: {
-		canonical: "https://olutunmise.vercel.app/projects",
+		canonical: "https://olutunmise.vercel.app/services",
 	},
 	category: "Technology",
 	classification: "Software Development Portfolio",

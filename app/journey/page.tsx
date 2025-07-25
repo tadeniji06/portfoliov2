@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: "website",
 		locale: "en_US",
-		url: "https://olutunmise.vercel.app/",
+		url: "https://olutunmise.vercel.app/journey",
 		title:
 			"My Journey | Olutunmise Adeniji - From Curious Kid to Tech Builder",
 		description:
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 		images: ["/hero.jpg"],
 	},
 	alternates: {
-		canonical: "https://olutunmise.vercel.app/",
+		canonical: "https://olutunmise.vercel.app/journey",
 	},
 	category: "Technology",
 	classification: "Personal Portfolio",
