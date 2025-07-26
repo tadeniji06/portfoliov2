@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 		"Full-stack developer in Nigeria building websites, web apps, mobile apps, and Web3 products. Expert in React, Next.js, Tailwind, and blockchain-ready solutions.",
 
 	icons: {
-		icon: "/icon.svg",
+		icon: "/favicon.ico",
 	},
 	keywords: [
 		"Website Developer Nigeria",
