@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://olutunmise.vercel.app/sitemap.xml
