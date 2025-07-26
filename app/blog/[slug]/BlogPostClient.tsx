@@ -236,17 +236,17 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 				</p>
 			),
 			blockquote: ({ children }: any) => (
-				<blockquote className='border-l-4 border-blue-500 bg-gray-900/50 pl-8 py-6 my-10 rounded-r-xl shadow-lg'>
+				<blockquote className='border-l-4 border-red-500 bg-gray-900/50 pl-8 py-6 my-10 rounded-r-xl shadow-lg'>
 					<div className='text-xl md:text-2xl font-light text-gray-100 italic leading-relaxed tracking-wide'>
 						{children}
 					</div>
-					<div className='mt-4 w-12 h-1 bg-blue-500 rounded'></div>
+					<div className='mt-4 w-12 h-1 bg-red-500 rounded'></div>
 				</blockquote>
 			),
 		},
 		marks: {
 			strong: ({ children }: any) => (
-				<strong className='font-semibold text-white bg-blue-600/20 px-1 rounded'>
+				<strong className='font-bold text-red-700 px-1 rounded'>
 					{children}
 				</strong>
 			),
@@ -260,7 +260,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 					href={value.href}
 					target='_blank'
 					rel='noopener noreferrer'
-					className='text-blue-400 font-medium underline decoration-blue-400/50 underline-offset-4 hover:decoration-blue-400 hover:text-blue-300 transition-all duration-300'
+					className='text-red-400 font-medium underline decoration-blue-400/50 underline-offset-4 hover:decoration-red-400 hover:text-red-300 transition-all duration-300'
 				>
 					{children}
 				</a>
@@ -281,7 +281,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 		listItem: {
 			bullet: ({ children }: any) => (
 				<li className='flex items-start space-x-4 leading-relaxed font-light tracking-wide'>
-					<span className='text-blue-500 text-xl mt-1 flex-shrink-0'>
+					<span className='text-red-500 text-xl mt-1 flex-shrink-0'>
 						•
 					</span>
 					<span>{children}</span>
@@ -289,7 +289,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 			),
 			number: ({ children }: any) => (
 				<li className='flex items-start space-x-4 leading-relaxed font-light tracking-wide counter-increment-list'>
-					<span className='text-blue-500 font-medium flex-shrink-0 min-w-[24px]'>
+					<span className='text-red-500 font-medium flex-shrink-0 min-w-[24px]'>
 						<span className='counter-list'></span>.
 					</span>
 					<span>{children}</span>
@@ -307,7 +307,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 							icon='mdi:loading'
 							className='text-6xl text-white animate-spin mx-auto mb-6'
 						/>
-						<div className='absolute inset-0 text-6xl text-blue-500 animate-pulse'>
+						<div className='absolute inset-0 text-6xl text-red-500 animate-pulse'>
 							<Icon icon='mdi:circle-outline' />
 						</div>
 					</div>
@@ -370,7 +370,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 			{/* Reading Progress Bar */}
 			<div className='fixed top-0 left-0 w-full h-1 bg-gray-800 z-50'>
 				<div
-					className='h-full bg-gradient-to-r from-blue-500 to-blue-400 transition-all duration-300 ease-out'
+					className='h-full bg-gradient-to-r from-red-500 to-gray-400 transition-all duration-300 ease-out'
 					style={{ width: `${readingProgress}%` }}
 				/>
 			</div>
@@ -385,7 +385,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 					>
 						<Icon
 							icon='mdi:twitter'
-							className='text-2xl text-gray-300 group-hover:text-blue-400'
+							className='text-2xl text-gray-300 group-hover:text-red-400'
 						/>
 					</button>
 					<button
@@ -395,7 +395,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 					>
 						<Icon
 							icon='mdi:linkedin'
-							className='text-2xl text-gray-300 group-hover:text-blue-500'
+							className='text-2xl text-gray-300 group-hover:text-red-500'
 						/>
 					</button>
 					<button
@@ -405,7 +405,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 					>
 						<Icon
 							icon='mdi:facebook'
-							className='text-2xl text-gray-300 group-hover:text-blue-600'
+							className='text-2xl text-gray-300 group-hover:text-red-600'
 						/>
 					</button>
 					<button
@@ -441,7 +441,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 							{post.categories.map((category) => (
 								<span
 									key={category._id}
-									className='px-4 py-2 bg-blue-600/20 border border-blue-500/30 text-blue-300 rounded-full text-sm font-medium tracking-wide'
+									className='px-4 py-2 bg-red-600/20 border border-gray-500/30 text-red-500 rounded-full text-sm font-medium tracking-wide'
 								>
 									{category.title}
 								</span>
@@ -469,7 +469,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 									className='rounded-full border-2 border-gray-700'
 								/>
 							) : (
-								<div className='w-13 h-13 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center border-2 border-gray-700'>
+								<div className='w-13 h-13 bg-gradient-to-br from-red-600 to-gray-500 rounded-full flex items-center justify-center border-2 border-gray-700'>
 									<Icon
 										icon='mdi:account'
 										className='text-white text-xl'
