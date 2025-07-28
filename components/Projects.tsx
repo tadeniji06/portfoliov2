@@ -1,5 +1,9 @@
 "use client";
-
+import {
+	websiteProjects,
+	webApplications,
+	apiService,
+} from "@/utils/projects";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 
@@ -17,79 +21,161 @@ const Projects = () => {
 					</h2>
 					<div className='w-32 h-1 bg-black mx-auto mb-8 rounded-full'></div>
 					<p className='text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed'>
-						I'm currently curating my best work for this v2 portfolio,
-						filtering by quality and impact to showcase only the
-						projects that matter most.
+						A curated collection of my best work, showcasing quality
+						projects that solve real problems and create genuine
+						value.
 					</p>
 				</div>
 
-				{/* Main Content Card */}
-				<div className='max-w-4xl mx-auto'>
-					<div className='bg-black border-2 border-black p-12 md:p-16 rounded-2xl text-center shadow-2xl'>
-						{/* Icon */}
-						<div className='mb-8'>
-							<Icon
-								icon='mdi:hammer-wrench'
-								className='text-8xl text-white mx-auto mb-4'
-							/>
-						</div>
-
-						{/* Status */}
-						<div className='mb-8'>
-							<span className='inline-flex items-center px-6 py-3 bg-white text-black rounded-full text-lg font-semibold'>
-								<Icon
-									icon='mdi:clock-outline'
-									className='mr-2 text-xl'
-								/>
-								Work in Progress
-							</span>
-						</div>
-
-						{/* Main Message */}
-						<h3 className='text-3xl md:text-4xl font-bold text-white mb-6'>
-							Curating Excellence
+				{/* Website Projects Section */}
+				<div className='mb-20'>
+					<div className='text-center mb-12'>
+						<h3 className='text-3xl md:text-4xl font-bold text-black mb-4'>
+							Website Projects
 						</h3>
-						<p className='text-xl text-gray-300 mb-8 leading-relaxed'>
-							I'm handpicking my most impactful projects for this
-							portfolio v2. Each project will be thoroughly documented
-							with case studies, tech stacks, challenges overcome, and
-							lessons learned.
-						</p>
+						<div className='w-24 h-1 bg-gray-400 mx-auto rounded-full'></div>
+					</div>
 
-						{/* What's Coming */}
-						<div className='bg-white p-8 rounded-xl mb-8 text-left'>
-							<h4 className='text-2xl font-bold text-black mb-6 text-center'>
-								What's Coming Soon:
-							</h4>
-							<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-								{[
-									"OLUTEE TECH HUB - HR Management Platform",
-									"E-commerce Solutions with Payment Integration",
-									"Real-time Chat Applications",
-									"API Development & Microservices",
-									"Mobile-First Web Applications",
-									"Database Design & Optimization Projects",
-								].map((item, index) => (
-									<div
-										key={index}
-										className='flex items-center space-x-3'
-									>
-										<Icon
-											icon='mdi:check-circle'
-											className='text-black text-xl flex-shrink-0'
-										/>
-										<span className='text-gray-700 font-medium'>
-											{item}
-										</span>
-									</div>
-								))}
+					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+						{websiteProjects.map((project, index) => (
+							<div
+								key={index}
+								className='bg-white border-2 border-black rounded-xl p-6 hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-2xl'
+							>
+								<div className='mb-4'>
+									<Icon
+										icon='mdi:web'
+										className='text-4xl text-black mb-3'
+									/>
+								</div>
+								<h4 className='text-xl font-bold text-black mb-3'>
+									{project.title}
+								</h4>
+								<p className='text-gray-700 mb-6 leading-relaxed'>
+									{project.desc}
+								</p>
+								<Link
+									href={project.url}
+									target='_blank'
+									rel='noopener noreferrer'
+									className='inline-flex items-center space-x-2 bg-black text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200'
+								>
+									<span>View Live</span>
+									<Icon
+										icon='mdi:external-link'
+										className='text-lg'
+									/>
+								</Link>
 							</div>
+						))}
+					</div>
+				</div>
+
+				{/* API Services Section */}
+				<div className='mb-20'>
+					<div className='text-center mb-12'>
+						<h3 className='text-3xl md:text-4xl font-bold text-black mb-4'>
+							API Services
+						</h3>
+						<div className='w-24 h-1 bg-gray-400 mx-auto rounded-full'></div>
+					</div>
+
+					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+						{apiService.map((api, index) => (
+							<div
+								key={index}
+								className='bg-black border-2 border-black rounded-xl p-6 hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-2xl'
+							>
+								<div className='mb-4'>
+									<Icon
+										icon='mdi:api'
+										className='text-4xl text-white mb-3'
+									/>
+								</div>
+								<h4 className='text-xl font-bold text-white mb-3'>
+									{api.title}
+								</h4>
+								<p className='text-gray-300 mb-4 leading-relaxed'>
+									{api.description}
+								</p>
+
+								{/* Tech Stack */}
+								<div className='mb-6'>
+									<h5 className='text-sm font-semibold text-white mb-2'>
+										Tech Stack:
+									</h5>
+									<div className='flex flex-wrap gap-2'>
+										{api.tech.map((tech, techIndex) => (
+											<span
+												key={techIndex}
+												className='px-3 py-1 bg-white text-black rounded-full text-sm font-medium'
+											>
+												{tech}
+											</span>
+										))}
+									</div>
+								</div>
+
+								<div className='flex space-x-3'>
+									<Link
+										href={api.repo}
+										target='_blank'
+										rel='noopener noreferrer'
+										className='inline-flex items-center space-x-2 bg-white text-black px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition-colors duration-200'
+									>
+										<Icon icon='mdi:github' className='text-lg' />
+										<span>Repository</span>
+									</Link>
+									{api.docs && (
+										<Link
+											href={api.docs}
+											target='_blank'
+											rel='noopener noreferrer'
+											className='inline-flex items-center space-x-2 border-2 border-white text-white px-4 py-2 rounded-lg font-medium hover:bg-white hover:text-black transition-colors duration-200'
+										>
+											<Icon
+												icon='mdi:file-document'
+												className='text-lg'
+											/>
+											<span>Docs</span>
+										</Link>
+									)}
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+
+				{/* Web Applications Section - Coming Soon */}
+				<div className='mb-20'>
+					<div className='text-center mb-12'>
+						<h3 className='text-3xl md:text-4xl font-bold text-black mb-4'>
+							Web Applications
+						</h3>
+						<div className='w-24 h-1 bg-gray-400 mx-auto rounded-full'></div>
+					</div>
+
+					<div className='max-w-2xl mx-auto'>
+						<div className='bg-gray-50 border-2 border-gray-300 rounded-xl p-8 text-center'>
+							<Icon
+								icon='mdi:rocket-launch'
+								className='text-6xl text-gray-400 mx-auto mb-4'
+							/>
+							<h4 className='text-2xl font-bold text-gray-700 mb-3'>
+								Coming Soon
+							</h4>
+							<p className='text-gray-600 leading-relaxed'>
+								Exciting web applications are currently in
+								development. Stay tuned for complex, feature-rich
+								applications that showcase advanced functionality and
+								user experience.
+							</p>
 						</div>
 					</div>
 				</div>
 
-				{/* Additional Info Cards */}
-				<div className='mt-16 grid grid-cols-1 md:grid-cols-3 gap-8'>
+				{/* Skills Showcase */}
+				<div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
 					{/* Quality Focus */}
 					<div className='bg-white border-2 border-black p-8 rounded-xl text-center hover:scale-105 transition-transform duration-300'>
 						<Icon
@@ -100,8 +186,8 @@ const Projects = () => {
 							Quality First
 						</h4>
 						<p className='text-gray-700'>
-							Each project will include detailed case studies,
-							technical documentation, and live demos.
+							Each project is built with attention to detail,
+							performance optimization, and user experience.
 						</p>
 					</div>
 
@@ -131,7 +217,8 @@ const Projects = () => {
 						</h4>
 						<p className='text-gray-700'>
 							Projects that solve real problems and create genuine
-							value for users and businesses.
+							value for users and businesses across different
+							industries.
 						</p>
 					</div>
 				</div>
