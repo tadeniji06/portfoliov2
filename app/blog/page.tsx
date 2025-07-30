@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "Latest Blog Posts | Olutunmise Adeniji",
     description: "Explore all recent articles and insights by Olutunmise.",
     url: "https://olutunmise.vercel.app/blog",
-    siteName: "YourBrandName",
+    siteName: "Olutunmise E.A",
     type: "website",
     images: [
       {

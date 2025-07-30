@@ -10,6 +10,13 @@ export const websiteProjects = [
 		url: "https://theexplore360.com",
 	},
 	{
+		title: "The B360 Group",
+		desc: `A group of companies driving business growth through
+Strategic Marketing, technology, Business expansion and
+Content Solutions`,
+		url: "https://www.theb360group.com",
+	},
+	{
 		title: "Awo Tech Mall, Lagos, Nigeria",
 		desc: "Realtor, RealEstate and TechMall all in one, ikeja, Lagos",
 		url: "https://awotechmall.com",
