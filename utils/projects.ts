@@ -4,6 +4,11 @@ export const websiteProjects = [
 		desc: "Website for a Real Estate & Consulting Firm in Kenya",
 		url: "https://imperiagrouponline.com",
 	},
+		{
+		title: "M360 Solutions Limited, Kenya, Lagos, Nigeria",
+		desc: "Website for Marketing and Brand Building Organization",
+		url: "https://m360solutionsgroup.com",
+	},
 	{
 		title: "Explore 360, Kenya, South Africa, Nigeria",
 		desc: "Website for a Travel and Tours company",
