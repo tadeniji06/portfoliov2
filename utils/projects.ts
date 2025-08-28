@@ -14,6 +14,11 @@ export const websiteProjects = [
 		desc: "Website for a Travel and Tours company",
 		url: "https://theexplore360.com",
 	},
+		{
+		title: "ShowcaseAfrica Online",
+		desc: "A platform showcasing African culture, art, business and tourism through media.",
+		url: "https://showcaseafricaonline.com",
+	},
 	{
 		title: "The B360 Group",
 		desc: `A group of companies driving business growth through
