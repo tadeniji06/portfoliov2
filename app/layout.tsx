@@ -35,9 +35,9 @@ export const metadata: Metadata = {
 	],
 
 	openGraph: {
-		title: "Olutunmise Adeniji | FrontEnd Developer",
+		title: "Olutunmise Adeniji | Software Developer",
 		description:
-			"FrontEnd specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
+			"Software specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
 		url: "https://olutunmise.vercel.app",
 		siteName: "Olutunmise Adeniji",
 		images: [
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Olutunmise Adeniji | FrontEnd Developer in Nigeria",
+		title: "Olutunmise Adeniji | Software Developer in Nigeria",
 		description:
-			"FrontEnd specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
+			"Software specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
 		images: ["/pfp.jpg"],
 		creator: "@tade_niji06",
 		site: "@tade_niji06",
