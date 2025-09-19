@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 		siteName: "Olutunmise Adeniji Portfolio",
 		images: [
 			{
-				url: "/hero.jpg", // You'll need to create this image
+				url: "/pfp.jpg", // You'll need to create this image
 				width: 600,
 				height: 250,
 				alt: "Olutunmise Adeniji's Software Development Projects Portfolio",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 		description:
 			"Curating my best software development projects for Portfolio V2. Quality over quantity! 🚀 Check out my current work at olutunmise.netlify.app",
 		creator: "@tade_niji06", // Replace with your actual Twitter handle
-		images: ["/hero.jpg"], // Same image as OpenGraph
+		images: ["/pfp.jpg"], // Same image as OpenGraph
 	},
 	alternates: {
 		canonical: "https://olutunmise.vercel.app/projects",

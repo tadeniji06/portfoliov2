@@ -56,7 +56,7 @@ export const metadata: Metadata = {
 		title: "Olutunmise Adeniji | FrontEnd Developer in Nigeria",
 		description:
 			"FrontEnd specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
-		images: ["/hero.jpg"],
+		images: ["/pfp.jpg"],
 		creator: "@tade_niji06",
 		site: "@tade_niji06",
 	},

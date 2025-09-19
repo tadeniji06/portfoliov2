@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 	return {
 		title: `${post.title} | Olutunmise Adeniji`,
-		description: post.body?.[0]?.children?.[0]?.text || `Read ${post.title} on YourSiteName`,
+		description: post.body?.[0]?.children?.[0]?.text || `Read ${post.title} on my blog.`,
 		openGraph: {
 			title: post.title,
 			description: post.body?.[0]?.children?.[0]?.text || "",

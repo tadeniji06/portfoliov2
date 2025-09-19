@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/hero.jpg", 
+        url: "/pfp.jpg", 
         width: 600,
         height: 250,
         alt: "Olutunmise Adeniji - Full-Stack Developer",

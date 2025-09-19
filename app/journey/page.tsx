@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 		siteName: "Olutunmise Adeniji Portfolio",
 		images: [
 			{
-				url: "/hero.jpg", // You'll need to create this image
+				url: "/pfp.jpg", // You'll need to create this image
 				width: 800,
 				height: 300,
 				alt: "Olutunmise Adeniji's Tech Journey Timeline",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
 		description:
 			"Follow my interactive journey from a tech-obsessed kid to building OLUTEE TECH HUB - Africa's HR Brain. 🚀",
 		creator: "@tade_niji06",
-		images: ["/hero.jpg"],
+		images: ["/pfp.jpg"],
 	},
 	alternates: {
 		canonical: "https://olutunmise.vercel.app/journey",
