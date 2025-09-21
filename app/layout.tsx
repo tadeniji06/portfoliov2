@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 				url: "https://olutunmise.vercel.app/pfp.jpg",
 				width: 700,
 				height: 300,
-				alt: "Olutunmise Adeniji - Web & Frontend Developer in Nigeria",
+				alt: "Olutunmise Adeniji - Fullstack Developer in Nigeria",
 			},
 		],
 		locale: "en_US",
