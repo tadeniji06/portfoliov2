@@ -1,3 +1,3 @@
 import hero from "@/assets/images/hero.png";
-
-export { hero };
+import pfp from './pfp.jpg';
+export { hero, pfp };

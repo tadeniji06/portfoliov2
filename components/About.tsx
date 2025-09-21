@@ -1,4 +1,4 @@
-import { hero } from "@/assets";
+import { hero, pfp } from "@/assets";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
 import Link from "next/link";
@@ -169,7 +169,7 @@ const About = () => {
 								<div className='w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-gray-700 rounded-full overflow-hidden shadow-2xl'>
 									<Image
 										alt='Olutunmise Adeniji'
-										src={hero}
+										src={pfp}
 										width={224}
 										height={224}
 										className='w-full h-full object-cover object-top scale-110'
