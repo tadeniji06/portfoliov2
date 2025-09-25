@@ -80,7 +80,7 @@ const Experience = () => {
 
 	return (
 		<section
-			id='experience'
+			id='work'
 			className='py-16 md:py-20 bg-black relative'
 		>
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>

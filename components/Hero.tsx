@@ -40,8 +40,7 @@ const Hero = () => {
 
 				{/* Subtitle */}
 				<p className='text-base sm:text-lg md:text-xl text-gray-300 mb-4 md:mb-6 max-w-2xl mx-auto leading-relaxed'>
-					Full-Stack Web Developer | Software Developer | Building
-					Digital Solutions
+					Web3 & FullStack Developer
 				</p>
 
 				{/* Tech stack icons */}
@@ -91,14 +90,14 @@ const Hero = () => {
 				{/* Action buttons */}
 				<div className='mt-6 md:mt-8 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6'>
 					<Link
-						href='/projects'
+						href='#work'
 						className='group inline-flex items-center justify-center bg-white text-black border-2 border-white hover:bg-black hover:text-white transition-all duration-200 text-sm md:text-base py-3 px-6 md:py-4 md:px-8 font-medium'
 					>
 						<Icon
 							icon='mdi:rocket-launch'
 							className='mr-2 text-base md:text-xl'
 						/>
-						<span>View Projects</span>
+						<span>View Experience</span>
 					</Link>
 
 					<Link
