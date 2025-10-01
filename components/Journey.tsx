@@ -82,7 +82,7 @@ const Journey: React.FC = () => {
 		{
 			id: "current",
 			year: "2024",
-			title: "Building OLUTEE HUB",
+			title: "Building Haychar Hub",
 			description: "Africa's HR Brain - Full Feature Stack, All In",
 			icon: "mdi:brain",
 			category: "current",
@@ -103,10 +103,10 @@ const Journey: React.FC = () => {
 			icon: "mdi:trophy",
 			category: "future",
 			details: [
-				"Launch OLUTEE TECH HUB globally",
+				"Launch Haychar hub globally",
 				"Build multiple SaaS products",
 				"Provide value, get recognized",
-				"Afford the fastest cars (priorities! 🏎️)",
+				"Afford the fastest cars (priorities!)",
 				"Inspire the next generation of African developers",
 			],
 		},
@@ -160,7 +160,7 @@ const Journey: React.FC = () => {
 						tech-obsessed kid to building
 						<span className='text-white font-semibold'>
 							{" "}
-							OLUTEE HUB
+							Haychar Hub
 						</span>{" "}
 						- Africa's HR Brain
 					</p>
@@ -319,7 +319,7 @@ const Journey: React.FC = () => {
 											icon='mdi:brain'
 											className='mr-3 text-2xl text-white'
 										/>
-										OLUTEE HUB Features
+										Haychar Hub Features
 									</h4>
 									<div className='grid grid-cols-1 md:grid-cols-2 gap-4 text-sm'>
 										{[
@@ -362,7 +362,7 @@ const Journey: React.FC = () => {
 								{activeEvent === "current" && (
 									<>
 										<a
-											href='https://twitter.com/olutee_hub'
+											href='https://twitter.com/haychar_hub'
 											target='_blank'
 											rel='noopener noreferrer'
 											className='inline-flex items-center bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300'
@@ -403,7 +403,7 @@ const Journey: React.FC = () => {
 									activeEvent === "first-code") && (
 									<div className='w-full bg-black p-4 rounded-xl text-center text-white'>
 										<p className='font-bold mb-1'>
-											💡 Fun Fact: I still get the same excitement
+											Fun Fact: I still get the same excitement
 											writing code today!
 										</p>
 									</div>
@@ -414,7 +414,7 @@ const Journey: React.FC = () => {
 				</div>
 
 				{/* Stats Section */}
-				<div className='mt-20 grid grid-cols-1 md:grid-cols-4 gap-6'>
+				<div className='mt-20 grid grid-cols-1 md:grid-cols-3 gap-6'>
 					{[
 						{
 							icon: "mdi:calendar",
@@ -427,14 +427,9 @@ const Journey: React.FC = () => {
 							value: "19",
 						},
 						{
-							icon: "mdi:code-braces",
-							label: "Projects Built",
-							value: "15+",
-						},
-						{
 							icon: "mdi:rocket-launch",
 							label: "Current Focus",
-							value: "OLUTEE",
+							value: "Haychar Hub",
 						},
 					].map((stat, index) => (
 						<div
