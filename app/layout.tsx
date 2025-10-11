@@ -13,6 +13,11 @@ export const metadata: Metadata = {
 	icons: {
 		icon: "/favicon.ico",
 	},
+	alternates: {
+		canonical: "https://olutunmise.tech",
+	},
+	metadataBase: new URL("https://olutunmise.tech"),
+
 	keywords: [
 		"Website Developer Nigeria",
 		"Best Website Developer Nigeria",
@@ -38,11 +43,11 @@ export const metadata: Metadata = {
 		title: "Olutunmise Adeniji | Software Developer",
 		description:
 			"Software specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
-		url: "https://olutunmise.vercel.app",
+		url: "https://www.olutunmise.tech",
 		siteName: "Olutunmise Adeniji",
 		images: [
 			{
-				url: "https://olutunmise.vercel.app/pfp.jpg",
+				url: "https://www.olutunmise.tech/pfp.jpg",
 				width: 700,
 				height: 300,
 				alt: "Olutunmise Adeniji - Fullstack Developer in Nigeria",
@@ -76,11 +81,37 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
-}: Readonly<{
+}: {
 	children: React.ReactNode;
-}>) {
+}) {
 	return (
 		<html lang='en'>
+			<head>
+				<script
+					type='application/ld+json'
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							"@context": "https://schema.org",
+							"@type": "Person",
+							name: "Olutunmise Adeniji",
+							url: "https://olutunmise.tech",
+							sameAs: [
+								"https://github.com/tadeniji06",
+								"https://x.com/tade_niji06",
+								"https://www.linkedin.com/in/olutunmise-adeniji-16a846250/",
+							],
+							jobTitle: "Software Developer",
+							worksFor: {
+								"@type": "Organization",
+								name: "Haychar Hub",
+							},
+							description:
+								"Full-stack developer in Nigeria building websites, web apps, mobile apps, and Web3 products.",
+						}),
+					}}
+				/>
+			</head>
+
 			<body className='antialiased' cz-shortcut-listen='true'>
 				<Header />
 				{children}
