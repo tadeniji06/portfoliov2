@@ -36,13 +36,13 @@ export const websiteProjects = [
 		image: imperia,
 	},
 	{
-		title: "M360 Solutions Limited, Kenya, Lagos, Nigeria",
+		title: "M360 Solutions Limited, Lagos, Nigeria",
 		desc: "Website for Marketing and Brand Building Organization",
 		url: "https://m360solutionsgroup.com",
 		image: m360,
 	},
 	{
-		title: "Explore 360, Kenya, South Africa, Nigeria",
+		title: "Explore 360",
 		desc: "Website for a Travel and Tours company",
 		url: "https://theexplore360.com",
 		image: exp,
