@@ -5,13 +5,12 @@ export const metadata: Metadata = {
 	title:
 		"Projects | Olutunmise Adeniji - Curating Quality Over Quantity",
 	description:
-		"Explore my carefully curated software development projects. Currently filtering by quality and impact for Portfolio V2. Visit my V1 portfolio at olutunmise.netlify.app to see my current work including OLUTEE TECH HUB and more.",
+		"Explore my carefully curated software development projects.",
 	keywords: [
 		"Olutunmise Adeniji projects",
 		"software development portfolio",
 		"React projects",
 		"Next.js applications",
-		"OLUTEE TECH HUB",
 		"HR management software",
 		"full stack projects",
 		"JavaScript projects",
@@ -45,7 +44,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: "website",
 		locale: "en_US",
-		url: "https://olutunmise.vercel.app/projects",
+		url: "https://www.olutunmise.tech/projects",
 		title:
 			"Projects | Olutunmise Adeniji - Quality Software Development Portfolio",
 		description:
@@ -53,7 +52,7 @@ export const metadata: Metadata = {
 		siteName: "Olutunmise Adeniji Portfolio",
 		images: [
 			{
-				url: "/pfp.jpg", // You'll need to create this image
+				url: "/pfp.jpg", 
 				width: 600,
 				height: 250,
 				alt: "Olutunmise Adeniji's Software Development Projects Portfolio",
@@ -65,12 +64,12 @@ export const metadata: Metadata = {
 		title:
 			"Projects | Olutunmise Adeniji - Quality Software Development Portfolio",
 		description:
-			"Curating my best software development projects for Portfolio V2. Quality over quantity! 🚀 Check out my current work at olutunmise.netlify.app",
-		creator: "@tade_niji06", // Replace with your actual Twitter handle
-		images: ["/pfp.jpg"], // Same image as OpenGraph
+			"Curating my best software development projects for Portfolio V2. Quality over quantity!",
+		creator: "@tade_niji06", 
+		images: ["/pfp.jpg"], 
 	},
 	alternates: {
-		canonical: "https://olutunmise.vercel.app/projects",
+		canonical: "https://www.olutunmise.tech/projects",
 	},
 	category: "Technology",
 	classification: "Software Development Portfolio",
@@ -82,7 +81,7 @@ export const metadata: Metadata = {
 		"article:author": "Olutunmise Adeniji",
 		"article:section": "Software Development",
 		"article:tag":
-			"Projects, Portfolio, Web Development, React, Next.js, OLUTEE TECH HUB",
+			"Projects, Portfolio, Web Development, React, Next.js",
 	},
 };
 

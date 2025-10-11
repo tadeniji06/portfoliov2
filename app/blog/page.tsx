@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Latest Blog Posts | Olutunmise Adeniji",
     description: "Explore all recent articles and insights by Olutunmise.",
-    url: "https://olutunmise.vercel.app/blog",
+    url: "https://www.olutunmise.tech/blog",
     siteName: "Olutunmise E.A",
     type: "website",
     images: [
       {
-        url: "https://olutunmise.vercel.app/icon.svg",
+        url: "https://www.olutunmise.tech/icon.svg",
         width: 1200,
         height: 630,
         alt: "Blog overview image",

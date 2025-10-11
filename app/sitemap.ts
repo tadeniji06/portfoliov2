@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	// Create sitemap entries for blog posts
 	const blogEntries: MetadataRoute.Sitemap = blogPosts.map(
 		(post: any) => ({
-			url: `https://olutunmise.vercel.app/blog/${post.slug.current}`,
+			url: `https://www.olutunmise.tech/blog/${post.slug.current}`,
 			lastModified: new Date(post.publishedAt),
 			changeFrequency: "monthly" as const,
 			priority: 0.6,
@@ -18,31 +18,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	// Static pages
 	const staticPages: MetadataRoute.Sitemap = [
 		{
-			url: "https://olutunmise.vercel.app",
+			url: "https://www.olutunmise.tech",
 			lastModified: new Date(),
 			changeFrequency: "yearly",
 			priority: 1,
 		},
 		{
-			url: "https://olutunmise.vercel.app/about",
+			url: "https://www.olutunmise.tech/about",
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 0.8,
 		},
 		{
-			url: "https://olutunmise.vercel.app/journey",
+			url: "https://www.olutunmise.tech/journey",
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 0.8,
 		},
 		{
-			url: "https://olutunmise.vercel.app/projects",
+			url: "https://www.olutunmise.tech/projects",
 			lastModified: new Date(),
 			changeFrequency: "weekly",
 			priority: 0.9,
 		},
 		{
-			url: "https://olutunmise.vercel.app/blog",
+			url: "https://www.olutunmise.tech/blog",
 			lastModified: new Date(),
 			changeFrequency: "weekly",
 			priority: 0.7,

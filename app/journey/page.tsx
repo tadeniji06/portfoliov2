@@ -5,12 +5,11 @@ export const metadata: Metadata = {
 	title:
 		"My Journey | Olutunmise Adeniji - From Curious Kid to Tech Builder",
 	description:
-		"Follow my interactive journey from a tech-obsessed kid to building OLUTEE TECH HUB - Africa's HR Brain. Discover my path through Industrial Chemistry, self-taught coding, and entrepreneurship.",
+		"Follow my interactive journey from a tech-obsessed kid to building...",
 	keywords: [
 		"Olutunmise Adeniji",
 		"software developer journey",
 		"tech entrepreneur",
-		"OLUTEE TECH HUB",
 		"African developer",
 		"full stack developer",
 		"React developer",
@@ -43,15 +42,15 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: "website",
 		locale: "en_US",
-		url: "https://olutunmise.vercel.app/journey",
+		url: "https://www.olutunmise.tech/journey",
 		title:
 			"My Journey | Olutunmise Adeniji - From Curious Kid to Tech Builder",
 		description:
-			"Follow my interactive journey from a tech-obsessed kid to building OLUTEE TECH HUB - Africa's HR Brain. Discover my path through Industrial Chemistry, self-taught coding, and entrepreneurship.",
+			"Follow my interactive journey from a tech-obsessed kid to building...",
 		siteName: "Olutunmise Adeniji Portfolio",
 		images: [
 			{
-				url: "/pfp.jpg", // You'll need to create this image
+				url: "/pfp.jpg",
 				width: 800,
 				height: 300,
 				alt: "Olutunmise Adeniji's Tech Journey Timeline",
@@ -63,12 +62,12 @@ export const metadata: Metadata = {
 		title:
 			"My Journey | Olutunmise Adeniji - From Curious Kid to Tech Builder",
 		description:
-			"Follow my interactive journey from a tech-obsessed kid to building OLUTEE TECH HUB - Africa's HR Brain. 🚀",
+			"Follow my interactive journey from a tech-obsessed kid to building...",
 		creator: "@tade_niji06",
 		images: ["/pfp.jpg"],
 	},
 	alternates: {
-		canonical: "https://olutunmise.vercel.app/journey",
+		canonical: "https://www.olutunmise.tech/journey",
 	},
 	category: "Technology",
 	classification: "Personal Portfolio",
@@ -76,7 +75,7 @@ export const metadata: Metadata = {
 		"article:author": "Olutunmise Adeniji",
 		"article:section": "Technology",
 		"article:tag":
-			"Software Development, Entrepreneurship, Tech Journey, OLUTEE TECH HUB",
+			"Software Development, Entrepreneurship, Tech Journey",
 	},
 };
 

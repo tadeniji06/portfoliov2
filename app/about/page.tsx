@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Olutunmise Adeniji | Full-Stack Developer & Tech Enthusiast",
     description: "21-year-old full-stack developer from Lagos, Nigeria. Building modern web applications with React, Next.js, and TypeScript. Industrial Chemistry graduate turned tech innovator.",
-    url: "https://olutunmise.vercel.app/about",
+    url: "https://www.olutunmise.tech/about",
     siteName: "Olutunmise Adeniji Portfolio",
     type: "profile",
     locale: "en_US",
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     title: "About Olutunmise Adeniji | Full-Stack Developer",
     description: "21-year-old full-stack developer from Lagos, Nigeria. Specializing in React, Next.js, TypeScript, and modern web development.",
     creator: "@tade_niji06", 
-    images: ["/hero.jpg"],
+    images: ["/pfp.jpg"],
   },
   
   // Additional metadata
@@ -111,10 +111,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  
-  // verification: {
-  //   google: "XpPKNsaiTXMfAdrPjPZK4qweSagtFgpYD-S2ESxwa-U",
-  // },
   
   // Additional structured data
   other: {

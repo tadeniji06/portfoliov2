@@ -1,225 +1,228 @@
 "use client";
+
 import {
-	websiteProjects,
 	webApplications,
+	websiteProjects,
 	apiService,
 } from "@/utils/projects";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 import Link from "next/link";
 
 const Projects = () => {
 	return (
-		<section className='py-20 md:py-24 bg-white'>
-			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+		<section className='py-24 bg-gradient-to-b from-white to-gray-50'>
+			<div className='max-w-7xl mx-auto px-6 lg:px-8'>
 				{/* Header */}
-				<div className='text-center mb-16'>
-					<h2 className='text-4xl md:text-6xl font-bold mb-6 text-black tracking-tight'>
+				<div className='text-center mb-20'>
+					<h2 className='text-5xl md:text-6xl font-bold tracking-tight text-gray-900'>
 						My Projects
-						<span className='block text-2xl md:text-3xl text-gray-600 font-normal mt-2'>
-							Quality Over Quantity
-						</span>
 					</h2>
-					<div className='w-32 h-1 bg-black mx-auto mb-8 rounded-full'></div>
-					<p className='text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed'>
-						A curated collection of my best work, showcasing quality
-						projects that solve real problems and create genuine
-						value.
+					<p className='mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
+						Where innovation meets execution — a blend of design,
+						functionality, and real-world impact.
 					</p>
+					<div className='w-32 h-1 bg-black mx-auto mt-6 rounded-full' />
 				</div>
 
-				{/* Website Projects Section */}
-				<div className='mb-20'>
+				{/* Section: Web Applications (PRIORITY SECTION) */}
+				<div className='mb-24'>
 					<div className='text-center mb-12'>
-						<h3 className='text-3xl md:text-4xl font-bold text-black mb-4'>
-							Website Projects
+						<p className='uppercase tracking-wide text-sm font-semibold text-gray-500 mb-2'>
+							Core Products
+						</p>
+						<h3 className='text-3xl md:text-4xl font-bold text-gray-900'>
+							Web Applications
 						</h3>
-						<div className='w-24 h-1 bg-gray-400 mx-auto rounded-full'></div>
+						<p className='text-gray-600 mt-3 text-lg'>
+							High-performance applications that solve real problems
+							and scale with users.
+						</p>
 					</div>
 
-					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-						{websiteProjects.map((project, index) => (
+					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+						{webApplications.map((app, index) => (
 							<div
 								key={index}
-								className='bg-white border-2 border-black rounded-xl p-6 hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-2xl'
+								className='relative bg-black rounded-2xl overflow-hidden shadow-xl group hover:-translate-y-1 transition-all duration-500'
 							>
-								<div className='mb-4'>
-									<Icon
-										icon='mdi:web'
-										className='text-4xl text-black mb-3'
+								{/* Image Gallery */}
+								<div className='relative w-full h-52 overflow-hidden'>
+									<img
+										src={app.images[0].src}
+										alt={app.title}
+										className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700'
 									/>
+									<div className='absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-80'></div>
 								</div>
-								<h4 className='text-xl font-bold text-black mb-3'>
-									{project.title}
-								</h4>
-								<p className='text-gray-700 mb-6 leading-relaxed'>
-									{project.desc}
-								</p>
-								<Link
-									href={project.url}
-									target='_blank'
-									rel='noopener noreferrer'
-									className='inline-flex items-center space-x-2 bg-black text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200'
-								>
-									<span>View Live</span>
-									<Icon
-										icon='mdi:external-link'
-										className='text-lg'
-									/>
-								</Link>
+
+								{/* Content */}
+								<div className='p-8 text-white'>
+									<h4 className='text-xl font-semibold mb-2'>
+										{app.title}
+									</h4>
+									<p className='text-gray-300 mb-5 leading-relaxed'>
+										{app.description}
+									</p>
+
+									{/* Stack */}
+									<div className='mb-6'>
+										<h5 className='text-sm font-semibold text-gray-400 mb-2'>
+											Stack
+										</h5>
+										<div className='flex flex-wrap gap-2'>
+											{app.stack[0].title
+												.split(",")
+												.map((tech, i) => (
+													<span
+														key={i}
+														className='bg-white text-black px-3 py-1 rounded-full text-xs font-medium'
+													>
+														{tech.trim()}
+													</span>
+												))}
+										</div>
+									</div>
+
+									<Link
+										href={app.url}
+										target='_blank'
+										rel='noopener noreferrer'
+										className='inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-all'
+									>
+										View Live
+										<Icon
+											icon='mdi:external-link'
+											className='text-lg'
+										/>
+									</Link>
+								</div>
 							</div>
 						))}
 					</div>
 				</div>
 
-				{/* API Services Section */}
-				<div className='mb-20'>
+				{/* Section: Website Projects */}
+				<div className='mb-24'>
 					<div className='text-center mb-12'>
-						<h3 className='text-3xl md:text-4xl font-bold text-black mb-4'>
-							API Services
+						<p className='uppercase tracking-wide text-sm font-semibold text-gray-500 mb-2'>
+							Client Projects
+						</p>
+						<h3 className='text-3xl md:text-4xl font-bold text-gray-900'>
+							Website Projects
 						</h3>
-						<div className='w-24 h-1 bg-gray-400 mx-auto rounded-full'></div>
 					</div>
 
-					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+						{websiteProjects.map((project, index) => (
+							<div
+								key={index}
+								className='bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group'
+							>
+								<div className='overflow-hidden rounded-t-2xl'>
+									<img
+										src={project.image.src}
+										alt={project.title}
+										className='w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500'
+									/>
+								</div>
+
+								<div className='p-8'>
+									<h4 className='text-xl font-semibold text-gray-900 mb-2'>
+										{project.title}
+									</h4>
+									<p className='text-gray-600 mb-6 leading-relaxed'>
+										{project.desc}
+									</p>
+									<Link
+										href={project.url}
+										target='_blank'
+										rel='noopener noreferrer'
+										className='inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-all'
+									>
+										View Live
+										<Icon
+											icon='mdi:external-link'
+											className='text-lg'
+										/>
+									</Link>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+
+				{/* Section: API Services */}
+				<div className='mb-24'>
+					<div className='text-center mb-12'>
+						<p className='uppercase tracking-wide text-sm font-semibold text-gray-500 mb-2'>
+							Development
+						</p>
+						<h3 className='text-3xl md:text-4xl font-bold text-gray-900'>
+							API Services
+						</h3>
+					</div>
+
+					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
 						{apiService.map((api, index) => (
 							<div
 								key={index}
-								className='bg-black border-2 border-black rounded-xl p-6 hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-2xl'
+								className='bg-gradient-to-br from-black to-gray-900 rounded-2xl p-8 hover:scale-[1.02] transition-transform shadow-lg'
 							>
-								<div className='mb-4'>
+								<div className='flex items-center gap-3 mb-4'>
 									<Icon
 										icon='mdi:api'
-										className='text-4xl text-white mb-3'
+										className='text-3xl text-white'
 									/>
+									<h4 className='text-xl font-semibold text-white'>
+										{api.title}
+									</h4>
 								</div>
-								<h4 className='text-xl font-bold text-white mb-3'>
-									{api.title}
-								</h4>
-								<p className='text-gray-300 mb-4 leading-relaxed'>
+
+								<p className='text-gray-300 mb-6 leading-relaxed'>
 									{api.description}
 								</p>
 
-								{/* Tech Stack */}
 								<div className='mb-6'>
-									<h5 className='text-sm font-semibold text-white mb-2'>
-										Tech Stack:
+									<h5 className='text-sm font-semibold text-gray-400 mb-2'>
+										Tech Stack
 									</h5>
 									<div className='flex flex-wrap gap-2'>
-										{api.tech.map((tech, techIndex) => (
+										{api.tech.map((t, i) => (
 											<span
-												key={techIndex}
-												className='px-3 py-1 bg-white text-black rounded-full text-sm font-medium'
+												key={i}
+												className='bg-white text-black px-3 py-1 rounded-full text-xs font-medium'
 											>
-												{tech}
+												{t}
 											</span>
 										))}
 									</div>
 								</div>
 
-								<div className='flex space-x-3'>
+								<div className='flex gap-3'>
 									<Link
 										href={api.repo}
 										target='_blank'
-										rel='noopener noreferrer'
-										className='inline-flex items-center space-x-2 bg-white text-black px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition-colors duration-200'
+										className='inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors'
 									>
 										<Icon icon='mdi:github' className='text-lg' />
-										<span>Repository</span>
+										Repo
 									</Link>
 									{api.docs && (
 										<Link
 											href={api.docs}
 											target='_blank'
-											rel='noopener noreferrer'
-											className='inline-flex items-center space-x-2 border-2 border-white text-white px-4 py-2 rounded-lg font-medium hover:bg-white hover:text-black transition-colors duration-200'
+											className='inline-flex items-center gap-2 border border-white text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-white hover:text-black transition-all'
 										>
 											<Icon
 												icon='mdi:file-document'
 												className='text-lg'
 											/>
-											<span>Docs</span>
+											Docs
 										</Link>
 									)}
 								</div>
 							</div>
 						))}
-					</div>
-				</div>
-
-				{/* Web Applications Section - Coming Soon */}
-				<div className='mb-20'>
-					<div className='text-center mb-12'>
-						<h3 className='text-3xl md:text-4xl font-bold text-black mb-4'>
-							Web Applications
-						</h3>
-						<div className='w-24 h-1 bg-gray-400 mx-auto rounded-full'></div>
-					</div>
-
-					<div className='max-w-2xl mx-auto'>
-						<div className='bg-gray-50 border-2 border-gray-300 rounded-xl p-8 text-center'>
-							<Icon
-								icon='mdi:rocket-launch'
-								className='text-6xl text-gray-400 mx-auto mb-4'
-							/>
-							<h4 className='text-2xl font-bold text-gray-700 mb-3'>
-								Coming Soon
-							</h4>
-							<p className='text-gray-600 leading-relaxed'>
-								Exciting web applications are currently in
-								development. Stay tuned for complex, feature-rich
-								applications that showcase advanced functionality and
-								user experience.
-							</p>
-						</div>
-					</div>
-				</div>
-
-				{/* Skills Showcase */}
-				<div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-					{/* Quality Focus */}
-					<div className='bg-white border-2 border-black p-8 rounded-xl text-center hover:scale-105 transition-transform duration-300'>
-						<Icon
-							icon='mdi:diamond-stone'
-							className='text-5xl text-black mx-auto mb-4'
-						/>
-						<h4 className='text-xl font-bold text-black mb-3'>
-							Quality First
-						</h4>
-						<p className='text-gray-700'>
-							Each project is built with attention to detail,
-							performance optimization, and user experience.
-						</p>
-					</div>
-
-					{/* Tech Stack */}
-					<div className='bg-black border-2 border-black p-8 rounded-xl text-center hover:scale-105 transition-transform duration-300'>
-						<Icon
-							icon='mdi:code-braces'
-							className='text-5xl text-white mx-auto mb-4'
-						/>
-						<h4 className='text-xl font-bold text-white mb-3'>
-							Modern Tech
-						</h4>
-						<p className='text-gray-300'>
-							React, Next.js, TypeScript, Node.js, MongoDB, and other
-							cutting-edge technologies.
-						</p>
-					</div>
-
-					{/* Real Impact */}
-					<div className='bg-white border-2 border-black p-8 rounded-xl text-center hover:scale-105 transition-transform duration-300'>
-						<Icon
-							icon='mdi:target'
-							className='text-5xl text-black mx-auto mb-4'
-						/>
-						<h4 className='text-xl font-bold text-black mb-3'>
-							Real Impact
-						</h4>
-						<p className='text-gray-700'>
-							Projects that solve real problems and create genuine
-							value for users and businesses across different
-							industries.
-						</p>
 					</div>
 				</div>
 			</div>

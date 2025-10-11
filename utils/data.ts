@@ -11,10 +11,10 @@ export const headerLinks = [
 		title: "My Journey",
 		link: "/journey",
 	},
-	// {
-	// 	title: "Projects",
-	// 	link: "/projects",
-	// },
+	{
+		title: "Projects",
+		link: "/projects",
+	},
 	{
 		title: "Blog",
 		link: "/blog",

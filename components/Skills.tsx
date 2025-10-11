@@ -256,43 +256,6 @@ const Skills = () => {
 					))}
 				</div>
 
-				{/* Stats Section */}
-				<div className='mt-20 bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-10 md:p-12 rounded-2xl shadow-2xl'>
-					<h3 className='text-3xl font-bold text-white mb-8 text-center'>
-						Skills Overview
-					</h3>
-					<div className='grid grid-cols-1 md:grid-cols-3 gap-8 text-center'>
-						<div className='space-y-2'>
-							<div className='text-4xl font-bold text-white'>
-								{allSkills.length}+
-							</div>
-							<div className='text-gray-300 font-medium'>
-								Technologies
-							</div>
-						</div>
-						<div className='space-y-2'>
-							<div className='text-4xl font-bold text-white'>
-								{Math.round(
-									allSkills.reduce(
-										(acc, skill) => acc + skill.level,
-										0
-									) / allSkills.length
-								)}
-								%
-							</div>
-							<div className='text-gray-300 font-medium'>
-								Average Proficiency
-							</div>
-						</div>
-						<div className='space-y-2'>
-							<div className='text-4xl font-bold text-white'>3+</div>
-							<div className='text-gray-300 font-medium'>
-								Years Experience
-							</div>
-						</div>
-					</div>
-				</div>
-
 				{/* Learning Section */}
 				<div className='mt-16 text-center bg-white border-2 border-gray-200 p-10 rounded-2xl shadow-lg'>
 					<Icon
