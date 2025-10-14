@@ -251,7 +251,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 				</strong>
 			),
 			em: ({ children }: any) => (
-				<em className='italic text-gray-400 font-light'>
+				<em className='italic text-red-600 font-light'>
 					{children}
 				</em>
 			),
