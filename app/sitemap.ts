@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		(post: any) => ({
 			url: `https://www.olutunmise.tech/blog/${post.slug.current}`,
 			lastModified: new Date(post.publishedAt),
-			changeFrequency: "monthly" as const,
+			changeFrequency: "daily" as const,
 			priority: 0.6,
 		})
 	);
@@ -20,19 +20,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		{
 			url: "https://www.olutunmise.tech",
 			lastModified: new Date(),
-			changeFrequency: "yearly",
+			changeFrequency: "monthly",
 			priority: 1,
 		},
 		{
 			url: "https://www.olutunmise.tech/about",
 			lastModified: new Date(),
-			changeFrequency: "monthly",
+			changeFrequency: "weekly",
 			priority: 0.8,
 		},
 		{
 			url: "https://www.olutunmise.tech/journey",
 			lastModified: new Date(),
-			changeFrequency: "monthly",
+			changeFrequency: "weekly",
 			priority: 0.8,
 		},
 		{
