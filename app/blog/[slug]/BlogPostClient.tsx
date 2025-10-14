@@ -211,33 +211,33 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 		},
 		block: {
 			h1: ({ children }: any) => (
-				<h1 className='text-5xl md:text-6xl font-bold text-white mt-16 mb-8 leading-tight tracking-tight font-serif'>
+				<h1 className='text-5xl md:text-6xl font-bold text-black mt-16 mb-8 leading-tight tracking-tight font-serif'>
 					{children}
 				</h1>
 			),
 			h2: ({ children }: any) => (
-				<h2 className='text-3xl md:text-4xl font-bold text-white mt-14 mb-6 leading-tight tracking-wide font-serif'>
+				<h2 className='text-3xl md:text-4xl font-bold text-black mt-14 mb-6 leading-tight tracking-wide font-serif'>
 					{children}
 				</h2>
 			),
 			h3: ({ children }: any) => (
-				<h3 className='text-2xl md:text-3xl font-semibold text-white mt-12 mb-5 leading-tight tracking-wide font-serif'>
+				<h3 className='text-2xl md:text-3xl font-semibold text-black mt-12 mb-5 leading-tight tracking-wide font-serif'>
 					{children}
 				</h3>
 			),
 			h4: ({ children }: any) => (
-				<h4 className='text-xl md:text-2xl font-semibold text-gray-100 mt-10 mb-4 leading-tight tracking-wide'>
+				<h4 className='text-xl md:text-2xl font-semibold text-black mt-10 mb-4 leading-tight tracking-wide'>
 					{children}
 				</h4>
 			),
 			normal: ({ children }: any) => (
-				<p className='text-lg md:text-xl text-gray-200 mb-8 leading-relaxed font-light tracking-wide max-w-none'>
+				<p className='text-lg md:text-xl text-black mb-8 leading-relaxed font-light tracking-wide max-w-none'>
 					{children}
 				</p>
 			),
 			blockquote: ({ children }: any) => (
-				<blockquote className='border-l-4 border-red-500 bg-gray-900/50 pl-8 py-6 my-10 rounded-r-xl shadow-lg'>
-					<div className='text-xl md:text-2xl font-light text-gray-100 italic leading-relaxed tracking-wide'>
+				<blockquote className='border-l-4 border-red-500 bg-black/70 pl-8 py-6 my-10 rounded-r-xl shadow-lg'>
+					<div className='text-xl md:text-2xl font-light text-white italic leading-relaxed tracking-wide'>
 						{children}
 					</div>
 					<div className='mt-4 w-12 h-1 bg-red-500 rounded'></div>
@@ -246,12 +246,12 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 		},
 		marks: {
 			strong: ({ children }: any) => (
-				<strong className='font-bold text-red-700 px-1 rounded'>
+				<strong className='font-bold text-gray-900 px-1 rounded'>
 					{children}
 				</strong>
 			),
 			em: ({ children }: any) => (
-				<em className='italic text-gray-200 font-light'>
+				<em className='italic text-gray-400 font-light'>
 					{children}
 				</em>
 			),
@@ -260,7 +260,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 					href={value.href}
 					target='_blank'
 					rel='noopener noreferrer'
-					className='text-red-400 font-medium underline decoration-blue-400/50 underline-offset-4 hover:decoration-red-400 hover:text-red-300 transition-all duration-300'
+					className='text-red-400 font-medium underline decoration-black/50 underline-offset-4 hover:decoration-red-400 hover:text-red-300 transition-all duration-300'
 				>
 					{children}
 				</a>
@@ -268,12 +268,12 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 		},
 		list: {
 			bullet: ({ children }: any) => (
-				<ul className='list-none mb-8 space-y-4 text-lg md:text-xl text-gray-200 ml-0'>
+				<ul className='list-none mb-8 space-y-4 text-lg md:text-xl text-black ml-0'>
 					{children}
 				</ul>
 			),
 			number: ({ children }: any) => (
-				<ol className='list-none counter-reset-list mb-8 space-y-4 text-lg md:text-xl text-gray-200 ml-0'>
+				<ol className='list-none counter-reset-list mb-8 space-y-4 text-lg md:text-xl text-black ml-0'>
 					{children}
 				</ol>
 			),
@@ -281,7 +281,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 		listItem: {
 			bullet: ({ children }: any) => (
 				<li className='flex items-start space-x-4 leading-relaxed font-light tracking-wide'>
-					<span className='text-red-500 text-xl mt-1 flex-shrink-0'>
+					<span className='text-red-700 text-xl mt-1 flex-shrink-0'>
 						•
 					</span>
 					<span>{children}</span>
@@ -354,7 +354,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 	}
 
 	return (
-		<div className='bg-black min-h-screen'>
+		<div className='bg-white min-h-screen'>
 			<style jsx>{`
 				.counter-reset-list {
 					counter-reset: list;
@@ -370,7 +370,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 			{/* Reading Progress Bar */}
 			<div className='fixed top-0 left-0 w-full h-1 bg-gray-800 z-50'>
 				<div
-					className='h-full bg-gradient-to-r from-red-500 to-gray-400 transition-all duration-300 ease-out'
+					className='h-full bg-gradient-to-r from-gray-500 to-red-400 transition-all duration-300 ease-out'
 					style={{ width: `${readingProgress}%` }}
 				/>
 			</div>
@@ -426,7 +426,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 				<div className='mb-12'>
 					<Link
 						href='/blog'
-						className='inline-flex items-center text-gray-400 hover:text-white transition-all duration-300 font-light tracking-wide'
+						className='inline-flex items-center text-black hover:text-red-500 transition-all duration-300 font-light tracking-wide'
 					>
 						<Icon icon='mdi:arrow-left' className='mr-3 text-xl' />
 						Back to Blog
@@ -441,7 +441,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 							{post.categories.map((category) => (
 								<span
 									key={category._id}
-									className='px-4 py-2 bg-red-600/20 border border-gray-500/30 text-red-500 rounded-full text-sm font-medium tracking-wide'
+									className='px-4 py-2 border border-gray-700 text-red-700 rounded-full text-sm font-medium tracking-wide'
 								>
 									{category.title}
 								</span>
@@ -450,7 +450,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 					)}
 
 					{/* Title */}
-					<h1 className='text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight font-serif'>
+					<h1 className='text-4xl md:text-5xl lg:text-7xl font-bold text-black mb-8 leading-tight tracking-tight font-serif'>
 						{post.title}
 					</h1>
 
@@ -477,7 +477,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 								</div>
 							)}
 							<div>
-								<p className='font-medium text-white text-lg tracking-wide'>
+								<p className='font-medium text-black text-lg tracking-wide'>
 									{post.author?.name || "Olutunmise"}
 								</p>
 								<p className='text-sm text-gray-500 font-light'>
@@ -486,14 +486,14 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 							</div>
 						</div>
 
-						<div className='flex items-center space-x-2 font-light tracking-wide'>
+						<div className='flex items-center space-x-2 text-black font-light tracking-wide'>
 							<Icon icon='mdi:calendar' className='text-lg' />
 							<time dateTime={post.publishedAt}>
 								{formatDate(post.publishedAt)}
 							</time>
 						</div>
 
-						<div className='flex items-center space-x-2 font-light tracking-wide'>
+						<div className='flex items-center space-x-2 text-black font-light tracking-wide'>
 							<Icon icon='mdi:clock-outline' className='text-lg' />
 							<span>{estimatedReadTime} min read</span>
 						</div>
@@ -582,14 +582,14 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 				{/* Related Posts */}
 				{relatedPosts.length > 0 && (
 					<div className='mt-24'>
-						<h3 className='text-4xl font-bold text-white mb-12 text-center font-serif tracking-wide'>
+						<h3 className='text-4xl font-bold text-black mb-12 text-center font-serif tracking-wide'>
 							Related Articles
 						</h3>
 						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
 							{relatedPosts.map((relatedPost) => (
 								<article
 									key={relatedPost._id}
-									className='bg-gray-900/50 border border-gray-700 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 group backdrop-blur-lg'
+									className='bg-gray-900/50 border border-gray-900 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 group backdrop-blur-lg'
 								>
 									{/* Image */}
 									<div className='relative h-48 bg-gray-800 overflow-hidden'>
@@ -613,13 +613,13 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 										)}
 
 										{/* Reading Time */}
-										<div className='absolute top-4 right-4 bg-blue-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium'>
+										<div className='absolute top-4 right-4 bg-red-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium'>
 											{relatedPost.estimatedReadingTime || 5} min
 										</div>
 									</div>
 
 									{/* Content */}
-									<div className='p-8'>
+									<div className='p-8 bg-black'>
 										<h4 className='text-xl font-bold text-white mb-4 line-clamp-2 group-hover:text-gray-200 transition-colors duration-300 font-serif leading-tight'>
 											{relatedPost.title}
 										</h4>
@@ -664,7 +664,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 						onClick={() =>
 							window.scrollTo({ top: 0, behavior: "smooth" })
 						}
-						className='inline-flex items-center bg-white text-black px-8 py-4 rounded-2xl font-medium hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105'
+						className='inline-flex items-center border bg-white text-black px-8 py-4 rounded-2xl font-medium  shadow-xl'
 					>
 						<Icon icon='mdi:arrow-up' className='mr-3 text-xl' />
 						Back to Top
