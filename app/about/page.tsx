@@ -2,11 +2,11 @@ import About from "@/components/About";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Olutunmise Adeniji | Full-Stack Developer & Tech Enthusiast",
-  description: "Meet Olutunmise Adeniji, a 21-year-old full-stack developer from Lagos, Nigeria. Specializing in React, Next.js, TypeScript, and modern web development. Industrial Chemistry graduate turned tech innovator.",
+  title: "About Tunmise E.A | Full-Stack Developer & Tech Enthusiast",
+  description: "Meet Tunmise E.A, a 21-year-old full-stack developer from Lagos, Nigeria. Specializing in React, Next.js, TypeScript, and modern web development. Industrial Chemistry graduate turned tech innovator.",
   keywords: [
     // Personal branding
-    "Olutunmise Adeniji",
+    "Tunmise E.A",
     "Tunmise developer",
     "Nigerian developer",
     "Lagos developer",
@@ -63,16 +63,16 @@ export const metadata: Metadata = {
     "problem solver",
     "continuous learner"
   ],
-  authors: [{ name: "Olutunmise Adeniji" }],
-  creator: "Olutunmise Adeniji",
-  publisher: "Olutunmise Adeniji",
+  authors: [{ name: "Tunmise E.A" }],
+  creator: "Tunmise E.A",
+  publisher: "Tunmise E.A",
   
   // Open Graph for social media
   openGraph: {
-    title: "About Olutunmise Adeniji | Full-Stack Developer & Tech Enthusiast",
+    title: "About Tunmise E.A | Full-Stack Developer & Tech Enthusiast",
     description: "21-year-old full-stack developer from Lagos, Nigeria. Building modern web applications with React, Next.js, and TypeScript. Industrial Chemistry graduate turned tech innovator.",
     url: "https://www.olutunmise.tech/about",
-    siteName: "Olutunmise Adeniji Portfolio",
+    siteName: "Tunmise E.A's Portfolio",
     type: "profile",
     locale: "en_US",
     images: [
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
         url: "/pfp.jpg", 
         width: 600,
         height: 250,
-        alt: "Olutunmise Adeniji - Full-Stack Developer",
+        alt: "Tunmise E.A - Full-Stack Developer",
         type: "image/jpg",
       }
     ],
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "About Olutunmise Adeniji | Full-Stack Developer",
+    title: "About Tunmise E.A | Full-Stack Developer",
     description: "21-year-old full-stack developer from Lagos, Nigeria. Specializing in React, Next.js, TypeScript, and modern web development.",
     creator: "@tade_niji06", 
     images: ["/pfp.jpg"],
@@ -114,13 +114,13 @@ export const metadata: Metadata = {
   
   // Additional structured data
   other: {
-    "og:profile:first_name": "Olutunmise",
+    "og:profile:first_name": "Tunmise",
     "og:profile:last_name": "Adeniji",
     "og:profile:username": "tadeniji06",
-    "article:author": "Olutunmise Adeniji",
-    "profile:first_name": "Olutunmise",
+    "article:author": "Tunmise Adeniji",
+    "profile:first_name": "Tunmise",
     "profile:last_name": "Adeniji",
-    "profile:username": "tadeniji06"
+    "profile:username": "taden_iji06"
   }
 };
 

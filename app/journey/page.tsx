@@ -3,11 +3,11 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title:
-		"My Journey | Olutunmise Adeniji - From Curious Kid to Tech Builder",
+		"My Journey | Tunmise E.A - From Curious Kid to Tech Builder",
 	description:
 		"Follow my interactive journey from a tech-obsessed kid to building...",
 	keywords: [
-		"Olutunmise Adeniji",
+		"Tunmise E.A",
 		"software developer journey",
 		"tech entrepreneur",
 		"African developer",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
 		"value creation",
 		"problem solver",
 	],
-	authors: [{ name: "Olutunmise Adeniji" }],
-	creator: "Olutunmise Adeniji",
-	publisher: "Olutunmise Adeniji",
+	authors: [{ name: "Tunmise E.A" }],
+	creator: "Tunmise E.A",
+	publisher: "Tunmise E.A",
 	robots: {
 		index: true,
 		follow: true,
@@ -44,23 +44,23 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		url: "https://www.olutunmise.tech/journey",
 		title:
-			"My Journey | Olutunmise Adeniji - From Curious Kid to Tech Builder",
+			"My Journey | Tunmise E.A - From Curious Kid to Tech Builder",
 		description:
 			"Follow my interactive journey from a tech-obsessed kid to building...",
-		siteName: "Olutunmise Adeniji Portfolio",
+		siteName: "Tunmise E.A Portfolio",
 		images: [
 			{
 				url: "/pfp.jpg",
 				width: 800,
 				height: 300,
-				alt: "Olutunmise Adeniji's Tech Journey Timeline",
+				alt: "Tunmise E.A's Tech Journey Timeline",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
 		title:
-			"My Journey | Olutunmise Adeniji - From Curious Kid to Tech Builder",
+			"My Journey | Tunmise E.A - From Curious Kid to Tech Builder",
 		description:
 			"Follow my interactive journey from a tech-obsessed kid to building...",
 		creator: "@tade_niji06",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 	category: "Technology",
 	classification: "Personal Portfolio",
 	other: {
-		"article:author": "Olutunmise Adeniji",
+		"article:author": "Tunmise E.A",
 		"article:section": "Technology",
 		"article:tag":
 			"Software Development, Entrepreneurship, Tech Journey",

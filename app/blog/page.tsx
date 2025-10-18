@@ -2,13 +2,13 @@ import BlogsClient from "./BlogsClient";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Latest Blog Posts | Olutunmise Adeniji",
+  title: "Latest Blog Posts | Tunmise E.A",
   description: "Dive into powerful articles exploring technology, growth, mindset, and modern challenges. Curated by YourBrandName.",
   openGraph: {
-    title: "Latest Blog Posts | Olutunmise Adeniji",
-    description: "Explore all recent articles and insights by Olutunmise.",
+    title: "Latest Blog Posts | Tunmise E.A",
+    description: "Explore all recent articles and insights by Tunmise E.A.",
     url: "https://www.olutunmise.tech/blog",
-    siteName: "Olutunmise E.A",
+    siteName: "Tunmise E.A",
     type: "website",
     images: [
       {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Latest Blog Posts | Olutunmise",
+    title: "Latest Blog Posts | Tunmise E.A",
     description: "Explore fresh takes on growth, tech, and the hustle of modern life.",
     images: ["/icon.svg"],
   },

@@ -3,11 +3,11 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title:
-		"Projects | Olutunmise Adeniji - Curating Quality Over Quantity",
+		"Projects | Tunmise E.A - Curating Quality Over Quantity",
 	description:
 		"Explore my carefully curated software development projects.",
 	keywords: [
-		"Olutunmise Adeniji projects",
+		"Tunmise E.A projects",
 		"software development portfolio",
 		"React projects",
 		"Next.js applications",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
 		"modern web development",
 		"responsive web design",
 	],
-	authors: [{ name: "Olutunmise Adeniji" }],
-	creator: "Olutunmise Adeniji",
-	publisher: "Olutunmise Adeniji",
+	authors: [{ name: "Tunmise E.A" }],
+	creator: "Tunmise E.A",
+	publisher: "Tunmise E.A",
 	robots: {
 		index: true,
 		follow: true,
@@ -46,23 +46,23 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		url: "https://www.olutunmise.tech/projects",
 		title:
-			"Projects | Olutunmise Adeniji - Quality Software Development Portfolio",
+			"Projects | Tunmise E.A - Quality Software Development Portfolio",
 		description:
 			"Discover my carefully curated software development projects including OLUTEE TECH HUB, e-commerce solutions, and modern web applications. Quality over quantity approach to showcase impactful work.",
-		siteName: "Olutunmise Adeniji Portfolio",
+		siteName: "Tunmise E.A Portfolio",
 		images: [
 			{
 				url: "/pfp.jpg", 
 				width: 600,
 				height: 250,
-				alt: "Olutunmise Adeniji's Software Development Projects Portfolio",
+				alt: "Tunmise E.A's Software Development Projects Portfolio",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
 		title:
-			"Projects | Olutunmise Adeniji - Quality Software Development Portfolio",
+			"Projects | Tunmise E.A - Quality Software Development Portfolio",
 		description:
 			"Curating my best software development projects for Portfolio V2. Quality over quantity!",
 		creator: "@tade_niji06", 
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
 		"portfolio:focus": "Full Stack Development",
 		"portfolio:technologies":
 			"React, Next.js, TypeScript, Node.js, MongoDB",
-		"article:author": "Olutunmise Adeniji",
+		"article:author": "Tunmise E.A",
 		"article:section": "Software Development",
 		"article:tag":
 			"Projects, Portfolio, Web Development, React, Next.js",

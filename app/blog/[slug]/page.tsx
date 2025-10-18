@@ -7,13 +7,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 	if (!post) {
 		return {
-			title: "Post not found | Olutunmise Adeniji",
+			title: "Post not found | Tunmise E.A",
 			description: "This blog post could not be found.",
 		};
 	}
 
 	return {
-		title: `${post.title} | Olutunmise Adeniji`,
+		title: `${post.title} | Tunmise E.A`,
 		description: post.body?.[0]?.children?.[0]?.text || `Read ${post.title} on my blog.`,
 		openGraph: {
 			title: post.title,
