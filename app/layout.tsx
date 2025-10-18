@@ -6,7 +6,7 @@ import ClarityScript from "@/components/Clarity";
 import AnalyticsScript from "@/components/Analytics";
 
 export const metadata: Metadata = {
-	title: "Olutunmise Adeniji | Software Developer",
+	title: "Tunmise E.A | Software Developer",
 	description:
 		"Full-stack developer in Nigeria building websites, web apps, mobile apps, and Web3 products. Expert in React, Next.js, Tailwind, and blockchain-ready solutions.",
 
@@ -40,17 +40,17 @@ export const metadata: Metadata = {
 	],
 
 	openGraph: {
-		title: "Olutunmise Adeniji | Software Developer",
+		title: "Tunmise E.A | Software Developer",
 		description:
 			"Software specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
 		url: "https://www.olutunmise.tech",
-		siteName: "Olutunmise Adeniji",
+		siteName: "Tunmise E.A",
 		images: [
 			{
 				url: "https://www.olutunmise.tech/pfp.jpg",
 				width: 700,
 				height: 300,
-				alt: "Olutunmise Adeniji - Fullstack Developer in Nigeria",
+				alt: "Tunmise E.A - Fullstack Developer in Nigeria",
 			},
 		],
 		locale: "en_US",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Olutunmise Adeniji | Software Developer in Nigeria",
+		title: "Tunmise E.A | Software Developer in Nigeria",
 		description:
 			"Software specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
 		images: ["/pfp.jpg"],
@@ -98,7 +98,7 @@ export default function RootLayout({
 							sameAs: [
 								"https://github.com/tadeniji06",
 								"https://x.com/tade_niji06",
-								"https://www.linkedin.com/in/olutunmise-adeniji-16a846250/",
+								"https://www.linkedin.com/in/tunmise-e-a-16a846250/",
 							],
 							jobTitle: "Software Developer",
 							worksFor: {
