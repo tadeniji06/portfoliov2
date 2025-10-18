@@ -23,7 +23,7 @@ const Header = () => {
 					{/* Logo/Brand */}
 					<Link href={"/"} className='flex-shrink-0'>
 						<span className='text-xl font-bold text-gray-900 hover:text-gray-600 transition-colors duration-200'>
-							Olutunmise 
+							Tunmise E.A 
 						</span>
 					</Link>
 
