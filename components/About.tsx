@@ -182,7 +182,7 @@ const About = () => {
 							</div>
 
 							<h4 className='text-2xl font-bold text-white mb-3'>
-								Olutunmise Adeniji
+								Tunmise E.A
 							</h4>
 							<p className='text-gray-300 mb-2 text-lg'>
 								Full-Stack Developer
@@ -207,7 +207,7 @@ const About = () => {
 										color: "hover:bg-gray-700",
 									},
 									{
-										href: "https://www.linkedin.com/in/olutunmise-adeniji-16a846250/",
+										href: "https://www.linkedin.com/in/tunmise-e-a-16a846250/",
 										icon: "mdi:linkedin",
 										label: "LinkedIn",
 										color: "hover:bg-blue-600",
