@@ -4,7 +4,6 @@ import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
 import ClarityScript from "@/components/Clarity";
 import AnalyticsScript from "@/components/Analytics";
-import OneSignalInit from "@/components/OneSignalInit";
 
 export const metadata: Metadata = {
 	title: "Tunmise E.A | Software Developer",
@@ -116,7 +115,6 @@ export default function RootLayout({
 			<body className='antialiased' cz-shortcut-listen='true'>
 				<Header />
 				{children}
-				<OneSignalInit />
 				<Footer />
 				<ClarityScript />
 				<AnalyticsScript />
