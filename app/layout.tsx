@@ -116,8 +116,8 @@ export default function RootLayout({
 			<body className='antialiased' cz-shortcut-listen='true'>
 				<Header />
 				{children}
-				<Footer />
 				<OneSignalInit />
+				<Footer />
 				<ClarityScript />
 				<AnalyticsScript />
 			</body>
