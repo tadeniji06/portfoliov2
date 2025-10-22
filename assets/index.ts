@@ -9,6 +9,7 @@ import imperia from "./images/imperia.jpg";
 import m360 from "./images/m360.jpg";
 import sa from "./images/sa.jpg";
 import tech from "./images/tech.jpg";
+import opal from "./images/oppal.jpg";
 import vedura from "./images/vedura.jpg";
 export {
 	hero,
@@ -23,4 +24,5 @@ export {
 	sa,
 	tech,
 	vedura,
+	opal,
 };

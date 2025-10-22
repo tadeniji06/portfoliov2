@@ -6,6 +6,7 @@ import {
 	g2,
 	imperia,
 	m360,
+	opal,
 	sa,
 	tech,
 	vedura,
@@ -29,6 +30,12 @@ export const webApplications = [
 ];
 
 export const websiteProjects = [
+	{
+		title: "Opalite Properties, Lagos, Nigeria",
+		desc: "Website for a Real Estate & Consulting Firm in Lagos",
+		url: "https://opaliteproperties.com",
+		image: opal,
+	},
 	{
 		title: "Imperia Consulting, Nairobi, Kenya",
 		desc: "Website for a Real Estate & Consulting Firm in Kenya",
