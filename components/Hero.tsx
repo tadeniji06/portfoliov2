@@ -1,10 +1,23 @@
+"use client";
+import { useEffect } from "react";
+import OneSignal from "react-onesignal";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 
 const Hero = () => {
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			OneSignal.init({
+				appId: "413a3c7c-85b4-4eb0-9cda-1e608d79a2ab",
+				notifyButton: {
+					enabled: true, 
+				},
+			} as any); 
+		}
+	}, []);
+
 	return (
 		<section className='min-h-screen bg-black flex items-center justify-center relative px-4 py-6'>
-			{/* Simple grid background - static */}
 			<div className='absolute inset-0 z-0 opacity-20'>
 				<div className='absolute top-0 left-1/4 w-0.5 h-full bg-gray-600 hidden md:block'></div>
 				<div className='absolute top-0 left-2/4 w-0.5 h-full bg-gray-600'></div>
@@ -14,15 +27,12 @@ const Hero = () => {
 				<div className='absolute top-3/4 left-0 w-full h-0.5 bg-gray-600 hidden md:block'></div>
 			</div>
 
-			{/* Main content */}
 			<div className='bg-black border-2 border-gray-800 shadow-2xl p-5 sm:p-8 md:p-10 w-full max-w-4xl text-center relative z-10'>
-				{/* Simple corner decorations */}
 				<div className='absolute -top-2 -left-2 md:-top-4 md:-left-4 w-8 h-8 md:w-16 md:h-16 border-t-2 border-l-2 border-white'></div>
 				<div className='absolute -top-2 -right-2 md:-top-4 md:-right-4 w-8 h-8 md:w-16 md:h-16 border-t-2 border-r-2 border-gray-400'></div>
 				<div className='absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 w-8 h-8 md:w-16 md:h-16 border-b-2 border-l-2 border-gray-400'></div>
 				<div className='absolute -bottom-2 -right-2 md:-bottom-4 md:-right-4 w-8 h-8 md:w-16 md:h-16 border-b-2 border-r-2 border-white'></div>
 
-				{/* Title */}
 				<div className='relative mb-4'>
 					<h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-white relative inline-block'>
 						<span>Tunmise's</span>
@@ -35,59 +45,34 @@ const Hero = () => {
 					</h1>
 				</div>
 
-				{/* Divider line */}
 				<div className='w-24 h-0.5 bg-white mx-auto my-4 md:my-6'></div>
 
-				{/* Subtitle */}
 				<p className='text-base sm:text-lg md:text-xl text-gray-300 mb-4 md:mb-6 max-w-2xl mx-auto leading-relaxed'>
 					Web3 & FullStack Developer
 				</p>
 
-				{/* Tech stack icons */}
 				<div className='flex justify-center flex-wrap gap-3 sm:gap-4 md:gap-6 mb-6 md:mb-8'>
-					<div className='p-2 sm:p-3 bg-gray-900 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors duration-200'>
-						<Icon
-							icon='logos:react'
-							width='24'
-							height='24'
-							className='md:w-8 md:h-8'
-						/>
-					</div>
-					<div className='p-2 sm:p-3 bg-gray-900 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors duration-200'>
-						<Icon
-							icon='logos:nextjs-icon'
-							width='24'
-							height='24'
-							className='md:w-8 md:h-8'
-						/>
-					</div>
-					<div className='p-2 sm:p-3 bg-gray-900 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors duration-200'>
-						<Icon
-							icon='logos:javascript'
-							width='24'
-							height='24'
-							className='md:w-8 md:h-8'
-						/>
-					</div>
-					<div className='p-2 sm:p-3 bg-gray-900 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors duration-200'>
-						<Icon
-							icon='logos:typescript-icon'
-							width='24'
-							height='24'
-							className='md:w-8 md:h-8'
-						/>
-					</div>
-					<div className='p-2 sm:p-3 bg-gray-900 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors duration-200'>
-						<Icon
-							icon='logos:tailwindcss-icon'
-							width='24'
-							height='24'
-							className='md:w-8 md:h-8'
-						/>
-					</div>
+					{[
+						"logos:react",
+						"logos:nextjs-icon",
+						"logos:javascript",
+						"logos:typescript-icon",
+						"logos:tailwindcss-icon",
+					].map((icon) => (
+						<div
+							key={icon}
+							className='p-2 sm:p-3 bg-gray-900 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors duration-200'
+						>
+							<Icon
+								icon={icon}
+								width='24'
+								height='24'
+								className='md:w-8 md:h-8'
+							/>
+						</div>
+					))}
 				</div>
 
-				{/* Action buttons */}
 				<div className='mt-6 md:mt-8 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6'>
 					<Link
 						href='#work'
@@ -112,7 +97,6 @@ const Hero = () => {
 					</Link>
 				</div>
 
-				{/* Scroll indicator */}
 				<div className='absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 hidden sm:block'>
 					<div className='flex flex-col items-center'>
 						<span className='text-gray-400 text-xs md:text-sm mb-2'>
