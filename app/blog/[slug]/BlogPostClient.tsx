@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { toast } from "sonner";
+import	OneSignal from "react-onesignal";
 import {
 	getBlogPost,
 	getRelatedPosts,
@@ -24,6 +25,17 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 	const [error, setError] = useState<string | null>(null);
 	const [readingProgress, setReadingProgress] = useState(0);
 	const [estimatedReadTime, setEstimatedReadTime] = useState(0);
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			OneSignal.init({
+				appId: "413a3c7c-85b4-4eb0-9cda-1e608d79a2ab",
+				notifyButton: {
+					enabled: true, 
+				},
+			} as any); 
+		}
+	}, []);
 
 	useEffect(() => {
 		const fetchPost = async () => {
