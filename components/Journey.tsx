@@ -82,8 +82,8 @@ const Journey: React.FC = () => {
 		{
 			id: "current",
 			year: "2024",
-			title: "Building Haychar Hub",
-			description: "Africa's HR Brain - Full Feature Stack, All In",
+			title: "Building valoraHR",
+			description: "Smart HR for startups - Full Feature Stack, All In",
 			icon: "mdi:brain",
 			category: "current",
 			details: [
@@ -103,7 +103,7 @@ const Journey: React.FC = () => {
 			icon: "mdi:trophy",
 			category: "future",
 			details: [
-				"Launch Haychar hub globally",
+				"Launch valoraHR globally",
 				"Build multiple SaaS products",
 				"Provide value, get recognized",
 				"Afford the fastest cars (priorities!)",

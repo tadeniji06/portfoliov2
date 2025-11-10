@@ -1,4 +1,6 @@
+"use client";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { motion } from "framer-motion";
 
 interface ExperienceCardProps {
 	company: string;
@@ -16,31 +18,44 @@ const ExperienceCard = ({
 	index,
 }: ExperienceCardProps) => {
 	return (
-		<div className='relative'>
+		<motion.div
+			initial={{ opacity: 0, y: 40 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true }}
+			transition={{ duration: 0.6, delay: index * 0.1 }}
+			className='relative'
+		>
 			{/* Timeline dot */}
-			<div className='absolute left-0 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gray-900 border-4 border-white z-10 shadow-lg'></div>
+			<div className='absolute left-0 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-gradient-to-r from-gray-300 to-gray-700 border-4 border-black shadow-[0_0_20px_rgba(99,102,241,0.8)] z-10'></div>
 
 			{/* Card */}
 			<div
-				className={`bg-white border-2 border-gray-200 hover:border-gray-400 shadow-lg hover:shadow-xl transition-all duration-300 p-6 ml-8 md:ml-0 md:w-5/12 ${
+				className={`p-6 md:w-5/12 rounded-2xl border border-gray-700 bg-gradient-to-tr from-gray-900 to-gray-800 text-gray-100 shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(99,102,241,0.3)] ${
 					index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
 				}`}
 			>
-				<h3 className='text-xl font-bold text-gray-900 mb-1'>
+				<h3 className='text-2xl font-bold text-gray-400 mb-1'>
 					{position}
 				</h3>
-				<h4 className='text-lg font-semibold mb-3 text-gray-700'>
+				<h4 className='text-lg font-medium text-gray-300 mb-3'>
 					{company}
 				</h4>
-				<div className='flex items-center mb-4 text-gray-600'>
-					<Icon icon='mdi:calendar' className='mr-2 text-lg' />
-					<span className='font-medium'>{period}</span>
+
+				<div className='mb-4'>
+					<span className='inline-flex items-center bg-gray-800 text-sm text-gray-300 px-3 py-1 rounded-full border border-gray-700'>
+						<Icon
+							icon='mdi:calendar'
+							className='mr-2 text-gray-400'
+						/>
+						{period}
+					</span>
 				</div>
-				<p className='text-gray-700 leading-relaxed whitespace-pre-line'>
+
+				<p className='text-gray-400 leading-relaxed whitespace-pre-line'>
 					{description}
 				</p>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
@@ -49,60 +64,83 @@ const Experience = () => {
 		{
 			company: "BTech 360",
 			position: "Lead Front-End Developer",
-			period: "February 2025 - Present",
-			description: `Spearheading the front-end architecture of scalable business automation platforms tailored to African markets.
-
-• Designing dynamic, responsive interfaces using React and modern JS tooling
-• Translating complex requirements into seamless user journeys
-• Coordinating cross-functional collaboration between UI/UX, backend, and product teams to deliver fast, intuitive applications`,
+			period: "Feb 2025 — Present",
+			description: `Architecting scalable, interactive web platforms for African enterprises.
+			
+• Designed intuitive UIs powered by React & TypeScript  
+• Led a small dev team to deliver production-grade automation tools  
+• Collaborated across design, backend, and QA for high-impact product releases`,
+		},
+		{
+			company: "Gidswap Exchange",
+			position: "CTO",
+			period: "Aug 2025 — Present",
+			description: `Overseeing the full technical architecture for a modern crypto exchange.
+			
+• Engineered a seamless swap interface powered by Node.js and MongoDB  
+• Integrated APIs like FixedFloat & Paycrest for automated trading  
+• Led technical strategy, team reviews, and system security practices`,
+		},
+		{
+			company: "ValoraHR",
+			position: "Founder & Lead Developer",
+			period: "Oct 2025 — Present",
+			description: `Building Africa’s next-gen HR Management SaaS for growing teams.
+			
+• Architected modular HR systems with Express, Vite, and MongoDB  
+• Designed admin dashboards with analytics, payroll, and automation  
+• Integrated Paystack OAuth and Google 2FA for secure, smooth workflows`,
 		},
 		{
 			company: "Diakrino",
 			position: "Full-Stack & Web3 Developer",
-			period: "October 2023 - March 2025",
-			description: `Built high-performance Web2 and Web3 applications from the ground up.
-
-• Engineered NFT minting platforms and custom smart contract integrations
-• Co-led development of a decentralized social media network using full-stack tools
-• Delivered responsive, secure, and user-friendly apps in agile sprints—balancing innovation with stability`,
+			period: "Oct 2023 — Mar 2025",
+			description: `Delivered next-gen Web2 + Web3 products for creative and fintech ecosystems.
+			
+• Built NFT minting and decentralized identity systems  
+• Co-led development of a social dApp with React + Solidity  
+• Balanced experimentation with reliability across agile releases`,
 		},
 		{
 			company: "Freelance",
-			position: "FullStack Web Developer",
-			period: "January 2022 - Present",
-			description: `Developed custom websites and web applications for various clients across different industries.
-
-• Built responsive websites using HTML, CSS, JavaScript, and React
-• Collaborated with clients to understand requirements and deliver tailored solutions
-• Maintained and updated existing websites with new features and improvements`,
+			position: "Full-Stack Developer",
+			period: "Jan 2022 — Present",
+			description: `Crafted digital experiences for startups and personal brands.
+			
+• Built responsive products with React, Tailwind, and Express  
+• Collaborated closely with clients to tailor unique solutions  
+• Maintained, optimized, and shipped scalable web applications`,
 		},
 	];
 
 	return (
 		<section
 			id='work'
-			className='py-16 md:py-20 bg-black relative'
+			className='py-20 md:py-24 bg-black relative overflow-hidden'
 		>
-			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+			{/* Subtle glowing overlay */}
+			<div className='absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-transparent pointer-events-none'></div>
+
+			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative'>
 				{/* Section Header */}
-				<div className='text-center mb-12 md:mb-16'>
-					<h2 className='text-3xl md:text-4xl font-bold mb-4 text-white'>
+				<div className='text-center mb-16'>
+					<h2 className='text-3xl md:text-5xl font-bold mb-4 text-white'>
 						Work Experience
 					</h2>
-					<div className='w-24 h-0.5 bg-white mx-auto mb-6'></div>
-					<p className='text-lg text-gray-300 max-w-2xl mx-auto'>
-						My professional journey and the experiences that have
-						shaped my development career
+					<div className='w-24 h-1 bg-gradient-to-r from-gray-500 to-gray-700 mx-auto mb-6 rounded-full'></div>
+					<p className='text-lg text-gray-400 max-w-2xl mx-auto'>
+						A quick tour through the roles and projects that shaped my
+						dev journey.
 					</p>
 				</div>
 
 				{/* Timeline */}
 				<div className='relative'>
-					{/* Timeline line */}
-					<div className='absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-600 transform md:-translate-x-1/2'></div>
+					{/* Glowing timeline line */}
+					<div className='absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-gray-700 via-gray-500 to-gray-700 md:-translate-x-1/2 shadow-[0_0_20px_rgba(99,102,241,0.3)]'></div>
 
 					{/* Experience cards */}
-					<div className='space-y-16 md:space-y-24'>
+					<div className='space-y-20 md:space-y-28'>
 						{experiences.map((exp, index) => (
 							<ExperienceCard
 								key={index}
