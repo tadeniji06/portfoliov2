@@ -77,49 +77,88 @@ const About = () => {
 						The story behind the code - who I am beyond the screen
 					</p>
 				</div>
+				{/* Profile Image & Info */}
+				<div className='relative'>
+					<div className='bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-10 text-center rounded-2xl shadow-2xl mb-6'>
+						{/* Profile Image */}
+						<div className='relative w-56 h-56 mx-auto mb-8'>
+							<div className='w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-gray-700 rounded-full overflow-hidden shadow-2xl'>
+								<Image
+									alt='Olutunmise Adeniji'
+									src={pfp}
+									width={224}
+									height={224}
+									className='w-full h-full object-cover object-top scale-110'
+									priority
+								/>
+							</div>
+							{/* Decorative rings */}
+							<div className='absolute -inset-4 border-2 border-gray-600 rounded-full opacity-20'></div>
+							<div className='absolute -inset-8 border border-gray-500 rounded-full opacity-10'></div>
+						</div>
+
+						<h4 className='text-2xl font-bold text-white mb-3'>
+							Tunmise E.A
+						</h4>
+						<p className='text-gray-300 mb-2 text-lg'>
+							Full-Stack Developer
+						</p>
+						<p className='text-gray-400 mb-8 text-sm'>
+							Lagos, Nigeria 🇳🇬
+						</p>
+
+						{/* Social Links */}
+						<div className='flex justify-center space-x-4 mb-8'>
+							{[
+								{
+									href: "https://open.spotify.com/user/31cnksr3i6gfq5jsn3733pfspkbi?si=tBO9TU4GTzKEfJd59hM6iw",
+									icon: "logos:spotify-icon",
+									label: "Spotify",
+									color: "hover:bg-green-600",
+								},
+								{
+									href: "https://github.com/tadeniji06",
+									icon: "mdi:github",
+									label: "GitHub",
+									color: "hover:bg-gray-700",
+								},
+								{
+									href: "https://www.linkedin.com/in/tunmise-e-a-16a846250/",
+									icon: "mdi:linkedin",
+									label: "LinkedIn",
+									color: "hover:bg-blue-600",
+								},
+							].map((social, index) => (
+								<a
+									key={index}
+									href={social.href}
+									target='_blank'
+									rel='noopener noreferrer'
+									className={`p-4 bg-gray-800 border border-gray-700 ${social.color} transition-all duration-300 rounded-xl hover:scale-110 hover:shadow-lg group`}
+									title={social.label}
+								>
+									<Icon
+										icon={social.icon}
+										className='text-2xl text-white group-hover:text-white'
+									/>
+								</a>
+							))}
+						</div>
+
+						{/* Status */}
+						<div className='flex items-center justify-center space-x-2 text-green-400'>
+							<div className='w-3 h-3 bg-green-400 rounded-full animate-pulse'></div>
+							<span className='text-sm font-medium'>
+								Available for work
+							</span>
+						</div>
+					</div>
+				</div>
 
 				{/* Main Content */}
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start mb-20'>
 					{/* Text Content */}
 					<div className='space-y-8'>
-						<div className='bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-8 md:p-10 text-white rounded-2xl shadow-2xl'>
-							<h3 className='text-3xl font-bold mb-6 text-white'>
-								Hey, I'm Tunmise
-							</h3>
-							<div className='space-y-5 text-gray-300 leading-relaxed text-lg'>
-								<p>
-									<strong className='text-white'>21 years old</strong>{" "}
-									and absolutely obsessed with technology. While I
-									studied{" "}
-									<strong className='text-white'>
-										Industrial Chemistry
-									</strong>
-									, I've always been a
-									<strong className='text-white'> tech junkie</strong>{" "}
-									at heart - constantly building, learning, and
-									pushing boundaries.
-								</p>
-								<p>
-									I consider myself{" "}
-									<strong className='text-white'>
-										extremely self-aware
-									</strong>
-									, and people often tell me the same. This awareness
-									drives my approach to both code and life -
-									understanding not just the "how" but the "why"
-									behind everything I build.
-								</p>
-								<p>
-									As a{" "}
-									<strong className='text-white'>peak writer</strong>,
-									I believe in clean code that tells a story. Whether
-									it's crafting user experiences or technical
-									documentation, I bring the same attention to detail
-									and clarity to everything I create.
-								</p>
-							</div>
-						</div>
-
 						{/* Quick Stats */}
 						<div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
 							{stats.map((stat, index) => (
@@ -157,84 +196,6 @@ const About = () => {
 										</span>
 									</div>
 								))}
-							</div>
-						</div>
-					</div>
-
-					{/* Profile Image & Info */}
-					<div className='relative'>
-						<div className='bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-10 text-center rounded-2xl shadow-2xl'>
-							{/* Profile Image */}
-							<div className='relative w-56 h-56 mx-auto mb-8'>
-								<div className='w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-gray-700 rounded-full overflow-hidden shadow-2xl'>
-									<Image
-										alt='Olutunmise Adeniji'
-										src={pfp}
-										width={224}
-										height={224}
-										className='w-full h-full object-cover object-top scale-110'
-										priority
-									/>
-								</div>
-								{/* Decorative rings */}
-								<div className='absolute -inset-4 border-2 border-gray-600 rounded-full opacity-20'></div>
-								<div className='absolute -inset-8 border border-gray-500 rounded-full opacity-10'></div>
-							</div>
-
-							<h4 className='text-2xl font-bold text-white mb-3'>
-								Tunmise E.A
-							</h4>
-							<p className='text-gray-300 mb-2 text-lg'>
-								Full-Stack Developer
-							</p>
-							<p className='text-gray-400 mb-8 text-sm'>
-								Lagos, Nigeria 🇳🇬
-							</p>
-
-							{/* Social Links */}
-							<div className='flex justify-center space-x-4 mb-8'>
-								{[
-									{
-										href: "https://open.spotify.com/user/31cnksr3i6gfq5jsn3733pfspkbi?si=tBO9TU4GTzKEfJd59hM6iw",
-										icon: "logos:spotify-icon",
-										label: "Spotify",
-										color: "hover:bg-green-600",
-									},
-									{
-										href: "https://github.com/tadeniji06",
-										icon: "mdi:github",
-										label: "GitHub",
-										color: "hover:bg-gray-700",
-									},
-									{
-										href: "https://www.linkedin.com/in/tunmise-e-a-16a846250/",
-										icon: "mdi:linkedin",
-										label: "LinkedIn",
-										color: "hover:bg-blue-600",
-									},
-								].map((social, index) => (
-									<a
-										key={index}
-										href={social.href}
-										target='_blank'
-										rel='noopener noreferrer'
-										className={`p-4 bg-gray-800 border border-gray-700 ${social.color} transition-all duration-300 rounded-xl hover:scale-110 hover:shadow-lg group`}
-										title={social.label}
-									>
-										<Icon
-											icon={social.icon}
-											className='text-2xl text-white group-hover:text-white'
-										/>
-									</a>
-								))}
-							</div>
-
-							{/* Status */}
-							<div className='flex items-center justify-center space-x-2 text-green-400'>
-								<div className='w-3 h-3 bg-green-400 rounded-full animate-pulse'></div>
-								<span className='text-sm font-medium'>
-									Available for work
-								</span>
 							</div>
 						</div>
 					</div>
