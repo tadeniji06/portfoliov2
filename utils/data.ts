@@ -25,7 +25,7 @@ export const socials = [
 	{
 		name: "WhatsApp",
 		icon: "ic:baseline-whatsapp",
-		url: "https://wa.me/2349127936598?text=Hi%20Olutunmise%2C%20I%27m%20interested%20in%20your%20web/software%20development%20services.%20Could%20we%20schedule%20a%20brief%20discussion%3F",
+		url: "https://wa.me/2349132828613?text=Hi%20Olutunmise%2C%20I%27m%20interested%20in%20your%20web/software%20development%20services.%20Could%20we%20schedule%20a%20brief%20discussion%3F",
 	},
 
 	{
