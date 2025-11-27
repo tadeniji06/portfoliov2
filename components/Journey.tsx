@@ -160,7 +160,7 @@ const Journey: React.FC = () => {
 						tech-obsessed kid to building
 						<span className='text-white font-semibold'>
 							{" "}
-							Haychar Hub
+							ValoraHR
 						</span>{" "}
 						- Africa's HR Brain
 					</p>
@@ -319,7 +319,7 @@ const Journey: React.FC = () => {
 											icon='mdi:brain'
 											className='mr-3 text-2xl text-white'
 										/>
-										Haychar Hub Features
+										ValoraHR Features
 									</h4>
 									<div className='grid grid-cols-1 md:grid-cols-2 gap-4 text-sm'>
 										{[
@@ -362,7 +362,7 @@ const Journey: React.FC = () => {
 								{activeEvent === "current" && (
 									<>
 										<a
-											href='https://twitter.com/haychar_hub'
+											href='https://twitter.com/valora_hr'
 											target='_blank'
 											rel='noopener noreferrer'
 											className='inline-flex items-center bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300'
@@ -429,7 +429,7 @@ const Journey: React.FC = () => {
 						{
 							icon: "mdi:rocket-launch",
 							label: "Current Focus",
-							value: "Haychar Hub",
+							value: "ValoraHR",
 						},
 					].map((stat, index) => (
 						<div
