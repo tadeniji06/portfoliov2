@@ -60,7 +60,7 @@ const Journey: React.FC = () => {
 				"Wanted Chemical/Petroleum Engineering",
 				"Ended up in Industrial Chemistry",
 				"Lived life in the fast lane",
-				"Graduated at 19 - youngest in my class",
+				"Graduated with Distinction",
 				"Coded more than I studied chemistry",
 			],
 		},
@@ -81,17 +81,18 @@ const Journey: React.FC = () => {
 		},
 		{
 			id: "current",
-			year: "2024",
-			title: "Building valoraHR",
-			description: "Smart HR for startups - Full Feature Stack, All In",
-			icon: "mdi:brain",
+			year: "2024-Present",
+			title: "Advanced Engineering",
+			description:
+				" architecting scalable solutions and pushing technical boundaries",
+			icon: "mdi:code-json",
 			category: "current",
 			details: [
-				"Comprehensive HR management platform",
-				"Payroll automation with Paystack/Flutterwave",
-				"Real-time notifications & document management",
-				"Targeting African businesses first",
-				"Built with React, Node.js, MongoDB",
+				"Building scalable web applications",
+				"Advanced System Architecture",
+				"Cloud Infrastructure Management",
+				"Performance Optimization",
+				"Full Stack Development",
 			],
 		},
 		{
@@ -103,7 +104,7 @@ const Journey: React.FC = () => {
 			icon: "mdi:trophy",
 			category: "future",
 			details: [
-				"Launch valoraHR globally",
+				"Launch innovative products globally",
 				"Build multiple SaaS products",
 				"Provide value, get recognized",
 				"Afford the fastest cars (priorities!)",
@@ -119,7 +120,7 @@ const Journey: React.FC = () => {
 		const interval = setInterval(() => {
 			setActiveEvent((prev) => {
 				const currentIndex = timelineEvents.findIndex(
-					(event) => event.id === prev
+					(event) => event.id === prev,
 				);
 				const nextIndex = (currentIndex + 1) % timelineEvents.length;
 				return timelineEvents[nextIndex]?.id || timelineEvents[0]?.id;
@@ -160,9 +161,9 @@ const Journey: React.FC = () => {
 						tech-obsessed kid to building
 						<span className='text-white font-semibold'>
 							{" "}
-							ValoraHR
+							Innovating
 						</span>{" "}
-						- Africa's HR Brain
+						- Building Impactful Solutions
 					</p>
 				</div>
 
@@ -311,68 +312,10 @@ const Journey: React.FC = () => {
 								</div>
 							)}
 
-							{/* Special Content for Current Project */}
-							{activeEvent === "current" && (
-								<div className='bg-black p-6 rounded-xl mb-6'>
-									<h4 className='text-xl font-bold text-white mb-4 flex items-center'>
-										<Icon
-											icon='mdi:brain'
-											className='mr-3 text-2xl text-white'
-										/>
-										ValoraHR Features
-									</h4>
-									<div className='grid grid-cols-1 md:grid-cols-2 gap-4 text-sm'>
-										{[
-											"Employee Onboarding & Management",
-											"Automated Payroll System",
-											"HR Letters & Document Management",
-											"KPI & Performance Tracking",
-											"Leave Management System",
-											"Real-time Notifications",
-											"ID Card Generation",
-											"Audit Trail & Logging",
-										].map((feature, index) => (
-											<div
-												key={index}
-												className='flex items-center space-x-2'
-											>
-												<Icon
-													icon='mdi:check-circle'
-													className='text-white'
-												/>
-												<span className='text-gray-300'>
-													{feature}
-												</span>
-											</div>
-										))}
-									</div>
-									<div className='mt-4 pt-4 border-t border-gray-700'>
-										<p className='text-gray-400 text-sm'>
-											<strong className='text-white'>
-												Tech Stack:
-											</strong>{" "}
-											React, Node.js, MongoDB, Paystack, Socket.IO
-										</p>
-									</div>
-								</div>
-							)}
-
 							{/* Call to Action based on active event */}
 							<div className='flex flex-wrap gap-4'>
 								{activeEvent === "current" && (
 									<>
-										<a
-											href='https://twitter.com/valora_hr'
-											target='_blank'
-											rel='noopener noreferrer'
-											className='inline-flex items-center bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300'
-										>
-											<Icon
-												icon='mdi:twitter'
-												className='mr-2 text-xl'
-											/>
-											Follow the Journey
-										</a>
 										<a
 											href='https://github.com/tadeniji06'
 											target='_blank'
@@ -422,14 +365,14 @@ const Journey: React.FC = () => {
 							value: "5+",
 						},
 						{
-							icon: "mdi:school",
-							label: "Graduated at",
-							value: "19",
+							icon: "mdi:code-tags",
+							label: "Tech Stack",
+							value: "Full Stack",
 						},
 						{
 							icon: "mdi:rocket-launch",
 							label: "Current Focus",
-							value: "ValoraHR",
+							value: "Innovation",
 						},
 					].map((stat, index) => (
 						<div
@@ -460,11 +403,7 @@ const Journey: React.FC = () => {
 						My Philosophy
 					</h3>
 					<blockquote className='text-xl text-gray-700 italic leading-relaxed max-w-4xl mx-auto mb-8'>
-						"I don't want to be the next Bill Gates or Elon Musk. I
-						just want to provide real value, get recognized for my
-						work, and afford the fastest cars I find appealing. Tech
-						is my passion, fast cars are my motivation, and value
-						creation is my mission."
+						"I think, therefore I am. Nomizo ara eimai."
 					</blockquote>
 					<div className='flex flex-wrap justify-center gap-4'>
 						<span className='px-4 py-2 bg-black text-white rounded-full text-sm font-medium'>

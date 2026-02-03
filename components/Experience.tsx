@@ -81,16 +81,7 @@ const Experience = () => {
 • Integrated APIs like FixedFloat & Paycrest for automated trading  
 • Led technical strategy, team reviews, and system security practices`,
 		},
-		{
-			company: "ValoraHR",
-			position: "Founder & Lead Developer",
-			period: "Oct 2025 — Present",
-			description: `Building Africa’s next-gen HR Management SaaS for growing teams.
-			
-• Architected modular HR systems with Express, Vite, and MongoDB  
-• Designed admin dashboards with analytics, payroll, and automation  
-• Integrated Paystack OAuth and Google 2FA for secure, smooth workflows`,
-		},
+
 		{
 			company: "Diakrino",
 			position: "Full-Stack & Web3 Developer",

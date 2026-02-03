@@ -36,7 +36,6 @@ const About = () => {
 	];
 
 	const stats = [
-		{ number: "21", label: "Years Old" },
 		{ number: "3+", label: "Years Coding" },
 		{ number: "10+", label: "Projects" },
 		{ number: "∞", label: "Lines of Code" },
