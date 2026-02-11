@@ -6,18 +6,18 @@ const Footer = () => {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer className='bg-white text-main border-t border-gray-200'>
+		<footer className='bg-black text-gray-400 border-t border-gray-800'>
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				{/* Main Footer Content */}
 				<div className='py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
 					{/* Brand Section */}
 					<div className='lg:col-span-2'>
 						<Link href='/' className='inline-block mb-4'>
-							<span className='text-2xl font-bold text-gray-900 hover:text-main transition-colors duration-200'>
+							<span className='text-2xl font-bold text-white hover:text-gray-300 transition-colors duration-200 tracking-wider'>
 								Olutunmise
 							</span>
 						</Link>
-						<p className='text-main mb-6 max-w-md leading-relaxed'>
+						<p className='text-gray-400 mb-6 max-w-md leading-relaxed font-light'>
 							Full-stack developer passionate about creating
 							innovative software solutions. Let's build something
 							amazing together.
@@ -31,12 +31,12 @@ const Footer = () => {
 									href={social.url}
 									target='_blank'
 									rel='noopener noreferrer'
-									className='group p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-all duration-200 transform hover:scale-110'
+									className='group p-2 rounded-lg bg-gray-900 hover:bg-gray-800 transition-all duration-200 transform hover:scale-110 border border-gray-800'
 									aria-label={`Follow on ${social.name}`}
 								>
 									<Icon
 										icon={social.icon}
-										className='w-5 h-5 text-main group-hover:text-gray-900 transition-colors duration-200'
+										className='w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-200'
 									/>
 								</a>
 							))}
@@ -45,7 +45,7 @@ const Footer = () => {
 
 					{/* Quick Links */}
 					<div>
-						<h3 className='text-lg font-semibold mb-4 text-gray-900'>
+						<h3 className='text-lg font-semibold mb-4 text-white'>
 							Quick Links
 						</h3>
 						<ul className='space-y-2'>
@@ -53,7 +53,7 @@ const Footer = () => {
 								<li key={link.title}>
 									<Link
 										href={link.link}
-										className='text-main hover:text-gray-900 transition-colors duration-200 block py-1'
+										className='text-gray-400 hover:text-white transition-colors duration-200 block py-1 font-light'
 									>
 										{link.title}
 									</Link>
@@ -64,13 +64,13 @@ const Footer = () => {
 
 					{/* Contact Info */}
 					<div>
-						<h3 className='text-lg font-semibold mb-4 text-gray-900'>
+						<h3 className='text-lg font-semibold mb-4 text-white'>
 							Get In Touch
 						</h3>
 						<div className='space-y-3'>
 							<a
 								href='mailto:tadeniji06@gmail.com'
-								className='flex items-center text-main hover:text-gray-900 transition-colors duration-200'
+								className='flex items-center text-gray-400 hover:text-white transition-colors duration-200 font-light'
 							>
 								<Icon
 									icon='mdi:email-outline'
@@ -81,7 +81,7 @@ const Footer = () => {
 
 							<a
 								href='tel:+2349127936598'
-								className='flex items-center text-main hover:text-gray-900 transition-colors duration-200'
+								className='flex items-center text-gray-400 hover:text-white transition-colors duration-200 font-light'
 							>
 								<Icon
 									icon='mdi:phone-outline'
@@ -90,7 +90,7 @@ const Footer = () => {
 								<span className='text-sm'>+234 912 793 6598</span>
 							</a>
 
-							<div className='flex items-center text-main'>
+							<div className='flex items-center text-gray-400 font-light'>
 								<Icon
 									icon='mdi:map-marker-outline'
 									className='w-5 h-5 mr-2'
@@ -102,22 +102,22 @@ const Footer = () => {
 				</div>
 
 				{/* Bottom Bar */}
-				<div className='border-t border-gray-200 py-6'>
+				<div className='border-t border-gray-800 py-6'>
 					<div className='flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0'>
-						<p className='text-gray-500 text-sm text-center md:text-left'>
+						<p className='text-gray-500 text-sm text-center md:text-left font-light'>
 							© {currentYear} Olutunmise Adeniji. All rights reserved.
 						</p>
 
 						<div className='flex space-x-6 text-sm'>
 							<Link
 								href='/'
-								className='text-gray-500 hover:text-gray-900 transition-colors duration-200'
+								className='text-gray-500 hover:text-gray-300 transition-colors duration-200 font-light'
 							>
 								Privacy Policy
 							</Link>
 							<Link
 								href='/'
-								className='text-gray-500 hover:text-gray-900 transition-colors duration-200'
+								className='text-gray-500 hover:text-gray-300 transition-colors duration-200 font-light'
 							>
 								Terms of Service
 							</Link>

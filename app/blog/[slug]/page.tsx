@@ -1,8 +1,11 @@
 import { Metadata } from "next";
 import BlogPostClient from "./BlogPostClient";
-import { getBlogPost, urlFor} from "@/utils/sanity"; 
+import { getBlogPost, urlFor } from "@/utils/sanity";
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata(props: {
+	params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+	const params = await props.params;
 	const post = await getBlogPost(params.slug);
 
 	if (!post) {
@@ -14,11 +17,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 	return {
 		title: `${post.title} | Tunmise E.A`,
-		description: post.body?.[0]?.children?.[0]?.text || `Read ${post.title} on my blog.`,
+		description:
+			post.body?.[0]?.children?.[0]?.text ||
+			`Read ${post.title} on my blog.`,
 		openGraph: {
 			title: post.title,
 			description: post.body?.[0]?.children?.[0]?.text || "",
-			images: post.mainImage ? [ { url: urlFor(post.mainImage).url(), alt: post.title } ] : [],
+			images: post.mainImage
+				? [{ url: urlFor(post.mainImage).url(), alt: post.title }]
+				: [],
 		},
 		twitter: {
 			card: "summary_large_image",
@@ -29,7 +36,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 	};
 }
 
-const Page = async ({ params }: { params: { slug: string } }) => {
+const Page = async (props: { params: Promise<{ slug: string }> }) => {
+	const params = await props.params;
 	return (
 		<div>
 			<BlogPostClient slug={params.slug} />

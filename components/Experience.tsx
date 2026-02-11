@@ -25,33 +25,33 @@ const ExperienceCard = ({
 			transition={{ duration: 0.6, delay: index * 0.1 }}
 			className='relative'
 		>
-			{/* Timeline dot */}
-			<div className='absolute left-0 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-gradient-to-r from-gray-300 to-gray-700 border-4 border-black shadow-[0_0_20px_rgba(99,102,241,0.8)] z-10'></div>
+			{/* Minimalist Timeline dot */}
+			<div className='absolute left-0 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-black border-2 border-white z-10'></div>
 
 			{/* Card */}
 			<div
-				className={`p-6 md:w-5/12 rounded-2xl border border-gray-700 bg-gradient-to-tr from-gray-900 to-gray-800 text-gray-100 shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(99,102,241,0.3)] ${
+				className={`p-6 md:w-5/12 rounded-none border border-gray-800 bg-black text-white transition-all duration-500 hover:border-white ${
 					index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
 				}`}
 			>
-				<h3 className='text-2xl font-bold text-gray-400 mb-1'>
+				<h3 className='text-2xl font-bold text-white mb-1 tracking-wide'>
 					{position}
 				</h3>
-				<h4 className='text-lg font-medium text-gray-300 mb-3'>
+				<h4 className='text-lg font-light text-gray-400 mb-3 tracking-wider uppercase'>
 					{company}
 				</h4>
 
 				<div className='mb-4'>
-					<span className='inline-flex items-center bg-gray-800 text-sm text-gray-300 px-3 py-1 rounded-full border border-gray-700'>
+					<span className='inline-flex items-center bg-transparent text-sm text-gray-500 border border-gray-800 px-3 py-1 tracking-widest'>
 						<Icon
 							icon='mdi:calendar'
-							className='mr-2 text-gray-400'
+							className='mr-2 text-gray-600'
 						/>
 						{period}
 					</span>
 				</div>
 
-				<p className='text-gray-400 leading-relaxed whitespace-pre-line'>
+				<p className='text-gray-400 leading-relaxed whitespace-pre-line font-light'>
 					{description}
 				</p>
 			</div>
@@ -109,26 +109,22 @@ const Experience = () => {
 			id='work'
 			className='py-20 md:py-24 bg-black relative overflow-hidden'
 		>
-			{/* Subtle glowing overlay */}
-			<div className='absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-transparent pointer-events-none'></div>
-
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative'>
 				{/* Section Header */}
 				<div className='text-center mb-16'>
-					<h2 className='text-3xl md:text-5xl font-bold mb-4 text-white'>
-						Work Experience
+					<h2 className='text-3xl md:text-5xl font-bold mb-4 text-white tracking-widest uppercase'>
+						Experience
 					</h2>
-					<div className='w-24 h-1 bg-gradient-to-r from-gray-500 to-gray-700 mx-auto mb-6 rounded-full'></div>
-					<p className='text-lg text-gray-400 max-w-2xl mx-auto'>
-						A quick tour through the roles and projects that shaped my
-						dev journey.
+					<div className='w-16 h-px bg-white mx-auto mb-6 opacity-30'></div>
+					<p className='text-lg text-gray-400 max-w-2xl mx-auto font-light tracking-wide'>
+						A chronicle of my professional journey.
 					</p>
 				</div>
 
 				{/* Timeline */}
 				<div className='relative'>
-					{/* Glowing timeline line */}
-					<div className='absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-gray-700 via-gray-500 to-gray-700 md:-translate-x-1/2 shadow-[0_0_20px_rgba(99,102,241,0.3)]'></div>
+					{/* Minimalist timeline line */}
+					<div className='absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gray-800 md:-translate-x-1/2'></div>
 
 					{/* Experience cards */}
 					<div className='space-y-20 md:space-y-28'>

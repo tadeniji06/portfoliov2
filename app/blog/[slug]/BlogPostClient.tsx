@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { toast } from "sonner";
-import	OneSignal from "react-onesignal";
+import OneSignal from "react-onesignal";
 import {
 	getBlogPost,
 	getRelatedPosts,
@@ -31,9 +31,9 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 			OneSignal.init({
 				appId: "413a3c7c-85b4-4eb0-9cda-1e608d79a2ab",
 				notifyButton: {
-					enabled: true, 
+					enabled: true,
 				},
-			} as any); 
+			} as any);
 		}
 	}, []);
 
@@ -65,14 +65,14 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 							const related = await getRelatedPosts(
 								postData.categories,
 								postData._id,
-								3
+								3,
 							);
 							console.log("Related posts fetched:", related.length);
 							setRelatedPosts(related);
 						} catch (relatedError) {
 							console.warn(
 								"Error fetching related posts:",
-								relatedError
+								relatedError,
 							);
 						}
 					}
@@ -136,13 +136,16 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 
 		const shareUrls = {
 			twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-				title
+				title,
 			)}&url=${encodeURIComponent(url)}`,
 			linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-				url
+				url,
 			)}`,
 			facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-				url
+				url,
+			)}`,
+			whatsapp: `https://wa.me/?text=${encodeURIComponent(
+				title + " " + url,
 			)}`,
 		};
 
@@ -263,9 +266,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 				</strong>
 			),
 			em: ({ children }: any) => (
-				<em className='italic text-red-600 font-light'>
-					{children}
-				</em>
+				<em className='italic text-red-600 font-light'>{children}</em>
 			),
 			link: ({ children, value }: any) => (
 				<a
@@ -421,16 +422,77 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 						/>
 					</button>
 					<button
+						onClick={() => sharePost("whatsapp")}
+						className='block p-3 hover:bg-gray-800 rounded-xl transition-all duration-300 group'
+						title='Share on WhatsApp'
+					>
+						<Icon
+							icon='mdi:whatsapp'
+							className='text-2xl text-gray-300 group-hover:text-green-500'
+						/>
+					</button>
+					<button
 						onClick={copyToClipboard}
 						className='block p-3 hover:bg-gray-800 rounded-xl transition-all duration-300 group'
 						title='Copy Link'
 					>
 						<Icon
 							icon='mdi:link'
-							className='text-2xl text-gray-300 group-hover:text-green-400'
+							className='text-2xl text-gray-300 group-hover:text-blue-400'
 						/>
 					</button>
 				</div>
+			</div>
+
+			{/* Mobile Bottom Share Bar */}
+			<div className='fixed bottom-0 left-0 w-full bg-gray-900/90 backdrop-blur-lg border-t border-gray-800 p-4 z-40 lg:hidden flex justify-around items-center'>
+				<button
+					onClick={() => sharePost("twitter")}
+					className='p-2 rounded-full hover:bg-gray-800 transition-colors'
+					title='Share on Twitter'
+				>
+					<Icon
+						icon='mdi:twitter'
+						className='text-2xl text-gray-300'
+					/>
+				</button>
+				<button
+					onClick={() => sharePost("linkedin")}
+					className='p-2 rounded-full hover:bg-gray-800 transition-colors'
+					title='Share on LinkedIn'
+				>
+					<Icon
+						icon='mdi:linkedin'
+						className='text-2xl text-gray-300'
+					/>
+				</button>
+				<button
+					onClick={() => sharePost("facebook")}
+					className='p-2 rounded-full hover:bg-gray-800 transition-colors'
+					title='Share on Facebook'
+				>
+					<Icon
+						icon='mdi:facebook'
+						className='text-2xl text-gray-300'
+					/>
+				</button>
+				<button
+					onClick={() => sharePost("whatsapp")}
+					className='p-2 rounded-full hover:bg-gray-800 transition-colors'
+					title='Share on WhatsApp'
+				>
+					<Icon
+						icon='mdi:whatsapp'
+						className='text-2xl text-gray-300'
+					/>
+				</button>
+				<button
+					onClick={copyToClipboard}
+					className='p-2 rounded-full hover:bg-gray-800 transition-colors'
+					title='Copy Link'
+				>
+					<Icon icon='mdi:link' className='text-2xl text-gray-300' />
+				</button>
 			</div>
 
 			<article className='max-w-4xl mx-auto px-6 sm:px-8 lg:px-10 py-16'>

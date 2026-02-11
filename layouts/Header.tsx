@@ -17,13 +17,13 @@ const Header = () => {
 	};
 
 	return (
-		<header className='sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md'>
+		<header className='sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800'>
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				<nav className='flex items-center justify-between h-16'>
 					{/* Logo/Brand */}
 					<Link href={"/"} className='flex-shrink-0'>
-						<span className='text-xl font-bold text-gray-900 hover:text-gray-600 transition-colors duration-200'>
-							Tunmise E.A 
+						<span className='text-xl font-bold text-white hover:text-gray-300 transition-colors duration-200 tracking-wider'>
+							Tunmise E.A
 						</span>
 					</Link>
 
@@ -33,10 +33,10 @@ const Header = () => {
 							<li key={link.title}>
 								<Link
 									href={link.link}
-									className='text-main hover:text-gray-700 font-medium transition-colors duration-200 relative group'
+									className='text-gray-300 hover:text-white font-light tracking-wide transition-colors duration-200 relative group'
 								>
 									{link.title}
-									<span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-600 transition-all duration-200 group-hover:w-full'></span>
+									<span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full'></span>
 								</Link>
 							</li>
 						))}
@@ -45,7 +45,7 @@ const Header = () => {
 					{/* Mobile menu button */}
 					<button
 						onClick={toggleMobileMenu}
-						className='md:hidden inline-flex items-center justify-center p-2 rounded-md hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 transition-colors duration-200'
+						className='md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-700 transition-colors duration-200'
 						aria-expanded='false'
 						aria-label='Toggle navigation menu'
 					>
@@ -55,26 +55,26 @@ const Header = () => {
 									? "mdi:cancel-bold"
 									: "mdi:hamburger-open"
 							}
-							className='h-6 w-6 text-main'
+							className='h-6 w-6'
 						/>
 					</button>
 				</nav>
 
 				{/* Mobile Navigation Menu */}
 				<div
-					className={`md:hidden transition-all duration-300 ease-in-out ${
+					className={`md:hidden transition-all duration-300 ease-in-out bg-black border-b border-gray-800 ${
 						isMobileMenuOpen
 							? "max-h-96 opacity-100 visible"
 							: "max-h-0 opacity-0 invisible overflow-hidden"
 					}`}
 				>
-					<div className='px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200'>
+					<div className='px-2 pt-2 pb-3 space-y-1'>
 						{headerLinks.map((link) => (
 							<Link
 								key={link.title}
 								href={link.link}
 								onClick={closeMobileMenu}
-								className='block px-3 py-2 text-base font-medium text-main hover:bg-gray-50 rounded-md transition-colors duration-200'
+								className='block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors duration-200'
 							>
 								{link.title}
 							</Link>

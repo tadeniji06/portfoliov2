@@ -4,6 +4,7 @@ import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
 import ClarityScript from "@/components/Clarity";
 import AnalyticsScript from "@/components/Analytics";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
 	title: "Tunmise E.A | Software Developer",
@@ -118,6 +119,7 @@ export default function RootLayout({
 				<Footer />
 				<ClarityScript />
 				<AnalyticsScript />
+				<Toaster richColors position='top-right' />
 			</body>
 		</html>
 	);

@@ -12,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			lastModified: new Date(post.publishedAt),
 			changeFrequency: "daily" as const,
 			priority: 0.6,
-		})
+		}),
 	);
 
 	// Static pages
@@ -35,12 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			changeFrequency: "weekly",
 			priority: 0.8,
 		},
-		{
-			url: "https://www.olutunmise.tech/projects",
-			lastModified: new Date(),
-			changeFrequency: "weekly",
-			priority: 0.9,
-		},
+
 		{
 			url: "https://www.olutunmise.tech/blog",
 			lastModified: new Date(),
