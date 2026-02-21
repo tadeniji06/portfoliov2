@@ -145,314 +145,235 @@ const Journey: React.FC = () => {
 	const currentEvent = getActiveEvent();
 
 	return (
-		<section className='py-20 md:py-24 bg-black'>
+		<section className='py-20 md:py-32 bg-black text-white'>
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-				{/* Header */}
-				<div className='text-center mb-16'>
-					<h2 className='text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight'>
-						My Journey
-						<span className='block text-2xl md:text-3xl text-gray-400 font-normal mt-2'>
-							From Curious Kid to Tech Builder
-						</span>
+				{/* The Dossier Header */}
+				<div className='mb-24 text-left'>
+					<h2 className='text-6xl md:text-9xl font-black tracking-tighter uppercase mb-6'>
+						The Descent.
 					</h2>
-					<div className='w-32 h-1 bg-white mx-auto mb-8 rounded-full'></div>
-					<p className='text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed'>
-						An interactive roadmap of my evolution from a
-						tech-obsessed kid to building
-						<span className='text-white font-semibold'>
-							{" "}
-							Innovating
-						</span>{" "}
-						- Building Impactful Solutions
+					<div className='w-24 h-px bg-white opacity-50 mb-8'></div>
+					<p className='text-xl md:text-3xl text-gray-500 font-light max-w-4xl tracking-tight'>
+						A documented history of{" "}
+						<span className='text-white'>technical evolution</span>.
+						No fluff, just progress.
 					</p>
 				</div>
 
-				{/* Interactive Timeline */}
-				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16'>
-					{/* Timeline Navigation */}
-					<div className='space-y-6'>
-						<div className='flex items-center justify-between mb-8'>
-							<h3 className='text-2xl font-bold text-white'>
-								Interactive Roadmap
+				{/* The Core Grid */}
+				<div className='grid grid-cols-1 lg:grid-cols-12 gap-16'>
+					{/* Navigation: Vertical List */}
+					<div className='lg:col-span-4 space-y-4'>
+						<div className='flex items-center justify-between mb-8 pb-4 border-b border-white/10'>
+							<h3 className='text-xs font-bold tracking-[0.5em] uppercase text-gray-500'>
+								Timeline // Data-Feed
 							</h3>
 							<button
 								onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-								className={`px-4 py-2 rounded-lg border-2 transition-all duration-300 ${
-									isAutoPlaying
-										? "bg-white border-white text-black hover:bg-gray-200"
-										: "bg-black border-white text-white hover:bg-gray-900"
-								}`}
+								className='text-[10px] tracking-widest uppercase border border-white/20 px-3 py-1 hover:bg-white hover:text-black transition-all'
 							>
-								<Icon
-									icon={isAutoPlaying ? "mdi:pause" : "mdi:play"}
-									className='inline mr-2'
-								/>
-								{isAutoPlaying ? "Pause" : "Play"}
+								{isAutoPlaying ? "Freeze" : "Stream"}
 							</button>
 						</div>
 
-						<div className='relative'>
-							{/* Timeline Line */}
-							<div className='absolute left-8 top-0 bottom-0 w-1 bg-white rounded-full'></div>
-
-							{timelineEvents.map((event, index) => (
+						<div className='space-y-2'>
+							{timelineEvents.map((event) => (
 								<div
 									key={event.id}
-									className={`relative flex items-start space-x-6 pb-8 cursor-pointer group ${
-										activeEvent === event.id
-											? "scale-105"
-											: "hover:scale-102"
-									} transition-transform duration-300`}
 									onClick={() => handleEventClick(event.id)}
+									className={`p-6 border transition-all cursor-pointer group ${
+										activeEvent === event.id
+											? "bg-white text-black border-white"
+											: "bg-transparent border-white/5 hover:border-white/20"
+									}`}
 								>
-									{/* Timeline Dot */}
 									<div
-										className={`relative z-10 w-16 h-16 rounded-full border-4 border-white flex items-center justify-center transition-all duration-300 ${
+										className={`text-[10px] font-bold tracking-widest uppercase mb-2 ${
 											activeEvent === event.id
-												? "bg-white scale-110 shadow-2xl"
-												: "bg-black group-hover:bg-gray-900"
+												? "text-black/50"
+												: "text-gray-600"
 										}`}
 									>
-										<Icon
-											icon={event.icon}
-											className={`text-2xl transition-all duration-300 ${
-												activeEvent === event.id
-													? "text-black"
-													: "text-white"
-											}`}
-										/>
+										{event.year}
 									</div>
-
-									{/* Event Info */}
-									<div
-										className={`flex-1 p-4 rounded-xl border-2 transition-all duration-300 ${
-											activeEvent === event.id
-												? "bg-white border-white shadow-2xl"
-												: "bg-gray-900 border-gray-700 hover:border-gray-600"
-										}`}
-									>
-										<div
-											className={`text-sm font-semibold mb-1 ${
-												activeEvent === event.id
-													? "text-gray-600"
-													: "text-gray-400"
-											}`}
-										>
-											{event.year}
-										</div>
-										<h4
-											className={`text-lg font-bold mb-2 ${
-												activeEvent === event.id
-													? "text-black"
-													: "text-white"
-											}`}
-										>
-											{event.title}
-										</h4>
-										<p
-											className={`text-sm ${
-												activeEvent === event.id
-													? "text-gray-700"
-													: "text-gray-300"
-											}`}
-										>
-											{event.description}
-										</p>
-									</div>
+									<h4 className='text-lg font-bold uppercase tracking-tighter italic'>
+										{event.title}
+									</h4>
 								</div>
 							))}
 						</div>
 					</div>
 
-					{/* Active Event Details */}
-					<div className='lg:sticky lg:top-8'>
-						<div className='bg-white border-2 border-gray-200 p-8 md:p-10 rounded-2xl shadow-2xl'>
-							{/* Event Header */}
-							<div className='flex items-center space-x-4 mb-6'>
-								<div className='w-20 h-20 rounded-2xl bg-black flex items-center justify-center'>
-									<Icon
-										icon={currentEvent.icon}
-										className='text-4xl text-white'
-									/>
-								</div>
-								<div>
-									<div className='text-sm font-semibold text-gray-600 mb-1'>
-										{currentEvent.year}
-									</div>
-									<h3 className='text-2xl md:text-3xl font-bold text-black'>
-										{currentEvent.title}
-									</h3>
-								</div>
+					{/* The Data View: Assertive Display */}
+					<div className='lg:col-span-8'>
+						<div className='border border-white/10 p-8 md:p-16 relative overflow-hidden bg-white/[0.02]'>
+							{/* Large background serial number */}
+							<div className='absolute -bottom-10 -right-10 text-[10rem] font-black opacity-[0.03] pointer-events-none uppercase tracking-tighter'>
+								{currentEvent.id}
 							</div>
 
-							{/* Event Description */}
-							<p className='text-lg text-gray-700 mb-8 leading-relaxed'>
-								{currentEvent.description}
-							</p>
-
-							{/* Event Details */}
-							{currentEvent.details && (
-								<div className='space-y-4 mb-8'>
-									<h4 className='text-xl font-bold text-black mb-4'>
-										Key Highlights:
-									</h4>
-									<ul className='space-y-3'>
-										{currentEvent.details.map((detail, index) => (
-											<li
-												key={index}
-												className='flex items-start space-x-3'
-											>
-												<div className='w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0'></div>
-												<span className='text-gray-700 leading-relaxed'>
-													{detail}
-												</span>
-											</li>
-										))}
-									</ul>
+							<div className='relative z-10'>
+								<div className='flex items-center space-x-4 mb-12'>
+									<Icon
+										icon={currentEvent.icon}
+										className='text-5xl text-white'
+									/>
+									<div className='h-px flex-1 bg-white/10'></div>
+									<div className='text-xs font-mono tracking-widest uppercase text-gray-500'>
+										Log: {currentEvent.year}
+									</div>
 								</div>
-							)}
 
-							{/* Call to Action based on active event */}
-							<div className='flex flex-wrap gap-4'>
-								{activeEvent === "current" && (
-									<>
+								<h3 className='text-4xl md:text-7xl font-black uppercase tracking-tighter mb-10 leading-none'>
+									{currentEvent.title}
+								</h3>
+
+								<p className='text-xl md:text-2xl text-gray-400 mb-16 font-light leading-relaxed max-w-2xl'>
+									{currentEvent.description}
+								</p>
+
+								{currentEvent.details && (
+									<div className='space-y-12'>
+										<div className='h-px w-12 bg-white/50'></div>
+										<ul className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6'>
+											{currentEvent.details.map((detail, index) => (
+												<li
+													key={index}
+													className='flex items-start space-x-4 group'
+												>
+													<div className='text-[10px] font-bold text-gray-700 mt-1 pointer-events-none'>
+														0{index + 1}
+													</div>
+													<span className='text-gray-500 font-light group-hover:text-white transition-colors'>
+														{detail}
+													</span>
+												</li>
+											))}
+										</ul>
+									</div>
+								)}
+
+								<div className='mt-20 flex gap-4'>
+									{activeEvent === "current" && (
 										<a
 											href='https://github.com/tadeniji06'
 											target='_blank'
 											rel='noopener noreferrer'
-											className='inline-flex items-center bg-white hover:bg-gray-100 text-black border-2 border-black px-6 py-3 rounded-xl font-semibold transition-all duration-300'
+											className='bg-white text-black px-8 py-4 text-xs font-bold tracking-[0.3em] uppercase hover:bg-neutral-200 transition-all'
 										>
-											<Icon
-												icon='mdi:github'
-												className='mr-2 text-xl'
-											/>
-											View Code
+											Inspect Code
 										</a>
-									</>
-								)}
-
-								{activeEvent === "goals" && (
-									<div className='w-full bg-white border-2 border-black p-4 rounded-xl text-center'>
-										<p className='text-black font-bold text-lg mb-2'>
-											The Fast Car Fund is Loading...
-										</p>
-										<p className='text-gray-700 text-sm'>
-											Every line of code gets me closer to that!
-										</p>
-									</div>
-								)}
-
-								{(activeEvent === "early-life" ||
-									activeEvent === "first-code") && (
-									<div className='w-full bg-black p-4 rounded-xl text-center text-white'>
-										<p className='font-bold mb-1'>
-											Fun Fact: I still get the same excitement
-											writing code today!
-										</p>
-									</div>
-								)}
+									)}
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				{/* Stats Section */}
-				<div className='mt-20 grid grid-cols-1 md:grid-cols-3 gap-6'>
+				{/* The Core Competencies Section */}
+				<div className='mt-32 grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10'>
 					{[
 						{
 							icon: "mdi:calendar",
-							label: "Years Coding",
-							value: "5+",
+							label: "Active Combat",
+							value: "5+ Years",
 						},
 						{
 							icon: "mdi:code-tags",
-							label: "Tech Stack",
-							value: "Full Stack",
+							label: "Lethal Stack",
+							value: "Full Mastery",
 						},
 						{
 							icon: "mdi:rocket-launch",
-							label: "Current Focus",
+							label: "Primary Directive",
 							value: "Innovation",
 						},
-					].map((stat, index) => (
+					].map((stat) => (
 						<div
 							key={stat.label}
-							className='bg-white border-2 border-black p-6 rounded-xl text-center transition-all duration-300 hover:scale-105 hover:shadow-xl'
+							className='bg-black p-12 text-center group hover:bg-neutral-900 transition-all'
 						>
 							<Icon
 								icon={stat.icon}
-								className='text-4xl text-black mx-auto mb-3'
+								className='text-3xl text-gray-600 mb-6 group-hover:text-white transition-colors'
 							/>
-							<div className='text-2xl font-bold text-black mb-1'>
-								{stat.value}
-							</div>
-							<div className='text-gray-600 text-sm'>
+							<div className='text-xs text-gray-500 uppercase tracking-widest mb-2 font-bold'>
 								{stat.label}
+							</div>
+							<div className='text-3xl font-black uppercase italic'>
+								{stat.value}
 							</div>
 						</div>
 					))}
 				</div>
 
-				{/* Philosophy Section */}
-				<div className='mt-20 bg-white border-2 border-black p-10 md:p-12 rounded-2xl shadow-2xl text-center'>
+				{/* The Manifesto / Philosophy */}
+				<div className='mt-32 border border-white/10 p-12 md:p-24 text-left relative overflow-hidden bg-white/[0.01]'>
 					<Icon
 						icon='mdi:lightbulb'
-						className='text-6xl text-black mx-auto mb-6'
+						className='text-[15rem] absolute -top-12 -right-12 opacity-[0.02] pointer-events-none'
 					/>
-					<h3 className='text-3xl font-bold text-black mb-6'>
-						My Philosophy
+					<h3 className='text-xs font-bold tracking-[0.5em] uppercase text-gray-500 mb-12'>
+						System Philosophy
 					</h3>
-					<blockquote className='text-xl text-gray-700 italic leading-relaxed max-w-4xl mx-auto mb-8'>
-						"I think, therefore I am. Nomizo ara eimai."
+					<blockquote className='text-4xl md:text-7xl font-black italic tracking-tighter leading-none mb-16 uppercase'>
+						"I think, therefore I architect."
 					</blockquote>
-					<div className='flex flex-wrap justify-center gap-4'>
-						<span className='px-4 py-2 bg-black text-white rounded-full text-sm font-medium'>
-							Value-Driven
-						</span>
-						<span className='px-4 py-2 bg-white border-2 border-black text-black rounded-full text-sm font-medium'>
-							Tech Passionate
-						</span>
-						<span className='px-4 py-2 bg-black text-white rounded-full text-sm font-medium'>
-							Speed Enthusiast
-						</span>
-						<span className='px-4 py-2 bg-white border-2 border-black text-black rounded-full text-sm font-medium'>
-							Problem Solver
-						</span>
+					<div className='flex flex-wrap gap-4'>
+						{[
+							"Value-Driven",
+							"Passionate",
+							"Lethal Speed",
+							"Absolute Solver",
+						].map((tag) => (
+							<span
+								key={tag}
+								className='text-[10px] tracking-[0.2em] uppercase text-gray-600 border border-white/10 px-4 py-2 hover:border-white hover:text-white transition-all'
+							>
+								{tag}
+							</span>
+						))}
 					</div>
 				</div>
 
-				{/* Connect Section */}
-				<div className='mt-16 text-center'>
-					<h3 className='text-2xl font-bold text-white mb-6'>
-						Want to Follow My Journey?
+				{/* Transmission Section */}
+				<div className='mt-32 text-center'>
+					<h3 className='text-6xl md:text-8xl font-black tracking-tighter uppercase mb-20'>
+						Transmit Message.
 					</h3>
-					<div className='flex flex-wrap justify-center gap-4'>
+					<div className='flex flex-wrap justify-center gap-12'>
 						<a
 							href='https://twitter.com/tade_niji06'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='inline-flex items-center bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-xl font-semibold transition-all duration-300'
+							className='group flex flex-col items-center'
 						>
-							<Icon icon='mdi:twitter' className='mr-3 text-xl' />
-							Follow on Twitter
+							<span className='text-xs font-bold tracking-[0.5em] uppercase text-gray-500 mb-4 group-hover:text-white transition-colors'>
+								X / Twitter
+							</span>
+							<div className='w-12 h-px bg-white/20 group-hover:w-full transition-all'></div>
 						</a>
 						<a
 							href='https://github.com/tadeniji06'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='inline-flex items-center bg-black border-2 border-white hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300'
+							className='group flex flex-col items-center'
 						>
-							<Icon icon='mdi:github' className='mr-3 text-xl' />
-							GitHub
+							<span className='text-xs font-bold tracking-[0.5em] uppercase text-gray-500 mb-4 group-hover:text-white transition-colors'>
+								The Vault / GitHub
+							</span>
+							<div className='w-12 h-px bg-white/20 group-hover:w-full transition-all'></div>
 						</a>
 						<a
 							href='https://linkedin.com/in/olutunmise-adeniji-16a846250'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='inline-flex items-center bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-xl font-semibold transition-all duration-300'
+							className='group flex flex-col items-center'
 						>
-							<Icon icon='mdi:linkedin' className='mr-3 text-xl' />
-							LinkedIn
+							<span className='text-xs font-bold tracking-[0.5em] uppercase text-gray-500 mb-4 group-hover:text-white transition-colors'>
+								Protocol / LinkedIn
+							</span>
+							<div className='w-12 h-px bg-white/20 group-hover:w-full transition-all'></div>
 						</a>
 					</div>
 				</div>

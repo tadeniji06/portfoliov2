@@ -1,5 +1,5 @@
 import hero from "@/assets/images/hero.png";
-import pfp from "./pfp.jpg";
+import pfp from "./pfp.jpeg";
 import awo from "./images/awo.jpg";
 import b360 from "./images/b360.jpg";
 import exp from "./images/exp.jpg";

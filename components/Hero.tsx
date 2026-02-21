@@ -17,39 +17,47 @@ const Hero = () => {
 	}, []);
 
 	return (
-		<section className='min-h-screen bg-black flex flex-col items-center justify-center relative px-4'>
-			{/* Subtle Background Grain/Texture could go here if supported, otherwise just black */}
+		<section className='min-h-screen bg-black flex flex-col items-center justify-center relative px-4 overflow-hidden'>
+			{/* Aggressive background radial elements */}
+			<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white opacity-[0.03] rounded-full pointer-events-none'></div>
+			<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] border border-white opacity-[0.02] rounded-full pointer-events-none'></div>
 
-			<div className='text-center z-10 max-w-2xl mx-auto'>
-				<h1 className='text-6xl md:text-8xl font-bold text-white mb-6 tracking-tighter'>
+			<div className='text-center z-10 max-w-5xl mx-auto'>
+				<div className='mb-8'>
+					<span className='text-xs font-bold tracking-[1em] text-gray-500 uppercase'>
+						Apex Developer // Subject-01
+					</span>
+				</div>
+
+				<h1 className='text-7xl md:text-[12rem] font-black text-white mb-8 tracking-tighter leading-none uppercase'>
 					Tunmise.
 				</h1>
 
-				<p className='text-xl md:text-2xl text-gray-500 font-light tracking-widest mb-12 uppercase'>
-					Building in the Dark
+				<p className='text-2xl md:text-5xl text-gray-500 font-light tracking-tighter mb-16 uppercase italic'>
+					Engineering{" "}
+					<span className='text-white font-bold'>Dominance</span> in
+					the shadows.
 				</p>
 
-				<div className='flex flex-col sm:flex-row justify-center items-center gap-8 md:gap-12'>
+				<div className='flex flex-col sm:flex-row justify-center items-center gap-12 md:gap-20'>
 					<Link
 						href='#work'
-						className='text-gray-400 hover:text-white transition-all duration-500 tracking-widest text-sm uppercase border-b border-transparent hover:border-white pb-1'
+						className='text-white text-xl font-bold tracking-widest uppercase border-b-2 border-white pb-2 hover:opacity-50 transition-all'
 					>
-						Experience
+						The War Log
 					</Link>
 
 					<Link
 						href='/blog'
-						className='text-gray-400 hover:text-white transition-all duration-500 tracking-widest text-sm uppercase border-b border-transparent hover:border-white pb-1'
+						className='text-gray-600 hover:text-white text-xl font-bold tracking-widest uppercase border-b-2 border-transparent hover:border-white pb-2 transition-all'
 					>
-						Thoughts
+						The Manifesto
 					</Link>
 				</div>
 			</div>
 
-			{/* Minimal Scroll Indicator */}
-			<div className='absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-pulse'>
-				<div className='w-px h-16 bg-gradient-to-b from-transparent via-gray-500 to-transparent'></div>
-			</div>
+			{/* Minimal vertical scroll indicator */}
+			<div className='absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-t from-white/20 to-transparent'></div>
 		</section>
 	);
 };

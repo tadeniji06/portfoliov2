@@ -4,241 +4,145 @@ import Image from "next/image";
 import Link from "next/link";
 
 const About = () => {
-	const interests = [
+	const values = [
 		{
-			icon: "mdi:music",
-			title: "Music Lover",
+			title: "PRECISION",
 			description:
-				"Chicago drill to West Coast - King Von, Lil Durk, Polo G, EBK Jayboo",
-			color: "text-purple-600",
+				"Code is either perfect or it is garbage. I don't settle for 'works on my machine'.",
+			icon: "mdi:target",
 		},
 		{
-			icon: "mdi:dumbbell",
-			title: "Fitness Enthusiast",
+			title: "VIOLENCE",
 			description:
-				"Calisthenics training and staying in peak physical condition",
-			color: "text-red-600",
+				"I attack problems with an intensity most people reserve for life-or-death situations.",
+			icon: "mdi:lightning-bolt",
 		},
 		{
-			icon: "mdi:soccer",
-			title: "Football Player",
+			title: "SILENCE",
 			description:
-				"Playing football in my free time - the beautiful game",
-			color: "text-green-600",
+				"Results speak louder than any LinkedIn bio ever could. I ship then I vanish.",
+			icon: "mdi:ghost",
 		},
-		{
-			icon: "mdi:pen",
-			title: "Peak Writer",
-			description:
-				"Crafting compelling content and technical documentation",
-			color: "text-blue-600",
-		},
-	];
-
-	const stats = [
-		{ number: "3+", label: "Years Coding" },
-		{ number: "10+", label: "Projects" },
-		{ number: "∞", label: "Lines of Code" },
-	];
-
-	const techStack = [
-		{ icon: "logos:react", name: "React" },
-		{ icon: "logos:nextjs-icon", name: "Next.js" },
-		{ icon: "logos:typescript-icon", name: "TypeScript" },
-		{ icon: "logos:nodejs-icon", name: "Node.js" },
-		{ icon: "logos:python", name: "Python" },
-		{ icon: "logos:tailwindcss-icon", name: "Tailwind" },
 	];
 
 	return (
 		<section
 			id='about'
-			className='py-20 md:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden'
+			className='py-20 md:py-32 bg-black text-white relative overflow-hidden'
 		>
-			{/* Background Pattern */}
-			<div className='absolute inset-0 opacity-5'>
-				<div
-					className='absolute inset-0'
-					style={{
-						backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-					}}
-				></div>
-			</div>
-
-			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative'>
-				{/* Section Header */}
-				<div className='text-center mb-16 md:mb-20'>
-					<h2 className='text-4xl md:text-5xl font-bold mb-6 text-gray-900 tracking-tight'>
-						About Me
+			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
+				{/* The Ego Header */}
+				<div className='mb-24 md:mb-32'>
+					<h2 className='text-6xl md:text-9xl font-black tracking-tighter uppercase mb-8'>
+						The Entity.
 					</h2>
-					<div className='w-32 h-1 bg-gradient-to-r from-gray-900 to-gray-600 mx-auto mb-8 rounded-full'></div>
-					<p className='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
-						The story behind the code - who I am beyond the screen
+					<div className='w-24 h-px bg-white opacity-50 mb-12'></div>
+					<p className='text-2xl md:text-4xl font-light text-gray-500 max-w-4xl leading-tight tracking-tight'>
+						I don't just write code. I{" "}
+						<span className='text-white'>architect dominance</span>.
+						Based in Lagos, operating globally.
 					</p>
 				</div>
-				{/* Profile Image & Info */}
-				<div className='relative'>
-					<div className='bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-10 text-center rounded-2xl shadow-2xl mb-6'>
-						{/* Profile Image */}
-						<div className='relative w-56 h-56 mx-auto mb-8'>
-							<div className='w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-gray-700 rounded-full overflow-hidden shadow-2xl'>
-								<Image
-									alt='Olutunmise Adeniji'
-									src={pfp}
-									width={224}
-									height={224}
-									className='w-full h-full object-cover object-top scale-110'
-									priority
-								/>
+
+				{/* Identity Block */}
+				<div className='grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-32'>
+					<div className='lg:col-span-5'>
+						<div className='relative group'>
+							<div className='absolute -inset-2 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
+							<Image
+								alt='Tunmise'
+								src={pfp}
+								width={500}
+								height={600}
+								className='w-full grayscale contrast-125 filter duration-700 group-hover:grayscale-0'
+								priority
+							/>
+							<div className='absolute bottom-0 left-0 bg-black p-4 text-xs tracking-widest uppercase'>
+								Subject-01 // Tunmise E.A
 							</div>
-							{/* Decorative rings */}
-							<div className='absolute -inset-4 border-2 border-gray-600 rounded-full opacity-20'></div>
-							<div className='absolute -inset-8 border border-gray-500 rounded-full opacity-10'></div>
-						</div>
-
-						<h4 className='text-2xl font-bold text-white mb-3'>
-							Tunmise E.A
-						</h4>
-						<p className='text-gray-300 mb-2 text-lg'>
-							Full-Stack Developer
-						</p>
-						<p className='text-gray-400 mb-8 text-sm'>
-							Lagos, Nigeria 🇳🇬
-						</p>
-
-						{/* Social Links */}
-						<div className='flex justify-center space-x-4 mb-8'>
-							{[
-								{
-									href: "https://open.spotify.com/user/31cnksr3i6gfq5jsn3733pfspkbi?si=tBO9TU4GTzKEfJd59hM6iw",
-									icon: "logos:spotify-icon",
-									label: "Spotify",
-									color: "hover:bg-green-600",
-								},
-								{
-									href: "https://github.com/tadeniji06",
-									icon: "mdi:github",
-									label: "GitHub",
-									color: "hover:bg-gray-700",
-								},
-								{
-									href: "https://www.linkedin.com/in/tunmise-e-a-16a846250/",
-									icon: "mdi:linkedin",
-									label: "LinkedIn",
-									color: "hover:bg-blue-600",
-								},
-							].map((social, index) => (
-								<a
-									key={index}
-									href={social.href}
-									target='_blank'
-									rel='noopener noreferrer'
-									className={`p-4 bg-gray-800 border border-gray-700 ${social.color} transition-all duration-300 rounded-xl hover:scale-110 hover:shadow-lg group`}
-									title={social.label}
-								>
-									<Icon
-										icon={social.icon}
-										className='text-2xl text-white group-hover:text-white'
-									/>
-								</a>
-							))}
-						</div>
-
-						{/* Status */}
-						<div className='flex items-center justify-center space-x-2 text-green-400'>
-							<div className='w-3 h-3 bg-green-400 rounded-full animate-pulse'></div>
-							<span className='text-sm font-medium'>
-								Available for work
-							</span>
 						</div>
 					</div>
-				</div>
 
-				{/* Main Content */}
-				<div className='grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start mb-20'>
-					{/* Text Content */}
-					<div className='space-y-8'>
-						{/* Quick Stats */}
-						<div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
-							{stats.map((stat, index) => (
-								<div
-									key={index}
-									className='text-center p-6 bg-white border-2 border-gray-200 hover:border-gray-900 hover:shadow-lg transition-all duration-300 rounded-xl group'
-								>
-									<div className='text-3xl font-bold text-gray-900 group-hover:text-gray-900 mb-2'>
-										{stat.number}
+					<div className='lg:col-span-7 space-y-12'>
+						<div className='space-y-4'>
+							<h3 className='text-xs font-bold tracking-[0.5em] uppercase text-gray-500'>
+								The Philosophy
+							</h3>
+							<p className='text-3xl md:text-5xl font-medium tracking-tighter leading-none'>
+								"Most people build to be seen. I build to be felt."
+							</p>
+						</div>
+
+						<div className='grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-white/10 pt-12'>
+							{[
+								{ num: "3+", label: "Years of War" },
+								{ num: "10+", label: "Hard Hits" },
+								{ num: "∞", label: "Pure Focus" },
+							].map((stat, i) => (
+								<div key={i} className='space-y-2'>
+									<div className='text-4xl font-black'>
+										{stat.num}
 									</div>
-									<div className='text-sm text-gray-600 font-semibold uppercase tracking-wide'>
+									<div className='text-xs text-gray-500 uppercase tracking-widest'>
 										{stat.label}
 									</div>
 								</div>
 							))}
 						</div>
-
-						{/* Tech Stack */}
-						<div className='bg-white border-2 border-gray-200 p-8 rounded-2xl shadow-lg'>
-							<h4 className='text-xl font-bold text-gray-900 mb-6 text-center'>
-								Tech Stack
-							</h4>
-							<div className='grid grid-cols-3 md:grid-cols-6 gap-4'>
-								{techStack.map((tech, index) => (
-									<div
-										key={index}
-										className='flex flex-col items-center p-3 hover:bg-gray-50 rounded-lg transition-colors group'
-									>
-										<Icon
-											icon={tech.icon}
-											className='text-3xl mb-2 group-hover:scale-110 transition-transform'
-										/>
-										<span className='text-xs text-gray-600 font-medium'>
-											{tech.name}
-										</span>
-									</div>
-								))}
-							</div>
-						</div>
 					</div>
 				</div>
 
-				{/* Interests Grid */}
-				<div className='mb-20'>
-					<h3 className='text-3xl font-bold text-center mb-12 text-gray-900'>
-						Beyond The Code
+				{/* Core Values / Brutalist Grid */}
+				<div className='mb-32'>
+					<h3 className='text-xs font-bold tracking-[0.5em] uppercase text-gray-500 mb-12 text-center'>
+						Operational Standards
 					</h3>
-					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-						{interests.map((interest, index) => (
+					<div className='grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10'>
+						{values.map((v, i) => (
 							<div
-								key={index}
-								className='bg-white border-2 border-gray-200 hover:border-gray-900 p-8 text-center transition-all duration-300 hover:shadow-xl group rounded-2xl'
+								key={i}
+								className='bg-black p-12 space-y-6 hover:bg-neutral-900 transition-colors group'
 							>
-								<div className='w-20 h-20 mx-auto mb-6 bg-gray-100 group-hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110'>
-									<Icon
-										icon={interest.icon}
-										className={`text-3xl ${interest.color} group-hover:scale-110 transition-transform`}
-									/>
-								</div>
-								<h4 className='font-bold text-gray-900 mb-3 text-lg'>
-									{interest.title}
+								<Icon
+									icon={v.icon}
+									className='text-4xl text-gray-600 group-hover:text-white transition-colors'
+								/>
+								<h4 className='text-xl font-bold tracking-widest uppercase'>
+									{v.title}
 								</h4>
-								<p className='text-gray-600 leading-relaxed'>
-									{interest.description}
+								<p className='text-gray-500 group-hover:text-gray-300 transition-colors leading-relaxed font-light'>
+									{v.description}
 								</p>
 							</div>
 						))}
 					</div>
 				</div>
 
-				{/* Music Section */}
-				<div className='bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-10 md:p-12 text-center rounded-2xl shadow-2xl mb-20'>
-					<h3 className='text-3xl font-bold text-white mb-6'>
-						<Icon icon='mdi:music' className='inline mr-3 text-4xl' />
-						Currently Vibing To
-					</h3>
-					<p className='text-gray-300 mb-8 text-lg max-w-2xl mx-auto'>
-						From Chicago drill to West Coast beats - music fuels my
-						creativity and coding sessions
-					</p>
-					<div className='flex flex-wrap justify-center gap-3 mb-8'>
+				{/* The Sound of Violence */}
+				<div className='grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32 items-center'>
+					<div>
+						<h3 className='text-xs font-bold tracking-[0.5em] uppercase text-gray-500 mb-8'>
+							Acoustic Fuel
+						</h3>
+						<p className='text-4xl md:text-6xl font-black tracking-tighter uppercase mb-8 leading-none'>
+							The frequency of <br />
+							the streets.
+						</p>
+						<p className='text-gray-500 text-lg mb-12 max-w-md'>
+							The grit of King Von, the raw ambition of Lil Durk, and
+							the energy of EBK Jayboo. This is the soundtrack to my
+							sessions.
+						</p>
+						<a
+							href='https://open.spotify.com/playlist/37i9dQZF1EpiunT9MRBus8'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='inline-block border border-white px-12 py-5 text-sm font-bold tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all group'
+						>
+							Enter the Abyss
+						</a>
+					</div>
+					<div className='grid grid-cols-2 gap-4'>
 						{[
 							"King Von",
 							"Lil Durk",
@@ -247,60 +151,44 @@ const About = () => {
 							"21 Savage",
 							"RodWave",
 							"PayGotti",
-						].map((artist, index) => (
-							<span
+							"Duck",
+						].map((artist) => (
+							<div
 								key={artist}
-								className='px-4 py-2 bg-gray-800 border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white text-sm font-medium rounded-full transition-all duration-200 hover:bg-gray-700'
+								className='border border-white/5 p-6 text-xs text-gray-600 tracking-widest uppercase hover:border-white/20 hover:text-white transition-all'
 							>
 								{artist}
-							</span>
+							</div>
 						))}
 					</div>
-					<a
-						href='https://open.spotify.com/playlist/37i9dQZF1EpiunT9MRBus8?si=TimyGZJJQaa2bs6MWiZ13g&pi=yfGAXrrdS06Mo'
-						target='_blank'
-						rel='noopener noreferrer'
-						className='inline-flex items-center justify-center bg-white text-black border-2 border-white hover:bg-transparent hover:text-white transition-all duration-300 py-4 px-8 font-semibold rounded-xl hover:scale-105 hover:shadow-lg'
-					>
-						<Icon
-							icon='logos:spotify-icon'
-							className='mr-3 text-xl'
-						/>
-						Check My Playlist
-					</a>
 				</div>
 
-				{/* Call to Action */}
-				<div className='text-center bg-white border-2 border-gray-200 p-12 rounded-2xl shadow-lg'>
-					<h3 className='text-3xl font-bold text-gray-900 mb-6'>
-						Let's Build Something Amazing Together
+				{/* Final Call */}
+				<div className='border-t border-white/10 pt-24 text-center'>
+					<h3 className='text-4xl md:text-8xl font-black tracking-tighter uppercase mb-12'>
+						Speak or move on.
 					</h3>
-					<p className='text-gray-600 mb-8 max-w-3xl mx-auto text-lg leading-relaxed'>
-						Whether you need a full-stack application, want to discuss
-						the latest drill tracks, or just want to connect - I'm
-						always down for good conversation.
-					</p>
-					<div className='flex flex-col sm:flex-row justify-center gap-6'>
+					<div className='flex flex-col sm:flex-row justify-center gap-8 items-center'>
 						<Link
 							href='/'
-							className='inline-flex items-center justify-center bg-gray-900 text-white border-2 border-gray-900 hover:bg-white hover:text-gray-900 transition-all duration-300 py-4 px-10 font-semibold rounded-xl hover:scale-105 hover:shadow-lg'
+							className='text-white text-xl font-bold border-b-2 border-white pb-2 hover:opacity-50 transition-opacity uppercase tracking-widest'
 						>
-							<Icon icon='mdi:email' className='mr-3 text-xl' />
-							Get In Touch
+							Contact the Authority
 						</Link>
+						<div className='hidden sm:block w-px h-12 bg-white/20'></div>
 						<Link
-							href='/projects'
-							className='inline-flex items-center justify-center bg-white text-gray-900 border-2 border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300 py-4 px-10 font-semibold rounded-xl hover:scale-105 hover:shadow-lg'
+							href='/blog'
+							className='text-gray-500 text-xl font-bold hover:text-white transition-colors uppercase tracking-widest'
 						>
-							<Icon
-								icon='mdi:rocket-launch'
-								className='mr-3 text-xl'
-							/>
-							View My Work
+							Read the Manifesto
 						</Link>
 					</div>
 				</div>
 			</div>
+
+			{/* Background Noise / Elements */}
+			<div className='absolute top-1/4 -right-24 w-96 h-96 bg-white/5 blur-[120px] rounded-full pointer-events-none'></div>
+			<div className='absolute bottom-1/4 -left-24 w-96 h-96 bg-white/5 blur-[120px] rounded-full pointer-events-none'></div>
 		</section>
 	);
 };

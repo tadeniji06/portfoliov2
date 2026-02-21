@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 		siteName: "Tunmise E.A Portfolio",
 		images: [
 			{
-				url: "/pfp.jpg",
+				url: "/pfp.jpeg",
 				width: 800,
 				height: 300,
 				alt: "Tunmise E.A's Tech Journey Timeline",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
 		description:
 			"Follow my interactive journey from a tech-obsessed kid to building...",
 		creator: "@tade_niji06",
-		images: ["/pfp.jpg"],
+		images: ["/pfp.jpeg"],
 	},
 	alternates: {
 		canonical: "https://www.olutunmise.tech/journey",

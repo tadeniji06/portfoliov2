@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 		siteName: "Tunmise E.A",
 		images: [
 			{
-				url: "https://www.olutunmise.tech/pfp.jpg",
+				url: "https://www.olutunmise.tech/pfp.jpeg",
 				width: 700,
 				height: 300,
 				alt: "Tunmise E.A - Fullstack Developer in Nigeria",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
 		title: "Tunmise E.A | Software Developer in Nigeria",
 		description:
 			"Software specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
-		images: ["/pfp.jpg"],
+		images: ["/pfp.jpeg"],
 		creator: "@tade_niji06",
 		site: "@tade_niji06",
 	},

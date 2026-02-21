@@ -17,26 +17,25 @@ const Header = () => {
 	};
 
 	return (
-		<header className='sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800'>
+		<header className='sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5'>
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-				<nav className='flex items-center justify-between h-16'>
+				<nav className='flex items-center justify-between h-20'>
 					{/* Logo/Brand */}
-					<Link href={"/"} className='flex-shrink-0'>
-						<span className='text-xl font-bold text-white hover:text-gray-300 transition-colors duration-200 tracking-wider'>
-							Tunmise E.A
+					<Link href={"/"} className='flex-shrink-0 group'>
+						<span className='text-sm font-black text-white uppercase tracking-[0.4em] group-hover:italic transition-all'>
+							Tunmise // Archive
 						</span>
 					</Link>
 
 					{/* Desktop Navigation */}
-					<ul className='hidden md:flex items-center space-x-8'>
+					<ul className='hidden md:flex items-center space-x-12'>
 						{headerLinks.map((link) => (
 							<li key={link.title}>
 								<Link
 									href={link.link}
-									className='text-gray-300 hover:text-white font-light tracking-wide transition-colors duration-200 relative group'
+									className='text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-[0.3em] transition-all duration-300'
 								>
 									{link.title}
-									<span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full'></span>
 								</Link>
 							</li>
 						))}
@@ -45,36 +44,31 @@ const Header = () => {
 					{/* Mobile menu button */}
 					<button
 						onClick={toggleMobileMenu}
-						className='md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-700 transition-colors duration-200'
-						aria-expanded='false'
-						aria-label='Toggle navigation menu'
+						className='md:hidden p-2 text-white hover:text-gray-400 transition-colors'
+						aria-label='System Menu'
 					>
 						<Icon
-							icon={
-								isMobileMenuOpen
-									? "mdi:cancel-bold"
-									: "mdi:hamburger-open"
-							}
-							className='h-6 w-6'
+							icon={isMobileMenuOpen ? "mdi:close" : "mdi:menu"}
+							className='h-5 w-5'
 						/>
 					</button>
 				</nav>
 
 				{/* Mobile Navigation Menu */}
 				<div
-					className={`md:hidden transition-all duration-300 ease-in-out bg-black border-b border-gray-800 ${
+					className={`md:hidden transition-all duration-500 ease-in-out bg-black border-t border-white/5 ${
 						isMobileMenuOpen
-							? "max-h-96 opacity-100 visible"
-							: "max-h-0 opacity-0 invisible overflow-hidden"
+							? "max-h-screen opacity-100 py-12"
+							: "max-h-0 opacity-0 overflow-hidden"
 					}`}
 				>
-					<div className='px-2 pt-2 pb-3 space-y-1'>
+					<div className='flex flex-col items-center space-y-8'>
 						{headerLinks.map((link) => (
 							<Link
 								key={link.title}
 								href={link.link}
 								onClick={closeMobileMenu}
-								className='block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors duration-200'
+								className='text-lg font-black text-white hover:text-gray-500 uppercase tracking-[0.5em] transition-all'
 							>
 								{link.title}
 							</Link>

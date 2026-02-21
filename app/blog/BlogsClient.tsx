@@ -47,13 +47,13 @@ const BlogsClient = () => {
 
 		if (selectedCategory !== "all") {
 			filtered = filtered.filter((post) =>
-				post.categories?.some((cat) => cat._id === selectedCategory)
+				post.categories?.some((cat) => cat._id === selectedCategory),
 			);
 		}
 
 		if (searchTerm.trim()) {
 			filtered = filtered.filter((post) =>
-				post.title.toLowerCase().includes(searchTerm.toLowerCase())
+				post.title.toLowerCase().includes(searchTerm.toLowerCase()),
 			);
 		}
 
@@ -72,7 +72,7 @@ const BlogsClient = () => {
 		if (!body || body.length === 0) return "No preview available...";
 
 		const firstBlock = body.find(
-			(block) => block._type === "block" && block.children
+			(block) => block._type === "block" && block.children,
 		);
 		if (!firstBlock) return "No preview available...";
 
@@ -86,14 +86,11 @@ const BlogsClient = () => {
 
 	if (loading) {
 		return (
-			<div className='min-h-screen bg-black text-white flex items-center justify-center'>
-				<div className='text-center'>
-					<Icon
-						icon='mdi:loading'
-						className='text-6xl animate-spin mx-auto mb-4'
-					/>
-					<p className='text-xl text-gray-300'>
-						Loading amazing content...
+			<div className='min-h-screen bg-black text-white flex items-center justify-center font-mono'>
+				<div className='text-center space-y-4'>
+					<div className='w-16 h-px bg-white animate-pulse mx-auto'></div>
+					<p className='text-xs tracking-[0.5em] uppercase text-gray-500'>
+						Authenticating Feed...
 					</p>
 				</div>
 			</div>
@@ -101,64 +98,66 @@ const BlogsClient = () => {
 	}
 
 	return (
-		<section className='py-20 md:py-24 bg-black text-white min-h-screen'>
+		<section className='py-20 md:py-32 bg-black text-white min-h-screen'>
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-				<div className='text-center mb-16'>
-					<h1 className='text-4xl md:text-6xl font-bold mb-6 tracking-tight'>
-						My Blog
-						<span className='block text-2xl md:text-3xl text-gray-400 font-normal mt-2'>
-							Thoughts, Insights & Tech Adventures
-						</span>
+				{/* The Manifesto Header */}
+				<div className='mb-24 text-left'>
+					<h1 className='text-6xl md:text-9xl font-black tracking-tighter uppercase mb-6'>
+						The Manifesto.
 					</h1>
-					<div className='w-32 h-1 bg-white mx-auto mb-8 rounded-full'></div>
-					<p className='text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed'>
-						Sharing my journey in tech, lessons learned, and insights
-						from building products that matter.
+					<div className='w-24 h-px bg-white opacity-50 mb-8'></div>
+					<p className='text-xl md:text-3xl text-gray-500 font-light max-w-4xl tracking-tight leading-tight'>
+						Sharing unfiltered insights, technical breakdowns, and the{" "}
+						<span className='text-white'>
+							architecture of success
+						</span>
+						.
 					</p>
 				</div>
 
-				<div className='mb-12'>
-					<div className='max-w-2xl mx-auto mb-8'>
-						<div className='relative'>
+				{/* Filter Interface */}
+				<div className='mb-24 space-y-12'>
+					<div className='max-w-2xl'>
+						<div className='relative group'>
 							<Icon
 								icon='mdi:magnify'
-								className='absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl'
+								className='absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 text-xl group-focus-within:text-white transition-colors'
 							/>
 							<input
 								type='text'
-								placeholder='Search articles...'
+								placeholder='LOCATE INTEL...'
 								value={searchTerm}
 								onChange={(e) => setSearchTerm(e.target.value)}
-								className='w-full pl-12 pr-4 py-4 bg-zinc-900 text-white border-2 border-white rounded-xl placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white text-lg'
+								className='w-full pl-12 pr-4 py-5 bg-black text-white border-b border-white/10 placeholder-gray-800 focus:outline-none focus:border-white transition-all text-xs tracking-[0.3em] uppercase'
 							/>
 						</div>
 					</div>
 
-					<div className='flex flex-wrap justify-center gap-3'>
+					<div className='flex flex-wrap gap-4'>
 						<button
 							onClick={() => setSelectedCategory("all")}
-							className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+							className={`px-8 py-4 text-[10px] font-bold tracking-[0.4em] uppercase transition-all ${
 								selectedCategory === "all"
 									? "bg-white text-black"
-									: "bg-zinc-800 text-white hover:bg-zinc-700"
+									: "bg-transparent text-gray-600 border border-white/10 hover:border-white/40 hover:text-white"
 							}`}
 						>
-							All Posts ({posts.length})
+							Universal Feed ({posts.length})
 						</button>
 						{categories.map((category) => {
 							const count = posts.filter((post) =>
 								post.categories?.some(
-									(cat) => cat._id === category._id
-								)
+									(cat) => cat._id === category._id,
+								),
 							).length;
 							return (
 								<button
 									key={category._id}
 									onClick={() => setSelectedCategory(category._id)}
-									className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+									className={`px-8 py-4 text-[10px] font-bold tracking-[0.4em] uppercase transition-all ${
 										selectedCategory === category._id
 											? "bg-white text-black"
-											: "bg-zinc-800 text-white hover:bg-zinc-700"
+											: "bg-transparent text-gray-600 border border-white/10 hover:border-white/40 hover:text-white"
 									}`}
 								>
 									{category.title} ({count})
@@ -168,47 +167,38 @@ const BlogsClient = () => {
 					</div>
 				</div>
 
-				{/* Blog Cards */}
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+				{/* Intel Grid */}
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10'>
 					{filteredPosts.map((post) => (
 						<article
 							key={post._id}
-							className='bg-zinc-900 border border-white rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 shadow-xl'
+							className='bg-black p-8 md:p-12 hover:bg-neutral-900 transition-all group flex flex-col justify-between aspect-square'
 						>
-							<div className='relative h-48 overflow-hidden'>
-								{post.mainImage ? (
-									<Image
-										src={urlFor(post.mainImage)
-											.width(400)
-											.height(200)
-											.url()}
-										alt={post.title}
-										fill
-										className='object-cover'
+							<div>
+								<div className='flex items-center justify-between mb-8 pb-4 border-b border-white/5'>
+									<span className='text-[10px] font-bold tracking-widest text-gray-700 uppercase'>
+										{formatDate(post.publishedAt)}
+									</span>
+									<Icon
+										icon='mdi:arrow-top-right'
+										className='text-gray-800 group-hover:text-white transition-colors'
 									/>
-								) : (
-									<div className='w-full h-full bg-black flex items-center justify-center'>
-										<Icon
-											icon='mdi:file-document'
-											className='text-6xl text-white'
-										/>
-									</div>
-								)}
-							</div>
-							<div className='p-6'>
-								<h2 className='text-xl font-bold mb-3'>
+								</div>
+
+								<h2 className='text-2xl md:text-3xl font-black uppercase tracking-tighter leading-none mb-6 group-hover:italic transition-all'>
 									{post.title}
 								</h2>
-								<p className='text-gray-400 mb-4'>
+								<p className='text-gray-500 font-light text-sm leading-relaxed mb-8 line-clamp-3'>
 									{getPostExcerpt(post.body)}
 								</p>
-								<Link
-									href={`/blog/${post.slug.current}`}
-									className='text-white font-semibold hover:underline'
-								>
-									Read More →
-								</Link>
 							</div>
+
+							<Link
+								href={`/blog/${post.slug.current}`}
+								className='text-[10px] font-black tracking-[0.5em] uppercase text-white border-white/20 border px-6 py-4 hover:bg-white hover:text-black transition-all text-center'
+							>
+								Access Entry
+							</Link>
 						</article>
 					))}
 				</div>

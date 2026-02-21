@@ -313,23 +313,12 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 
 	if (loading) {
 		return (
-			<div className='min-h-screen bg-black flex items-center justify-center'>
-				<div className='text-center'>
-					<div className='relative'>
-						<Icon
-							icon='mdi:loading'
-							className='text-6xl text-white animate-spin mx-auto mb-6'
-						/>
-						<div className='absolute inset-0 text-6xl text-red-500 animate-pulse'>
-							<Icon icon='mdi:circle-outline' />
-						</div>
-					</div>
-					<h2 className='text-2xl font-light text-white mb-2 tracking-wide'>
-						Loading article...
-					</h2>
-					{/* <p className='text-gray-400 font-mono text-sm'>
-						Slug: {slug}
-					</p> */}
+			<div className='min-h-screen bg-black flex items-center justify-center font-mono'>
+				<div className='text-center space-y-4'>
+					<div className='w-16 h-px bg-white animate-pulse mx-auto'></div>
+					<p className='text-[10px] tracking-[0.5em] uppercase text-gray-500'>
+						Deciphering Entry...
+					</p>
 				</div>
 			</div>
 		);
@@ -339,27 +328,17 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 		return (
 			<div className='min-h-screen bg-black flex items-center justify-center'>
 				<div className='text-center max-w-lg mx-auto px-6'>
-					<Icon
-						icon='mdi:file-document-remove'
-						className='text-8xl text-gray-600 mx-auto mb-8'
-					/>
-					<h1 className='text-4xl font-bold text-white mb-6 font-serif'>
-						{error || "Article Not Found"}
+					<h1 className='text-6xl md:text-8xl font-black text-white mb-8 uppercase tracking-tighter'>
+						Void.
 					</h1>
-					<p className='text-gray-300 text-lg mb-6 leading-relaxed font-light'>
-						{error === "Failed to load article"
-							? "There was an error loading this article. Please try again later."
-							: "The article you're looking for doesn't exist or has been moved."}
-					</p>
-					<p className='text-gray-500 text-sm mb-10 font-mono'>
-						Requested slug: {slug}
+					<p className='text-gray-500 text-lg mb-12 uppercase tracking-tight'>
+						{error || "The requested data is non-existent."}
 					</p>
 					<Link
 						href='/blog'
-						className='inline-flex items-center bg-white text-black px-8 py-4 rounded-2xl font-medium hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105'
+						className='inline-block border border-white px-12 py-5 text-sm font-bold tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all'
 					>
-						<Icon icon='mdi:arrow-left' className='mr-3 text-xl' />
-						Back to Blog
+						Return to Feed
 					</Link>
 				</div>
 			</div>
@@ -367,382 +346,169 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 	}
 
 	return (
-		<div className='bg-white min-h-screen'>
-			<style jsx>{`
-				.counter-reset-list {
-					counter-reset: list;
-				}
-				.counter-increment-list {
-					counter-increment: list;
-				}
-				.counter-list::before {
-					content: counter(list);
-				}
-			`}</style>
-
+		<div className='bg-black text-white min-h-screen'>
 			{/* Reading Progress Bar */}
-			<div className='fixed top-0 left-0 w-full h-1 bg-gray-800 z-50'>
+			<div className='fixed top-0 left-0 w-full h-1 bg-white/5 z-50'>
 				<div
-					className='h-full bg-gradient-to-r from-gray-500 to-red-400 transition-all duration-300 ease-out'
+					className='h-full bg-white transition-all duration-300 ease-out'
 					style={{ width: `${readingProgress}%` }}
 				/>
 			</div>
 
 			{/* Floating Share Buttons */}
 			<div className='fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block'>
-				<div className='bg-gray-900 border border-gray-700 rounded-2xl p-3 space-y-3 shadow-2xl backdrop-blur-lg'>
+				<div className='border border-white/10 p-2 space-y-2 bg-black/50 backdrop-blur-md'>
 					<button
 						onClick={() => sharePost("twitter")}
-						className='block p-3 hover:bg-gray-800 rounded-xl transition-all duration-300 group'
-						title='Share on Twitter'
+						className='block p-3 hover:bg-white hover:text-black transition-all'
+						title='Transmit via X'
 					>
-						<Icon
-							icon='mdi:twitter'
-							className='text-2xl text-gray-300 group-hover:text-red-400'
-						/>
+						<Icon icon='mdi:twitter' className='text-xl' />
 					</button>
 					<button
 						onClick={() => sharePost("linkedin")}
-						className='block p-3 hover:bg-gray-800 rounded-xl transition-all duration-300 group'
-						title='Share on LinkedIn'
+						className='block p-3 hover:bg-white hover:text-black transition-all'
+						title='Transmit via LinkedIn'
 					>
-						<Icon
-							icon='mdi:linkedin'
-							className='text-2xl text-gray-300 group-hover:text-red-500'
-						/>
-					</button>
-					<button
-						onClick={() => sharePost("facebook")}
-						className='block p-3 hover:bg-gray-800 rounded-xl transition-all duration-300 group'
-						title='Share on Facebook'
-					>
-						<Icon
-							icon='mdi:facebook'
-							className='text-2xl text-gray-300 group-hover:text-red-600'
-						/>
+						<Icon icon='mdi:linkedin' className='text-xl' />
 					</button>
 					<button
 						onClick={() => sharePost("whatsapp")}
-						className='block p-3 hover:bg-gray-800 rounded-xl transition-all duration-300 group'
-						title='Share on WhatsApp'
+						className='block p-3 hover:bg-white hover:text-black transition-all'
+						title='Transmit via WhatsApp'
 					>
-						<Icon
-							icon='mdi:whatsapp'
-							className='text-2xl text-gray-300 group-hover:text-green-500'
-						/>
+						<Icon icon='mdi:whatsapp' className='text-xl' />
 					</button>
 					<button
 						onClick={copyToClipboard}
-						className='block p-3 hover:bg-gray-800 rounded-xl transition-all duration-300 group'
-						title='Copy Link'
+						className='block p-3 hover:bg-white hover:text-black transition-all'
+						title='Copy Protocol'
 					>
-						<Icon
-							icon='mdi:link'
-							className='text-2xl text-gray-300 group-hover:text-blue-400'
-						/>
+						<Icon icon='mdi:link' className='text-xl' />
 					</button>
 				</div>
 			</div>
 
-			{/* Mobile Bottom Share Bar */}
-			<div className='fixed bottom-0 left-0 w-full bg-gray-900/90 backdrop-blur-lg border-t border-gray-800 p-4 z-40 lg:hidden flex justify-around items-center'>
-				<button
-					onClick={() => sharePost("twitter")}
-					className='p-2 rounded-full hover:bg-gray-800 transition-colors'
-					title='Share on Twitter'
-				>
-					<Icon
-						icon='mdi:twitter'
-						className='text-2xl text-gray-300'
-					/>
-				</button>
-				<button
-					onClick={() => sharePost("linkedin")}
-					className='p-2 rounded-full hover:bg-gray-800 transition-colors'
-					title='Share on LinkedIn'
-				>
-					<Icon
-						icon='mdi:linkedin'
-						className='text-2xl text-gray-300'
-					/>
-				</button>
-				<button
-					onClick={() => sharePost("facebook")}
-					className='p-2 rounded-full hover:bg-gray-800 transition-colors'
-					title='Share on Facebook'
-				>
-					<Icon
-						icon='mdi:facebook'
-						className='text-2xl text-gray-300'
-					/>
-				</button>
-				<button
-					onClick={() => sharePost("whatsapp")}
-					className='p-2 rounded-full hover:bg-gray-800 transition-colors'
-					title='Share on WhatsApp'
-				>
-					<Icon
-						icon='mdi:whatsapp'
-						className='text-2xl text-gray-300'
-					/>
-				</button>
-				<button
-					onClick={copyToClipboard}
-					className='p-2 rounded-full hover:bg-gray-800 transition-colors'
-					title='Copy Link'
-				>
-					<Icon icon='mdi:link' className='text-2xl text-gray-300' />
-				</button>
-			</div>
-
-			<article className='max-w-4xl mx-auto px-6 sm:px-8 lg:px-10 py-16'>
-				{/* Back to Blog */}
-				<div className='mb-12'>
+			<article className='max-w-4xl mx-auto px-6 py-16 md:py-32'>
+				{/* Back Link */}
+				<div className='mb-24'>
 					<Link
 						href='/blog'
-						className='inline-flex items-center text-black hover:text-red-500 transition-all duration-300 font-light tracking-wide'
+						className='text-xs font-bold tracking-[0.4em] uppercase text-gray-600 hover:text-white transition-colors'
 					>
-						<Icon icon='mdi:arrow-left' className='mr-3 text-xl' />
-						Back to Blog
+						← Return to Universal Feed
 					</Link>
 				</div>
 
 				{/* Article Header */}
-				<header className='mb-16'>
-					{/* Categories */}
-					{post.categories && post.categories.length > 0 && (
-						<div className='flex flex-wrap gap-3 mb-8'>
-							{post.categories.map((category) => (
-								<span
-									key={category._id}
-									className='px-4 py-2 border border-gray-700 text-red-700 rounded-full text-sm font-medium tracking-wide'
-								>
-									{category.title}
-								</span>
-							))}
-						</div>
-					)}
-
-					{/* Title */}
-					<h1 className='text-4xl md:text-5xl lg:text-7xl font-bold text-black mb-8 leading-tight tracking-tight font-serif'>
-						{post.title}
-					</h1>
-
-					{/* Meta Information */}
-					<div className='flex flex-wrap items-center gap-8 text-gray-400 mb-12'>
-						<div className='flex items-center space-x-4'>
-							{post.author?.image ? (
-								<Image
-									src={urlFor(post.author.image)
-										.width(52)
-										.height(52)
-										.url()}
-									alt={post.author.name}
-									width={52}
-									height={52}
-									className='rounded-full border-2 border-gray-700'
-								/>
-							) : (
-								<div className='w-13 h-13 bg-gradient-to-br from-red-600 to-gray-500 rounded-full flex items-center justify-center border-2 border-gray-700'>
-									<Icon
-										icon='mdi:account'
-										className='text-white text-xl'
-									/>
-								</div>
-							)}
-							<div>
-								<p className='font-medium text-black text-lg tracking-wide'>
-									{post.author?.name || "Olutunmise"}
-								</p>
-								<p className='text-sm text-gray-500 font-light'>
-									Author
-								</p>
-							</div>
-						</div>
-
-						<div className='flex items-center space-x-2 text-black font-light tracking-wide'>
-							<Icon icon='mdi:calendar' className='text-lg' />
-							<time dateTime={post.publishedAt}>
-								{formatDate(post.publishedAt)}
-							</time>
-						</div>
-
-						<div className='flex items-center space-x-2 text-black font-light tracking-wide'>
-							<Icon icon='mdi:clock-outline' className='text-lg' />
-							<span>{estimatedReadTime} min read</span>
+				<header className='mb-24'>
+					<div className='flex items-center space-x-4 mb-4'>
+						<div className='h-px w-8 bg-white'></div>
+						<div className='text-xs font-bold tracking-[0.5em] uppercase text-gray-500'>
+							Entry Log // {formatDate(post.publishedAt)}
 						</div>
 					</div>
 
-					{/* Featured Image */}
-					{post.mainImage && (
-						<div className='mb-16 group'>
-							<div className='rounded-3xl overflow-hidden border border-gray-700 shadow-2xl transition-all duration-700 group-hover:shadow-blue-500/20'>
-								<Image
-									src={urlFor(post.mainImage)
-										.width(1200)
-										.height(600)
-										.url()}
-									alt={post.title}
-									width={1200}
-									height={600}
-									className='w-full h-auto transition-transform duration-700 group-hover:scale-105'
-									priority
-								/>
-							</div>
+					<h1 className='text-5xl md:text-8xl font-black uppercase tracking-tighter mb-12 leading-none'>
+						{post.title}
+					</h1>
+
+					<div className='flex flex-wrap items-center gap-12 text-gray-500 uppercase tracking-widest text-[10px] font-bold'>
+						<div className='flex items-center space-x-2'>
+							<span className='text-white'>Auth:</span>
+							<span>{post.author?.name || "Tunmise E.A"}</span>
 						</div>
-					)}
+						<div className='flex items-center space-x-2'>
+							<span className='text-white'>Time:</span>
+							<span>{estimatedReadTime} MIN SCAN</span>
+						</div>
+					</div>
 				</header>
 
-				{/* Article Content */}
-				<div className='prose prose-lg prose-invert max-w-none'>
+				{/* Featured Image */}
+				{post.mainImage && (
+					<div className='mb-24 border border-white/10'>
+						<Image
+							src={urlFor(post.mainImage)
+								.width(1200)
+								.height(600)
+								.url()}
+							alt={post.title}
+							width={1200}
+							height={600}
+							className='w-full grayscale contrast-125'
+							priority
+						/>
+					</div>
+				)}
+
+				{/* Article Body */}
+				<div className='prose prose-invert prose-2xl max-w-none text-gray-400 font-light leading-relaxed mb-32 article-body'>
+					<style jsx global>{`
+						.article-body h2,
+						.article-body h3 {
+							color: white;
+							text-transform: uppercase;
+							font-weight: 900;
+							letter-spacing: -0.05em;
+							margin-top: 4rem;
+							margin-bottom: 2rem;
+						}
+						.article-body p {
+							margin-bottom: 2.5rem;
+						}
+						.article-body blockquote {
+							border-left: 2px solid white;
+							background: #111;
+							padding: 2rem;
+							font-style: italic;
+							color: white;
+						}
+						.article-body pre {
+							background: #111 !important;
+							border: 1px solid #222;
+							padding: 2rem !important;
+							border-radius: 0 !important;
+						}
+						.article-body code {
+							color: white;
+							font-family: monospace;
+						}
+					`}</style>
 					{post.body &&
 					Array.isArray(post.body) &&
 					post.body.length > 0 ? (
-						<PortableText
-							value={post.body}
-							components={portableTextComponents}
-						/>
+						<PortableText value={post.body} />
 					) : (
-						<div className='text-center py-16'>
-							<Icon
-								icon='mdi:file-document-outline'
-								className='text-8xl text-gray-600 mx-auto mb-6'
-							/>
-							<p className='text-gray-400 text-xl font-light tracking-wide'>
-								No content available for this article.
-							</p>
-							<p className='text-gray-600 text-sm mt-4 font-mono'>
-								Body data: {JSON.stringify(post.body)}
+						<div className='text-center py-16 border border-white/5'>
+							<p className='text-xs tracking-widest uppercase'>
+								Log is Empty.
 							</p>
 						</div>
 					)}
 				</div>
 
-				{/* Author Bio */}
-				{post.author?.bio && (
-					<div className='mt-20 bg-gray-900/50 border border-gray-700 rounded-3xl p-10 backdrop-blur-lg'>
-						<div className='flex items-start space-x-6'>
-							{post.author.image ? (
-								<Image
-									src={urlFor(post.author.image)
-										.width(80)
-										.height(80)
-										.url()}
-									alt={post.author.name}
-									width={80}
-									height={80}
-									className='rounded-full flex-shrink-0 border-2 border-gray-600'
-								/>
-							) : (
-								<div className='w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0 border-2 border-gray-600'>
-									<Icon
-										icon='mdi:account'
-										className='text-white text-2xl'
-									/>
-								</div>
-							)}
-							<div>
-								<h3 className='text-2xl font-bold text-white mb-4 font-serif tracking-wide'>
-									About {post.author.name}
-								</h3>
-								<p className='text-gray-300 leading-relaxed font-light tracking-wide text-lg'>
-									{post.author.bio}
-								</p>
-							</div>
-						</div>
+				{/* Final Call */}
+				<div className='border-t border-white/10 pt-24 text-center'>
+					<h3 className='text-3xl md:text-6xl font-black uppercase tracking-tighter mb-12'>
+						END OF LOG.
+					</h3>
+					<div className='flex justify-center gap-8 items-center'>
+						<button
+							onClick={() =>
+								window.scrollTo({ top: 0, behavior: "smooth" })
+							}
+							className='text-white text-xs font-bold uppercase tracking-widest border border-white px-8 py-4 hover:bg-white hover:text-black transition-all'
+						>
+							Scroll to Apex
+						</button>
+						<Link
+							href='/blog'
+							className='text-gray-600 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors'
+						>
+							Return to Stream
+						</Link>
 					</div>
-				)}
-
-				{/* Related Posts */}
-				{relatedPosts.length > 0 && (
-					<div className='mt-24'>
-						<h3 className='text-4xl font-bold text-black mb-12 text-center font-serif tracking-wide'>
-							Related Articles
-						</h3>
-						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-							{relatedPosts.map((relatedPost) => (
-								<article
-									key={relatedPost._id}
-									className='bg-gray-900/50 border border-gray-900 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 group backdrop-blur-lg'
-								>
-									{/* Image */}
-									<div className='relative h-48 bg-gray-800 overflow-hidden'>
-										{relatedPost.mainImage ? (
-											<Image
-												src={urlFor(relatedPost.mainImage)
-													.width(400)
-													.height(200)
-													.url()}
-												alt={relatedPost.title}
-												fill
-												className='object-cover group-hover:scale-110 transition-transform duration-700'
-											/>
-										) : (
-											<div className='w-full h-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center'>
-												<Icon
-													icon='mdi:file-document'
-													className='text-6xl text-gray-400'
-												/>
-											</div>
-										)}
-
-										{/* Reading Time */}
-										<div className='absolute top-4 right-4 bg-red-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium'>
-											{relatedPost.estimatedReadingTime || 5} min
-										</div>
-									</div>
-
-									{/* Content */}
-									<div className='p-8 bg-black'>
-										<h4 className='text-xl font-bold text-white mb-4 line-clamp-2 group-hover:text-gray-200 transition-colors duration-300 font-serif leading-tight'>
-											{relatedPost.title}
-										</h4>
-
-										<div className='flex items-center justify-between text-sm text-gray-400 mb-6 font-light'>
-											<span className='font-medium text-gray-300'>
-												{relatedPost.author?.name || "Olutunmise"}
-											</span>
-											<time dateTime={relatedPost.publishedAt}>
-												{formatDate(relatedPost.publishedAt)}
-											</time>
-										</div>
-
-										<Link
-											href={`/blog/${relatedPost.slug.current}`}
-											className='inline-flex items-center w-full justify-center bg-white text-black py-4 px-6 rounded-2xl font-medium hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group'
-										>
-											Read Article
-											<Icon
-												icon='mdi:arrow-right'
-												className='ml-3 text-lg group-hover:translate-x-1 transition-transform duration-300'
-											/>
-										</Link>
-									</div>
-								</article>
-							))}
-						</div>
-					</div>
-				)}
-
-				{/* Navigation */}
-				<div className='mt-20 flex justify-between items-center'>
-					<Link
-						href='/blog'
-						className='inline-flex items-center bg-gray-900 border border-gray-700 text-white px-8 py-4 rounded-2xl font-medium hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105'
-					>
-						<Icon icon='mdi:arrow-left' className='mr-3 text-xl' />
-						All Articles
-					</Link>
-
-					<button
-						onClick={() =>
-							window.scrollTo({ top: 0, behavior: "smooth" })
-						}
-						className='inline-flex items-center border bg-white text-black px-8 py-4 rounded-2xl font-medium  shadow-xl'
-					>
-						<Icon icon='mdi:arrow-up' className='mr-3 text-xl' />
-						Back to Top
-					</button>
 				</div>
 			</article>
 		</div>
