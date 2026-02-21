@@ -40,7 +40,6 @@ const About = () => {
 					<p className='text-2xl md:text-4xl font-light text-gray-500 max-w-4xl leading-tight tracking-tight'>
 						I don't just write code. I{" "}
 						<span className='text-white'>architect dominance</span>.
-						Based in Lagos, operating globally.
 					</p>
 				</div>
 

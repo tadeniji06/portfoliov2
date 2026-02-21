@@ -156,7 +156,6 @@ const Journey: React.FC = () => {
 					<p className='text-xl md:text-3xl text-gray-500 font-light max-w-4xl tracking-tight'>
 						A documented history of{" "}
 						<span className='text-white'>technical evolution</span>.
-						No fluff, just progress.
 					</p>
 				</div>
 
