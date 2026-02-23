@@ -170,55 +170,46 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 		types: {
 			image: ({ value }: any) => {
 				if (!value?.asset) return null;
-
 				try {
-					const imageUrl = urlFor(value).width(900).height(450).url();
+					const imageUrl = urlFor(value)
+						.width(1200)
+						.height(600)
+						.url();
 					return (
-						<figure className='my-12 group'>
-							<div className='rounded-2xl overflow-hidden border border-gray-700 shadow-2xl transition-all duration-500 group-hover:shadow-blue-500/20'>
+						<figure className='my-24 group'>
+							<div className='border border-white/10 overflow-hidden shadow-2xl transition-all duration-500 group-hover:border-white/30'>
 								<Image
 									src={imageUrl}
-									alt={value.alt || "Blog image"}
-									width={900}
-									height={450}
-									className='w-full h-auto transition-transform duration-700 group-hover:scale-105'
+									alt={value.alt || "Intel Visual"}
+									width={1200}
+									height={600}
+									className='w-full h-auto grayscale contrast-125 transition-transform duration-700 group-hover:scale-105'
 								/>
 							</div>
 							{value.caption && (
-								<figcaption className='text-center text-gray-400 text-sm mt-4 font-light tracking-wide'>
-									{value.caption}
+								<figcaption className='text-center text-gray-500 text-[10px] mt-4 font-bold tracking-[0.3em] uppercase'>
+									// {value.caption}
 								</figcaption>
 							)}
 						</figure>
 					);
 				} catch (error) {
 					console.error("Error rendering image:", error);
-					return (
-						<div className='my-12 p-8 bg-gray-900 border border-gray-700 rounded-2xl text-center'>
-							<Icon
-								icon='mdi:image-broken'
-								className='text-4xl text-gray-500 mx-auto mb-3'
-							/>
-							<p className='text-gray-400'>
-								Image could not be loaded
-							</p>
-						</div>
-					);
+					return null;
 				}
 			},
 			code: ({ value }: any) => (
-				<div className='my-8 bg-gray-900 border border-gray-700 rounded-2xl overflow-hidden shadow-xl'>
-					<div className='bg-gray-800 px-6 py-3 border-b border-gray-700 flex items-center justify-between'>
-						<span className='text-gray-300 text-sm font-mono font-medium tracking-wide'>
-							{value.language || "Code"}
+				<div className='my-12 transition-all'>
+					<div className='bg-neutral-900 px-6 py-3 border-x border-t border-white/10 flex items-center justify-between'>
+						<span className='text-gray-500 text-[10px] font-black tracking-[0.3em] uppercase'>
+							{value.language || "Terminal Output"}
 						</span>
 						<div className='flex space-x-2'>
-							<div className='w-3 h-3 bg-red-500 rounded-full'></div>
-							<div className='w-3 h-3 bg-yellow-500 rounded-full'></div>
-							<div className='w-3 h-3 bg-green-500 rounded-full'></div>
+							<div className='w-2 h-2 bg-white/20 rounded-full'></div>
+							<div className='w-2 h-2 bg-white/20 rounded-full'></div>
 						</div>
 					</div>
-					<pre className='p-6 text-green-400 text-sm font-mono overflow-x-auto leading-relaxed'>
+					<pre className='p-8 bg-black border border-white/10 text-neutral-300 text-sm font-mono overflow-x-auto leading-relaxed'>
 						<code>{value.code}</code>
 					</pre>
 				</div>
@@ -226,54 +217,56 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 		},
 		block: {
 			h1: ({ children }: any) => (
-				<h1 className='text-5xl md:text-6xl font-bold text-black mt-16 mb-8 leading-tight tracking-tight font-serif'>
+				<h1 className='text-5xl md:text-7xl font-black text-white mt-32 mb-12 uppercase tracking-tighter leading-none'>
 					{children}
 				</h1>
 			),
 			h2: ({ children }: any) => (
-				<h2 className='text-3xl md:text-4xl font-bold text-black mt-14 mb-6 leading-tight tracking-wide font-serif'>
+				<h2 className='text-4xl font-black text-white mt-24 mb-10 uppercase tracking-tighter leading-none'>
 					{children}
 				</h2>
 			),
 			h3: ({ children }: any) => (
-				<h3 className='text-2xl md:text-3xl font-semibold text-black mt-12 mb-5 leading-tight tracking-wide font-serif'>
+				<h3 className='text-2xl font-black text-white mt-20 mb-8 uppercase tracking-tighter leading-none'>
 					{children}
 				</h3>
 			),
-			h4: ({ children }: any) => (
-				<h4 className='text-xl md:text-2xl font-semibold text-black mt-10 mb-4 leading-tight tracking-wide'>
-					{children}
-				</h4>
-			),
 			normal: ({ children }: any) => (
-				<p className='text-lg md:text-xl text-black mb-8 leading-relaxed font-light tracking-wide max-w-none'>
+				<p className='text-xl md:text-2xl text-neutral-400 mb-10 leading-relaxed font-light tracking-tight max-w-none'>
 					{children}
 				</p>
 			),
 			blockquote: ({ children }: any) => (
-				<blockquote className='border-l-4 border-red-500 bg-black/70 pl-8 py-6 my-10 rounded-r-xl shadow-lg'>
-					<div className='text-xl md:text-2xl font-light text-white italic leading-relaxed tracking-wide'>
+				<blockquote className='border-l-2 border-white bg-white/[0.03] px-12 py-10 my-16'>
+					<div className='text-2xl md:text-3xl font-light text-white italic leading-relaxed tracking-tight'>
 						{children}
 					</div>
-					<div className='mt-4 w-12 h-1 bg-red-500 rounded'></div>
+					<div className='mt-8 flex items-center gap-4'>
+						<div className='h-px w-8 bg-white/20'></div>
+						<span className='text-[10px] font-black tracking-[0.5em] text-gray-500 uppercase'>
+							End Protocol
+						</span>
+					</div>
 				</blockquote>
 			),
 		},
 		marks: {
 			strong: ({ children }: any) => (
-				<strong className='font-bold text-gray-900 px-1 rounded'>
+				<strong className='font-black text-white tracking-tight'>
 					{children}
 				</strong>
 			),
 			em: ({ children }: any) => (
-				<em className='italic text-red-600 font-light'>{children}</em>
+				<em className='italic text-neutral-100 font-normal tracking-tight px-1 bg-white/[0.05]'>
+					{children}
+				</em>
 			),
 			link: ({ children, value }: any) => (
 				<a
 					href={value.href}
 					target='_blank'
 					rel='noopener noreferrer'
-					className='text-red-400 font-medium underline decoration-black/50 underline-offset-4 hover:decoration-red-400 hover:text-red-300 transition-all duration-300'
+					className='text-white font-bold underline decoration-white/20 underline-offset-8 hover:decoration-white hover:bg-white hover:text-black transition-all px-2 -mx-2'
 				>
 					{children}
 				</a>
@@ -281,31 +274,25 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 		},
 		list: {
 			bullet: ({ children }: any) => (
-				<ul className='list-none mb-8 space-y-4 text-lg md:text-xl text-black ml-0'>
+				<ul className='mb-12 space-y-6 text-xl md:text-2xl text-neutral-400 ml-4 list-none'>
 					{children}
 				</ul>
 			),
 			number: ({ children }: any) => (
-				<ol className='list-none counter-reset-list mb-8 space-y-4 text-lg md:text-xl text-black ml-0'>
+				<ol className='mb-12 space-y-6 text-xl md:text-2xl text-neutral-400 ml-4 list-decimal marker:text-white marker:font-black'>
 					{children}
 				</ol>
 			),
 		},
 		listItem: {
 			bullet: ({ children }: any) => (
-				<li className='flex items-start space-x-4 leading-relaxed font-light tracking-wide'>
-					<span className='text-red-700 text-xl mt-1 flex-shrink-0'>
-						•
-					</span>
-					<span>{children}</span>
+				<li className='relative pl-12 before:content-[""] before:absolute before:left-0 before:top-4 before:w-4 before:h-[2px] before:bg-white leading-relaxed font-light'>
+					{children}
 				</li>
 			),
 			number: ({ children }: any) => (
-				<li className='flex items-start space-x-4 leading-relaxed font-light tracking-wide counter-increment-list'>
-					<span className='text-red-500 font-medium flex-shrink-0 min-w-[24px]'>
-						<span className='counter-list'></span>.
-					</span>
-					<span>{children}</span>
+				<li className='pl-4 leading-relaxed font-light'>
+					{children}
 				</li>
 			),
 		},
@@ -443,42 +430,12 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 				)}
 
 				{/* Article Body */}
-				<div className='prose prose-invert prose-2xl max-w-none text-gray-400 font-light leading-relaxed mb-32 article-body'>
-					<style jsx global>{`
-						.article-body h2,
-						.article-body h3 {
-							color: white;
-							text-transform: uppercase;
-							font-weight: 900;
-							letter-spacing: -0.05em;
-							margin-top: 4rem;
-							margin-bottom: 2rem;
-						}
-						.article-body p {
-							margin-bottom: 2.5rem;
-						}
-						.article-body blockquote {
-							border-left: 2px solid white;
-							background: #111;
-							padding: 2rem;
-							font-style: italic;
-							color: white;
-						}
-						.article-body pre {
-							background: #111 !important;
-							border: 1px solid #222;
-							padding: 2rem !important;
-							border-radius: 0 !important;
-						}
-						.article-body code {
-							color: white;
-							font-family: monospace;
-						}
-					`}</style>
-					{post.body &&
-					Array.isArray(post.body) &&
-					post.body.length > 0 ? (
-						<PortableText value={post.body} />
+				<div className='prose prose-invert prose-2xl max-w-none text-neutral-400 font-light leading-relaxed mb-32 article-body'>
+					{post.body && Array.isArray(post.body) && post.body.length > 0 ? (
+						<PortableText
+							value={post.body}
+							components={portableTextComponents}
+						/>
 					) : (
 						<div className='text-center py-16 border border-white/5'>
 							<p className='text-xs tracking-widest uppercase'>
