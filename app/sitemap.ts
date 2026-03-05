@@ -37,6 +37,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		},
 
 		{
+			url: "https://www.olutunmise.tech/projects",
+			lastModified: new Date(),
+			changeFrequency: "weekly",
+			priority: 0.9,
+		},
+		{
 			url: "https://www.olutunmise.tech/blog",
 			lastModified: new Date(),
 			changeFrequency: "weekly",
