@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -8,7 +8,9 @@
 
 body {
 	background: var(--color-main);
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: "Playpen Sans", cursive;
+	font-optical-sizing: auto;
+	font-style: normal;
 	color: white;
 	scroll-behavior: smooth;
 }

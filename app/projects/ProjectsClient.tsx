@@ -70,11 +70,12 @@ const projects: Project[] = [
 	{
 		id: "dm360",
 		name: "DM360",
-		tagline: "Full-Stack Digital Domination.",
+		tagline: "One Platform. Total Marketing Control.",
 		description:
-			"An end-to-end digital marketing platform combining design studio, SEO management, social scheduling, and email automation under one dashboard. DM360 is built for agencies and brands that refuse to manage 15 tools simultaneously.",
+			"An end-to-end digital marketing platform combining design studio, SEO management, social scheduling, and email automation under one dashboard. DM360 is built for agencies and brands that refuse to juggle 15 tools simultaneously.",
 		type: ["SaaS", "MarTech"],
 		status: "coming_soon",
+		url: "https://thedm360.com",
 		tech: [
 			"Next.js",
 			"TypeScript",
@@ -93,13 +94,14 @@ const projects: Project[] = [
 		index: 2,
 	},
 	{
-		id: "valora",
-		name: "Valora HR",
-		tagline: "Modern HR. Built for Africa.",
+		id: "emplorahq",
+		name: "EmploraHQ",
+		tagline: "employrahq.com",
 		description:
-			"An enterprise-grade HR management system engineered for the African context. Valora automates end-to-end HR operations — from payroll and KYC to performance tracking and KPI management — without the bloat of legacy HRMS platforms.",
+			"An enterprise-grade HR management system engineered for the African context. EmploraHQ automates end-to-end HR operations — from payroll and KYC to performance tracking and KPI management — without the bloat of legacy HRMS platforms.",
 		type: ["SaaS", "Enterprise"],
 		status: "coming_soon",
+		url: "https://employrahq.com",
 		tech: [
 			"Next.js",
 			"Node.js",
@@ -174,6 +176,11 @@ const ProjectCard = ({
 				>
 					{project.tagline}
 				</p>
+				{project.url && !isActive && (
+					<p className='text-[10px] font-mono text-gray-800 mt-2 tracking-wider truncate'>
+						{project.url.replace("https://", "")}
+					</p>
+				)}
 			</div>
 			<Icon
 				icon='mdi:arrow-top-right'
@@ -249,7 +256,7 @@ const ProjectDetail = ({ project }: { project: Project }) => (
 		</div>
 
 		{/* CTA */}
-		<div className='mt-auto pt-8 border-t border-white/10'>
+		<div className='mt-auto pt-8 border-t border-white/10 flex flex-wrap items-center gap-4'>
 			{project.status === "live" && project.url ? (
 				<a
 					href={project.url}
@@ -264,9 +271,22 @@ const ProjectDetail = ({ project }: { project: Project }) => (
 					/>
 				</a>
 			) : (
-				<div className='inline-flex items-center gap-4 px-10 py-5 border border-white/10 text-gray-600 font-black text-xs tracking-[0.4em] uppercase'>
-					<div className='w-2 h-2 bg-gray-700 rounded-full animate-pulse'></div>
-					<span>System Deploying</span>
+				<div className='flex flex-wrap items-center gap-4'>
+					<div className='inline-flex items-center gap-3 px-8 py-4 border border-white/10 text-gray-600 font-black text-xs tracking-[0.4em] uppercase'>
+						<div className='w-2 h-2 rounded-full bg-amber-500 animate-pulse'></div>
+						<span>Deploying Soon</span>
+					</div>
+					{project.url && (
+						<a
+							href={project.url}
+							target='_blank'
+							rel='noopener noreferrer'
+							className='inline-flex items-center gap-2 text-[11px] font-mono text-gray-500 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white'
+						>
+							<Icon icon='mdi:earth' className='text-base' />
+							{project.url.replace("https://", "")}
+						</a>
+					)}
 				</div>
 			)}
 		</div>

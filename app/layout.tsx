@@ -5,6 +5,7 @@ import Footer from "@/layouts/Footer";
 import ClarityScript from "@/components/Clarity";
 import AnalyticsScript from "@/components/Analytics";
 import { Toaster } from "sonner";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
 	title: "Tunmise E.A | Software Developer",
@@ -120,6 +121,7 @@ export default function RootLayout({
 				<ClarityScript />
 				<AnalyticsScript />
 				<Toaster richColors position='top-right' />
+				<FloatingWhatsApp />
 			</body>
 		</html>
 	);
