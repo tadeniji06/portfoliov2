@@ -1,18 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-	--color-main: #000000;
-	--color-secondary: #ffffff;
+	--color-bg-primary: #ffffff;
+	--color-bg-secondary: #f8fafc;
+	--color-text-primary: #020617;
+	--color-text-secondary: #475569;
+	--color-accent-blue: #2563eb;
+	--color-accent-light: #60a5fa;
+	--color-dark-touch: #000000;
 }
 
 body {
-	background: var(--color-main);
-	font-family: "Playpen Sans", cursive;
+	background: var(--color-bg-primary);
+	font-family: "Outfit", sans-serif;
 	font-optical-sizing: auto;
 	font-style: normal;
-	color: white;
+	color: var(--color-text-primary);
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -21,22 +27,36 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-	background: #000000;
-	border-radius: 10px;
+	background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: linear-gradient(45deg, #333333, #666666);
+	background: #cbd5e1;
 	border-radius: 10px;
 	transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: linear-gradient(45deg, #555555, #888888);
+	background: var(--color-accent-blue);
 }
 
 /* For Firefox */
 * {
 	scrollbar-width: thin;
-	scrollbar-color: #666666 #000000;
+	scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.glassmorphism {
+	background: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.text-gradient {
+	background: linear-gradient(to right, #000000, #2563eb);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 }

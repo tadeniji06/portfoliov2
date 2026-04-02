@@ -3,10 +3,23 @@
 import { headerLinks } from "@/utils/data";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 20) {
+				setScrolled(true);
+			} else {
+				setScrolled(false);
+			}
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	const toggleMobileMenu = () => {
 		setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -17,13 +30,17 @@ const Header = () => {
 	};
 
 	return (
-		<header className='sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5'>
+		<header 
+			className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+				scrolled ? "bg-white/85 backdrop-blur-xl border-b border-slate-200 shadow-sm py-0" : "bg-transparent py-2"
+			}`}
+		>
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				<nav className='flex items-center justify-between h-20'>
 					{/* Logo/Brand */}
 					<Link href={"/"} className='flex-shrink-0 group'>
-						<span className='text-sm font-black text-white uppercase tracking-[0.4em] group-hover:italic transition-all'>
-							Tunmise // Archive
+						<span className='text-xl font-black text-slate-900 uppercase tracking-[0.2em] group-hover:text-blue-600 transition-colors'>
+							Tunmise<span className="text-blue-600 group-hover:text-slate-900 transition-colors">.</span>
 						</span>
 					</Link>
 
@@ -33,9 +50,10 @@ const Header = () => {
 							<li key={link.title}>
 								<Link
 									href={link.link}
-									className='text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-[0.3em] transition-all duration-300'
+									className='text-sm font-bold text-slate-600 hover:text-blue-600 uppercase tracking-widest transition-all duration-300 relative group'
 								>
 									{link.title}
+									<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
 								</Link>
 							</li>
 						))}
@@ -44,22 +62,22 @@ const Header = () => {
 					{/* Mobile menu button */}
 					<button
 						onClick={toggleMobileMenu}
-						className='md:hidden p-2 text-white hover:text-gray-400 transition-colors'
+						className='md:hidden p-2 text-slate-900 hover:text-blue-600 transition-colors bg-white/50 rounded-lg backdrop-blur-sm'
 						aria-label='System Menu'
 					>
 						<Icon
 							icon={isMobileMenuOpen ? "mdi:close" : "mdi:menu"}
-							className='h-5 w-5'
+							className='h-7 w-7'
 						/>
 					</button>
 				</nav>
 
 				{/* Mobile Navigation Menu */}
 				<div
-					className={`md:hidden transition-all duration-500 ease-in-out bg-black border-t border-white/5 ${
+					className={`md:hidden absolute left-0 right-0 w-full transition-all duration-500 ease-in-out bg-white border-b border-slate-200 shadow-xl ${
 						isMobileMenuOpen
 							? "max-h-screen opacity-100 py-12"
-							: "max-h-0 opacity-0 overflow-hidden"
+							: "max-h-0 opacity-0 overflow-hidden py-0 border-transparent shadow-none"
 					}`}
 				>
 					<div className='flex flex-col items-center space-y-8'>
@@ -68,7 +86,7 @@ const Header = () => {
 								key={link.title}
 								href={link.link}
 								onClick={closeMobileMenu}
-								className='text-lg font-black text-white hover:text-gray-500 uppercase tracking-[0.5em] transition-all'
+								className='text-xl font-bold text-slate-900 hover:text-blue-600 uppercase tracking-widest transition-all'
 							>
 								{link.title}
 							</Link>
