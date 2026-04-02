@@ -64,7 +64,7 @@ const Experience = () => {
 		{
 			company: "BTech 360",
 			position: "Lead Front-End Developer",
-			period: "Feb 2025 — Present",
+			period: "Feb 2025 — April 2026",
 			description: `Architecting scalable, interactive web platforms for African enterprises.\n\nLeading a small dev team to deliver production-grade automation tools and intuitive UIs powered by React & TypeScript.`,
 		},
 		{
