@@ -19,10 +19,10 @@ export const headerLinks = [
 		title: "Blog",
 		link: "/blog",
 	},
-	{
-		title: "Services",
-		link: "/rates",
-	},
+	// {
+	// 	title: "Services",
+	// 	link: "/rates",
+	// },
 ];
 
 export const socials = [
