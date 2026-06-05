@@ -63,7 +63,7 @@ const Header = () => {
 					<button
 						onClick={toggleMobileMenu}
 						className='md:hidden p-2 text-slate-900 hover:text-blue-600 transition-colors bg-white/50 rounded-lg backdrop-blur-sm'
-						aria-label='System Menu'
+						aria-label='Open navigation menu'
 					>
 						<Icon
 							icon={isMobileMenuOpen ? "mdi:close" : "mdi:menu"}

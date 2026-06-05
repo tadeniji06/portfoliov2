@@ -100,14 +100,14 @@ export default function RatesClient() {
 		if (currency === "USD") {
 			return `$${usdRaw.toLocaleString()}`;
 		}
-		return `₦${(usdRaw * EXCHANGE_RATE_NGN).toLocaleString()}`;
+		return `NGN ${(usdRaw * EXCHANGE_RATE_NGN).toLocaleString()}`;
 	};
 
 	const generateCheckoutMessage = () => {
 		const selectedServices = services.filter((s) => cart.includes(s.id));
 		const totalUsd = selectedServices.reduce((sum, s) => sum + s.priceUSD, 0);
 		
-		let text = `Hi Tunmise, I'd like to initiate a Co-op session.\n\nHere is my selected loadout:\n`;
+		let text = `Hi Tunmise, I'd like to discuss a project.\n\nHere are the services I selected:\n`;
 		selectedServices.forEach((s) => {
 			if (s.priceUSD === 0) {
 				text += `- *${s.name}* (Price TBD)\n`;
@@ -115,7 +115,7 @@ export default function RatesClient() {
 				text += `- *${s.name}* (${formatPrice(s.priceUSD)}${s.isMonthly ? '/mo' : ''})\n`;
 			}
 		});
-		text += `\n*Estimated Base Total:* ${formatPrice(totalUsd)}`;
+		text += `\n*Estimated Total:* ${formatPrice(totalUsd)}`;
 		if (cart.includes("custom")) {
 			text += `\n\n_I also have some extra requirements to discuss:_ `;
 		}
@@ -151,7 +151,7 @@ export default function RatesClient() {
 						className='inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm hover:shadow-md'
 					>
 						<Icon icon="mdi:arrow-left" />
-						Return to Base
+						Back to Home
 					</Link>
 				</motion.div>
 
@@ -167,10 +167,10 @@ export default function RatesClient() {
 							Service Shop
 						</div>
 						<h1 className='text-5xl md:text-8xl font-black tracking-tight text-slate-900 mb-6'>
-							Select <span className="text-blue-600">Loadout.</span>
+							Build a <span className="text-blue-600">Project Scope.</span>
 						</h1>
 						<p className='text-lg md:text-2xl text-slate-600 font-medium max-w-2xl'>
-							Build your custom tech stack package. Review base pricing and initiate a co-op development session.
+							Review common service packages, estimate a starting budget, and start a project discussion.
 							<br />
 							<span className="text-sm font-bold text-rose-500 mt-2 block">* All prices exclude domain and hosting infrastructure costs.</span>
 							<span className="text-sm font-bold text-amber-500 mt-1 block">* Note: Extra complexity of a selected module beyond its core features might be subject to price changes.</span>
@@ -197,7 +197,7 @@ export default function RatesClient() {
 									: "text-slate-500 hover:bg-slate-100"
 							}`}
 						>
-							NGN (₦)
+							NGN
 						</button>
 					</div>
 				</motion.div>
@@ -299,7 +299,7 @@ export default function RatesClient() {
 											className="h-40 flex flex-col items-center justify-center text-center border-2 border-dashed border-slate-200 rounded-2xl"
 										>
 											<Icon icon="mdi:cart-outline" className="text-4xl text-slate-300 mb-2" />
-											<p className="text-sm font-bold text-slate-400">Inventory is Empty</p>
+											<p className="text-sm font-bold text-slate-400">No services selected</p>
 										</motion.div>
 									) : (
 										<div className="space-y-4">
@@ -369,7 +369,7 @@ export default function RatesClient() {
 								</div>
 								
 								<p className="text-center text-xs text-slate-400 mt-6 font-medium leading-relaxed">
-									On proceeding, a drafted message will be created on the selected platform detailing your current loadout.
+									On proceeding, a drafted message will be created with your selected services.
 								</p>
 							</div>
 						</div>

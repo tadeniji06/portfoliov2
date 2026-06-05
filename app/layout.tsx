@@ -8,9 +8,9 @@ import { Toaster } from "sonner";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
-	title: "Tunmise E.A | Software Developer",
+	title: "Tunmise E.A | Full-Stack & Web3 Developer",
 	description:
-		"Full-stack developer in Nigeria building websites, web apps, mobile apps, and Web3 products. Expert in React, Next.js, Tailwind, and blockchain-ready solutions.",
+		"Full-stack and Web3 developer in Lagos, Nigeria building production web applications, APIs, SaaS platforms, and blockchain-ready products with JavaScript, TypeScript, Node.js, React, Next.js, and Solidity.",
 
 	icons: {
 		icon: "/favicon.ico",
@@ -27,10 +27,18 @@ export const metadata: Metadata = {
 		"Software Development Lagos",
 		"Web3 dev",
 		"Web3 developer lagos",
+		"Solidity developer Nigeria",
 		"Freelance Software developer",
 		"E-commerce website developer Nigeria",
 		"React developer",
+		"Node.js developer Nigeria",
+		"TypeScript developer Nigeria",
+		"JavaScript developer Nigeria",
+		"AI assisted software developer",
+		"Claude AI developer",
+		"Codex developer",
 		"Frontend developer in Nigeria",
+		"Backend developer Nigeria",
 		"Freelance Web Developer Lagos",
 		"Responsive website design Lagos",
 		"Web development services Nigeria",
@@ -42,9 +50,9 @@ export const metadata: Metadata = {
 	],
 
 	openGraph: {
-		title: "Tunmise E.A | Software Developer",
+		title: "Tunmise E.A | Full-Stack & Web3 Developer",
 		description:
-			"Software specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
+			"Full-stack and Web3 developer building React, Next.js, Node.js, TypeScript, and Solidity products for startups and growing teams.",
 		url: "https://www.olutunmise.tech",
 		siteName: "Tunmise E.A",
 		images: [
@@ -60,9 +68,9 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Tunmise E.A | Software Developer in Nigeria",
+		title: "Tunmise E.A | Full-Stack & Web3 Developer in Nigeria",
 		description:
-			"Software specialized full-stack enthusiast. Expert in React, Next.js and Web3 specific solutions",
+			"Full-stack and Web3 developer building React, Next.js, Node.js, TypeScript, and Solidity products.",
 		images: ["/pefp.jpeg"],
 		creator: "@tade_niji06",
 		site: "@tade_niji06",
@@ -108,7 +116,7 @@ export default function RootLayout({
 								name: "Haychar Hub",
 							},
 							description:
-								"Full-stack developer in Nigeria building websites, web apps, mobile apps, and Web3 products.",
+								"Full-stack and Web3 developer in Nigeria building production web applications, APIs, SaaS platforms, and blockchain-ready products.",
 						}),
 					}}
 				/>

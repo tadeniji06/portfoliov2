@@ -2,20 +2,6 @@ import type { MetadataRoute } from "next";
 import { getBlogPostsForSitemap } from "@/utils/sanity";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	// Fetch all blog posts from Sanity (optimized for sitemap)
-	const blogPosts = await getBlogPostsForSitemap();
-
-	// Create sitemap entries for blog posts
-	const blogEntries: MetadataRoute.Sitemap = blogPosts.map(
-		(post: any) => ({
-			url: `https://www.olutunmise.tech/blog/${post.slug.current}`,
-			lastModified: new Date(post.publishedAt),
-			changeFrequency: "daily" as const,
-			priority: 0.6,
-		}),
-	);
-
-	// Static pages
 	const staticPages: MetadataRoute.Sitemap = [
 		{
 			url: "https://www.olutunmise.tech",
@@ -50,6 +36,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		},
 	];
 
-	// Combine static pages and blog entries
+	let blogEntries: MetadataRoute.Sitemap = [];
+
+	try {
+		const blogPosts = await getBlogPostsForSitemap();
+		blogEntries = blogPosts.map((post: any) => ({
+			url: `https://www.olutunmise.tech/blog/${post.slug.current}`,
+			lastModified: new Date(post.publishedAt),
+			changeFrequency: "daily" as const,
+			priority: 0.6,
+		}));
+	} catch {
+		console.warn("Skipping dynamic blog sitemap entries because the CMS is unavailable.");
+	}
+
 	return [...staticPages, ...blogEntries];
 }

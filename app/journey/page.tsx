@@ -3,17 +3,20 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title:
-		"My Journey | Tunmise E.A - From Curious Kid to Tech Builder",
+		"Career Journey | Tunmise E.A - Full-Stack & Web3 Developer",
 	description:
-		"Follow my interactive journey from a tech-obsessed kid to building...",
+		"Follow Tunmise E.A's career journey from learning JavaScript to building full-stack web applications, SaaS products, Web3 interfaces, and AI-assisted engineering workflows.",
 	keywords: [
 		"Tunmise E.A",
 		"software developer journey",
 		"tech entrepreneur",
 		"African developer",
 		"full stack developer",
+		"Web3 developer",
+		"TypeScript developer",
 		"React developer",
 		"Node.js developer",
+		"Solidity developer",
 		"HR management software",
 		"tech startup Africa",
 		"developer story",
@@ -44,9 +47,9 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		url: "https://www.olutunmise.tech/journey",
 		title:
-			"My Journey | Tunmise E.A - From Curious Kid to Tech Builder",
+			"Career Journey | Tunmise E.A - Full-Stack & Web3 Developer",
 		description:
-			"Follow my interactive journey from a tech-obsessed kid to building...",
+			"From JavaScript fundamentals to full-stack, Web3, SaaS, and AI-assisted product development.",
 		siteName: "Tunmise E.A Portfolio",
 		images: [
 			{
@@ -60,9 +63,9 @@ export const metadata: Metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title:
-			"My Journey | Tunmise E.A - From Curious Kid to Tech Builder",
+			"Career Journey | Tunmise E.A - Full-Stack & Web3 Developer",
 		description:
-			"Follow my interactive journey from a tech-obsessed kid to building...",
+			"From JavaScript fundamentals to full-stack, Web3, SaaS, and AI-assisted product development.",
 		creator: "@tade_niji06",
 		images: ["/pefp.jpeg"],
 	},

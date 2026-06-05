@@ -7,243 +7,191 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const About = () => {
-	const values = [
+	const focusAreas = [
 		{
-			title: "PRECISION",
+			title: "Full-stack delivery",
 			description:
-				"Code is either perfect or it is garbage. I don't settle for 'works on my machine'.",
-			icon: "mdi:target",
+				"I build responsive frontends, backend APIs, dashboards, authentication flows, and data-driven product features with a strong bias for clean handoff and maintainable code.",
+			icon: "mdi:layers-triple-outline",
 		},
 		{
-			title: "AGILITY",
+			title: "Web3 exploration",
 			description:
-				"I attack problems with unmatched speed. Moving fast without breaking the core system.",
-			icon: "mdi:lightning-bolt",
+				"I work with crypto product flows, wallet-aware interfaces, Solidity fundamentals, exchange logic, and on-chain UX patterns that make blockchain products easier to use.",
+			icon: "mdi:ethereum",
 		},
 		{
-			title: "STEALTH",
+			title: "AI-assisted engineering",
 			description:
-				"Results speak louder than any bio ever could. I ship quiet, and the impact echoes loud.",
-			icon: "mdi:ghost",
+				"I use tools like Claude and Codex to speed up research, debugging, refactoring, documentation, and implementation while keeping technical judgment in the loop.",
+			icon: "mdi:robot-outline",
 		},
+	];
+
+	const stats = [
+		{ value: "5+", label: "Years building" },
+		{ value: "15+", label: "Web products shipped" },
+		{ value: "3", label: "Core focus areas" },
+	];
+
+	const stack = [
+		"JavaScript",
+		"TypeScript",
+		"React",
+		"Next.js",
+		"Node.js",
+		"Express.js",
+		"MongoDB",
+		"PostgreSQL",
+		"Solidity",
+		"Tailwind CSS",
+		"Claude",
+		"Codex",
 	];
 
 	return (
 		<section
 			id='about'
-			className='py-32 bg-slate-50 text-slate-900 relative overflow-hidden flex justify-center'
+			className='py-28 bg-slate-50 text-slate-900 relative overflow-hidden flex justify-center'
 		>
-			{/* Gamified Background */}
-			<div className='absolute inset-0 bg-[url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CiAgPGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiMzYjgyZjYiIG9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=")] pointer-events-none opacity-50 z-0'></div>
-			<div className='absolute top-1/4 -right-24 w-96 h-96 bg-blue-300/30 blur-[120px] rounded-full pointer-events-none'></div>
-			<div className='absolute bottom-1/4 -left-24 w-96 h-96 bg-blue-200/30 blur-[120px] rounded-full pointer-events-none'></div>
+			<div className='absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:48px_48px] opacity-40 pointer-events-none' />
 
 			<div className='max-w-7xl w-full px-4 sm:px-6 lg:px-8 relative z-10'>
-				{/* Player Profile Header */}
-				<motion.div 
+				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
-					className='mb-24 md:mb-32'
+					className='mb-16'
 				>
-					<div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 font-bold text-xs tracking-widest uppercase rounded-full mb-6">
-						<Icon icon="mdi:account" className="w-5 h-5" /> 
-						Player Profile
+					<div className='inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 font-bold text-xs tracking-widest uppercase rounded-full mb-6'>
+						<Icon icon='mdi:account-tie' className='w-5 h-5' />
+						Professional Profile
 					</div>
-					<h2 className='text-6xl md:text-9xl font-black tracking-tighter uppercase mb-8'>
-						The <span className="text-blue-600">Entity.</span>
+					<h2 className='text-5xl md:text-7xl font-black tracking-tight mb-8'>
+						Full-stack developer building useful software for real teams.
 					</h2>
-					<div className='w-32 h-2 bg-blue-600 mb-12 rounded-full'></div>
-					<p className='text-2xl md:text-4xl font-medium text-slate-600 max-w-4xl leading-tight tracking-tight'>
-						I don't just write code. I{" "}
-						<span className='text-slate-900 font-black'>architect dominance.</span>
+					<p className='text-xl md:text-2xl font-medium text-slate-600 max-w-4xl leading-relaxed'>
+						I am Tunmise Adeniji, a Lagos-based software developer focused on frontend engineering, backend systems, and Web3 product development. I like work that has a clear user, a real business need, and enough technical depth to keep the system interesting.
 					</p>
 				</motion.div>
 
-				{/* Identity Block / Character Stats */}
-				<div className='grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-32'>
-					<motion.div 
-						initial={{ opacity: 0, scale: 0.9 }}
+				<div className='grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20'>
+					<motion.div
+						initial={{ opacity: 0, scale: 0.96 }}
 						whileInView={{ opacity: 1, scale: 1 }}
 						viewport={{ once: true }}
-						className='lg:col-span-5 relative group'
+						className='lg:col-span-5'
 					>
-						<div className="absolute -inset-4 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-[2.5rem] opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl"></div>
-						<div className="relative rounded-[2rem] overflow-hidden border border-blue-100 shadow-[0_20px_60px_-15px_rgba(37,99,235,0.2)] bg-white p-2">
+						<div className='rounded-2xl overflow-hidden border border-slate-200 shadow-xl shadow-blue-900/5 bg-white p-2'>
 							<Image
-								alt='Tunmise'
+								alt='Tunmise Adeniji, full-stack and Web3 developer'
 								src={pfp}
 								width={500}
 								height={600}
-								className='w-full rounded-[1.5rem] object-cover filter contrast-125 duration-700'
+								className='w-full rounded-xl object-cover'
 								priority
 							/>
-							<div className='absolute top-6 right-6 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-blue-600 font-black text-xs tracking-widest uppercase shadow-lg'>
-								Lv. 99 Boss
-							</div>
-							<div className='absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl border border-blue-50 text-xs tracking-widest uppercase flex items-center justify-between'>
-								<span className="font-bold text-slate-800">Subject-01 // Tunmise E.A</span>
-								<Icon icon="mdi:shield-check" className="text-xl text-blue-500" />
-							</div>
 						</div>
 					</motion.div>
 
-					<div className='lg:col-span-7 space-y-12'>
-						<motion.div 
+					<div className='lg:col-span-7 space-y-8'>
+						<motion.div
 							initial={{ opacity: 0, x: 20 }}
 							whileInView={{ opacity: 1, x: 0 }}
 							viewport={{ once: true }}
-							className='bg-white p-10 rounded-3xl border border-slate-100 shadow-sm'
+							className='bg-white p-8 md:p-10 rounded-2xl border border-slate-200 shadow-sm'
 						>
-							<h3 className='text-sm font-bold tracking-[0.2em] uppercase text-blue-600 mb-6 flex items-center gap-2'>
-								<Icon icon="mdi:script-text" className="text-xl" /> The Philosophy
+							<h3 className='text-sm font-bold tracking-widest uppercase text-blue-600 mb-4 flex items-center gap-2'>
+								<Icon icon='mdi:briefcase-check-outline' className='text-xl' />
+								What I bring
 							</h3>
-							<p className='text-3xl md:text-5xl font-bold tracking-tight leading-tight text-slate-800'>
-								"Most people build to be seen. I build to be <span className="text-blue-600 underline decoration-blue-200 underline-offset-8">felt</span>."
+							<p className='text-2xl md:text-4xl font-bold tracking-tight leading-tight text-slate-900'>
+								A practical engineering mindset: ship the interface, wire the backend, document the decisions, and keep the product understandable.
 							</p>
 						</motion.div>
 
-						<div className='grid grid-cols-2 md:grid-cols-3 gap-6'>
-							{[
-								{ num: "5+", label: "Years of Expansion", icon: "mdi:clock-fast" },
-								{ num: "10+", label: "Bosses Defeated", icon: "mdi:skull-crossbones" },
-								{ num: "∞", label: "Mana / Focus", icon: "mdi:infinity" },
-							].map((stat, i) => (
-								<motion.div 
+						<div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
+							{stats.map((stat, i) => (
+								<motion.div
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
-									transition={{ delay: i * 0.1 }}
-									key={i} 
-									className='bg-blue-50/50 p-6 rounded-2xl border border-blue-100'
+									transition={{ delay: i * 0.08 }}
+									key={stat.label}
+									className='bg-white p-6 rounded-xl border border-slate-200'
 								>
-									<Icon icon={stat.icon} className="text-3xl text-blue-500 mb-4" />
 									<div className='text-4xl font-black text-slate-900 mb-2'>
-										{stat.num}
+										{stat.value}
 									</div>
-									<div className='text-xs text-blue-600 font-bold uppercase tracking-widest'>
+									<div className='text-xs text-slate-500 font-bold uppercase tracking-widest'>
 										{stat.label}
 									</div>
 								</motion.div>
 							))}
 						</div>
-					</div>
-				</div>
 
-				{/* Passive Skills / Core Values */}
-				<div className='mb-32'>
-					<div className="flex items-center gap-4 mb-12 justify-center">
-						<div className="h-px bg-slate-200 flex-1 max-w-[100px]"></div>
-						<h3 className='text-sm font-bold tracking-widest uppercase text-slate-400 text-center flex items-center gap-2'>
-							<Icon icon="mdi:star-circle" className="text-lg text-amber-500" />
-							Equipped Passive Skills
-						</h3>
-						<div className="h-px bg-slate-200 flex-1 max-w-[100px]"></div>
-					</div>
-					
-					<div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-						{values.map((v, i) => (
-							<motion.div
-								initial={{ opacity: 0, y: 30 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ delay: i * 0.1 }}
-								key={i}
-								className='bg-white p-10 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.15)] hover:border-blue-200 hover:-translate-y-2 transition-all group relative overflow-hidden'
-							>
-								<div className="absolute -right-10 -top-10 w-40 h-40 bg-blue-50 rounded-full group-hover:scale-150 transition-transform duration-700 ease-out z-0"></div>
-								<div className="relative z-10">
-									<div className="w-16 h-16 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-8">
-										<Icon
-											icon={v.icon}
-											className='text-3xl'
-										/>
-									</div>
-									<h4 className='text-2xl font-black tracking-tight text-slate-900 mb-4'>
-										{v.title}
-									</h4>
-									<p className='text-slate-600 leading-relaxed font-medium'>
-										{v.description}
-									</p>
-								</div>
-							</motion.div>
-						))}
-					</div>
-				</div>
-
-				{/* The Sound of Violence -> Acoustic Fuel */}
-				<motion.div 
-					initial={{ opacity: 0, scale: 0.95 }}
-					whileInView={{ opacity: 1, scale: 1 }}
-					viewport={{ once: true }}
-					className='grid grid-cols-1 lg:grid-cols-2 gap-16 mb-32 items-center bg-slate-900 text-white p-12 md:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden'
-				>
-					{/* Glowing sound wave effect */}
-					<div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/20 blur-[120px] rounded-full pointer-events-none"></div>
-
-					<div className="relative z-10">
-						<h3 className='inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-blue-400 mb-8 px-4 py-2 bg-blue-900/50 rounded-full'>
-							<Icon icon="mdi:headphones" className="text-lg" /> Acoustic Fuel
-						</h3>
-						<p className='text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6 leading-none'>
-							The frequency of the grind.
-						</p>
-						<p className='text-slate-400 text-lg mb-12 max-w-md font-medium leading-relaxed'>
-							The grit of King Von, the raw ambition of Lil Durk. This is the background music to my code sessions that keeps the output rapid and precise.
-						</p>
-						<a
-							href='https://open.spotify.com/playlist/37i9dQZF1EpiunT9MRBus8'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='inline-flex items-center gap-3 bg-blue-600 px-8 py-4 rounded-xl text-sm font-bold tracking-widest uppercase hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:-translate-y-1 transition-all group'
-						>
-							<Icon icon="mdi:play-circle" className="text-2xl" /> Play the Soundtrack
-						</a>
-					</div>
-					<div className='relative z-10 grid grid-cols-2 gap-4'>
-						{[
-							"King Von",
-							"Lil Durk",
-							"Polo G",
-							"EBK Jayboo",
-							"21 Savage",
-							"RodWave",
-							"PayGotti",
-							"Duck",
-						].map((artist) => (
-							<div
-								key={artist}
-								className='bg-slate-800/50 border border-slate-700/50 p-6 rounded-2xl text-xs font-bold text-slate-300 tracking-widest uppercase flex items-center gap-3 hover:bg-blue-600/20 hover:border-blue-500/50 hover:text-white transition-all cursor-default backdrop-blur-md'
-							>
-								<Icon icon="mdi:music-note" className="text-blue-400" />
-								{artist}
+						<div className='bg-white p-8 rounded-2xl border border-slate-200'>
+							<h3 className='text-sm font-bold tracking-widest uppercase text-slate-900 mb-5'>
+								Core Stack
+							</h3>
+							<div className='flex flex-wrap gap-3'>
+								{stack.map((tech) => (
+									<span
+										key={tech}
+										className='rounded-lg bg-slate-100 px-4 py-2 text-sm font-bold text-slate-700'
+									>
+										{tech}
+									</span>
+								))}
 							</div>
-						))}
+						</div>
 					</div>
-				</motion.div>
+				</div>
 
-				{/* Final Call */}
-				<motion.div 
+				<div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-20'>
+					{focusAreas.map((area, i) => (
+						<motion.div
+							initial={{ opacity: 0, y: 30 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ delay: i * 0.08 }}
+							key={area.title}
+							className='bg-white p-8 rounded-2xl border border-slate-200 shadow-sm'
+						>
+							<div className='w-14 h-14 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6'>
+								<Icon icon={area.icon} className='text-3xl' />
+							</div>
+							<h4 className='text-2xl font-black tracking-tight text-slate-900 mb-4'>
+								{area.title}
+							</h4>
+							<p className='text-slate-600 leading-relaxed font-medium'>
+								{area.description}
+							</p>
+						</motion.div>
+					))}
+				</div>
+
+				<motion.div
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
-					className='border-t border-slate-200 pt-24 text-center'
+					className='border-t border-slate-200 pt-16 text-center'
 				>
-					<h3 className='text-4xl md:text-8xl font-black tracking-tighter mb-12 text-slate-900'>
-						Ready to <span className="text-blue-600">execute?</span>
+					<h3 className='text-4xl md:text-6xl font-black tracking-tight mb-8 text-slate-900'>
+						Open to full-stack, frontend, backend, and Web3-focused roles.
 					</h3>
-					<div className='flex flex-col sm:flex-row justify-center gap-6 items-center'>
-						<Link
-							href='/'
-							className='w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold tracking-wide shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/40 transition-all'
+					<div className='flex flex-col sm:flex-row justify-center gap-4 items-center'>
+						<a
+							href='mailto:tadeniji06@gmail.com'
+							className='w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold tracking-wide shadow-lg shadow-blue-500/20 hover:bg-blue-700 transition-all'
 						>
-							Contact the Authority <Icon icon="mdi:send" />
-						</Link>
+							Contact Me <Icon icon='mdi:send' />
+						</a>
 						<Link
-							href='/blog'
-							className='w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-white border border-slate-200 text-slate-700 px-10 py-5 rounded-2xl font-bold tracking-wide hover:bg-slate-50 hover:border-blue-300 transition-all'
+							href='/projects'
+							className='w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-bold tracking-wide hover:bg-slate-50 hover:border-blue-300 transition-all'
 						>
-							Read the Archives <Icon icon="mdi:book-open-page-variant" className="text-blue-500" />
+							View Projects <Icon icon='mdi:folder-open-outline' className='text-blue-500' />
 						</Link>
 					</div>
 				</motion.div>

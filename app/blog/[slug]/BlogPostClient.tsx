@@ -126,9 +126,9 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 	const copyToClipboard = async () => {
 		try {
 			await navigator.clipboard.writeText(window.location.href);
-			toast.success("Connection Copied!");
+			toast.success("Link copied!");
 		} catch (error) {
-			toast.error("Failed to sequence link.");
+			toast.error("Failed to copy link.");
 		}
 	};
 
@@ -144,7 +144,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 							<div className='border-4 border-white overflow-hidden shadow-2xl rounded-2xl ring-1 ring-slate-100 transition-all duration-500 group-hover:shadow-[0_20px_50px_rgba(37,99,235,0.2)]'>
 								<Image
 									src={imageUrl}
-									alt={value.alt || "Data Visual"}
+									alt={value.alt || "Article image"}
 									width={1200}
 									height={600}
 									className='w-full h-auto transition-transform duration-700 group-hover:scale-105 object-cover'
@@ -269,7 +269,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 					className='w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full mb-6'
 				/>
 				<p className='text-[10px] font-bold tracking-[0.5em] uppercase text-blue-600 animate-pulse'>
-					Loading Memory Sequence...
+					Loading Article...
 				</p>
 			</div>
 		);
@@ -280,18 +280,18 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 			<div className='min-h-screen bg-slate-50 flex items-center justify-center relative overflow-hidden'>
 				<div className='absolute inset-0 bg-[url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CiAgPGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiMzYjgyZjYiIG9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=")] pointer-events-none opacity-50 z-0'></div>
 				<div className='text-center max-w-lg mx-auto px-6 relative z-10'>
-					<Icon icon="mdi:skull-scan" className="text-8xl text-slate-300 mx-auto mb-8" />
+					<Icon icon="mdi:file-alert-outline" className="text-8xl text-slate-300 mx-auto mb-8" />
 					<h1 className='text-6xl md:text-8xl font-black text-slate-900 mb-8 uppercase tracking-tighter'>
-						Corrupted.
+						Article Not Found
 					</h1>
 					<p className='text-slate-500 text-lg mb-12 font-medium'>
-						{error || "Memory segment could not be extracted from the server."}
+						{error || "This article could not be loaded from the server."}
 					</p>
 					<Link
 						href='/blog'
 						className='inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl text-sm font-bold tracking-widest uppercase hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all'
 					>
-						<Icon icon="mdi:backup-restore" className="text-xl" /> Return to Hub
+						<Icon icon="mdi:backup-restore" className="text-xl" /> Back to Blog
 					</Link>
 				</div>
 			</div>
@@ -359,7 +359,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 						className='inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-full text-xs font-bold tracking-widest uppercase text-slate-500 hover:text-blue-600 hover:border-blue-200 shadow-sm transition-all'
 					>
 						<Icon icon="mdi:arrow-left" className="text-lg" />
-						Back to Brain Uploads
+						Back to Blog
 					</Link>
 				</motion.div>
 
@@ -371,10 +371,10 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 						className='flex flex-wrap items-center gap-4 mb-8'
 					>
 						<div className='px-3 py-1 bg-blue-100 text-blue-700 rounded-md text-xs font-black tracking-widest uppercase flex items-center gap-2'>
-							<Icon icon="mdi:database-search" /> Log: {formatDate(post.publishedAt)}
+							<Icon icon="mdi:calendar-blank" /> Published: {formatDate(post.publishedAt)}
 						</div>
 						<div className='px-3 py-1 bg-blue-50 border border-blue-100 text-blue-600 rounded-md text-xs font-black tracking-widest uppercase flex items-center gap-2'>
-							<Icon icon="mdi:clock-fast" /> {estimatedReadTime} MIN SCAN
+							<Icon icon="mdi:clock-outline" /> {estimatedReadTime} min read
 						</div>
 					</motion.div>
 
@@ -446,9 +446,9 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 						/>
 					) : (
 						<div className='text-center py-20 bg-white rounded-3xl border border-slate-200 shadow-sm'>
-							<Icon icon="mdi:database-off" className="text-6xl text-slate-300 mx-auto mb-4" />
+							<Icon icon="mdi:file-document-alert-outline" className="text-6xl text-slate-300 mx-auto mb-4" />
 							<p className='text-sm font-bold tracking-widest uppercase text-slate-400'>
-								Data Segment Missing.
+								Article content unavailable.
 							</p>
 						</div>
 					)}
@@ -461,9 +461,9 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 						<Icon icon="mdi:check-all" className="text-4xl" />
 					</div>
 					<h3 className='text-3xl md:text-5xl font-black tracking-tight mb-4 relative z-10'>
-						MEMORY SEQUENCE COMPLETE
+						Thanks for reading
 					</h3>
-					<p className="text-slate-500 font-medium mb-10 max-w-md mx-auto relative z-10">+50 XP Awarded to your profile.</p>
+					<p className="text-slate-500 font-medium mb-10 max-w-md mx-auto relative z-10">Explore more technical notes and product-building thoughts on the blog.</p>
 					
 					<div className='flex flex-wrap justify-center gap-4 items-center relative z-10'>
 						<button
@@ -472,13 +472,13 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 							}
 							className='flex items-center gap-2 bg-slate-900 text-white text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-blue-600 hover:-translate-y-1 hover:shadow-lg transition-all group'
 						>
-							<Icon icon="mdi:arrow-up" className="group-hover:-translate-y-1 transition-transform" /> Scroll to Apex
+							<Icon icon="mdi:arrow-up" className="group-hover:-translate-y-1 transition-transform" /> Back to Top
 						</button>
 						<Link
 							href='/blog'
 							className='flex items-center gap-2 bg-slate-100 text-slate-600 text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-slate-200 hover:text-slate-900 transition-all'
 						>
-							<Icon icon="mdi:view-grid" /> Return to Hub
+							<Icon icon="mdi:view-grid" /> Back to Blog
 						</Link>
 					</div>
 				</div>

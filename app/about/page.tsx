@@ -2,9 +2,9 @@ import About from "@/components/About";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "The Identity | Tunmise E.A - Software Architect",
+	title: "About Tunmise E.A | Full-Stack & Web3 Developer",
 	description:
-		"Operating from the shadows. I build high-performance systems and architect digital dominance. React, Next.js, and pure logic.",
+		"Learn about Tunmise E.A, a Lagos-based full-stack and Web3 developer building web applications, APIs, SaaS platforms, and blockchain-ready products with JavaScript, TypeScript, Node.js, React, Next.js, and Solidity.",
 	keywords: [
 		// Personal branding
 		"Tunmise E.A",
@@ -21,6 +21,12 @@ export const metadata: Metadata = {
 		"frontend developer",
 		"backend developer",
 		"web developer",
+		"Web3 developer",
+		"Solidity developer",
+		"Node.js developer",
+		"AI assisted developer",
+		"Claude AI developer",
+		"Codex developer",
 
 		// Trending tech keywords 2024
 		"modern web development",
@@ -34,11 +40,14 @@ export const metadata: Metadata = {
 
 		// Technologies
 		"React.js",
-		"Next.js 14",
+		"Next.js",
 		"TypeScript",
 		"Tailwind CSS",
 		"Node.js",
+		"Express.js",
 		"MongoDB",
+		"PostgreSQL",
+		"Solidity",
 		"Firebase",
 		"Vercel",
 
@@ -71,9 +80,9 @@ export const metadata: Metadata = {
 	// Open Graph for social media
 	openGraph: {
 		title:
-			"About Tunmise E.A | Full-Stack Developer & Tech Enthusiast",
+			"About Tunmise E.A | Full-Stack & Web3 Developer",
 		description:
-			"21-year-old full-stack developer from Lagos, Nigeria. Building modern web applications with React, Next.js, and TypeScript. Industrial Chemistry graduate turned tech innovator.",
+			"Full-stack and Web3 developer from Lagos, Nigeria building modern web applications, APIs, SaaS platforms, and blockchain-ready products.",
 		url: "https://www.olutunmise.tech/about",
 		siteName: "Tunmise E.A's Portfolio",
 		type: "profile",
@@ -92,9 +101,9 @@ export const metadata: Metadata = {
 	// Twitter Card
 	twitter: {
 		card: "summary_large_image",
-		title: "About Tunmise E.A | Full-Stack Developer",
+		title: "About Tunmise E.A | Full-Stack & Web3 Developer",
 		description:
-			"21-year-old full-stack developer from Lagos, Nigeria. Specializing in React, Next.js, TypeScript, and modern web development.",
+			"Full-stack and Web3 developer from Lagos, Nigeria specializing in React, Next.js, TypeScript, Node.js, and Solidity.",
 		creator: "@tade_niji06",
 		images: ["/pefp.jpeg"],
 	},

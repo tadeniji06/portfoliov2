@@ -11,129 +11,134 @@ interface Project {
 	tagline: string;
 	description: string;
 	type: string[];
-	status: "live" | "coming_soon";
+	status: "live" | "in_progress";
 	url?: string;
 	tech: string[];
 	features: string[];
-	index: number;
-	xp: number;
+	role: string;
 }
 
 const projects: Project[] = [
 	{
+		id: "mybuma",
+		name: "MyBuma",
+		tagline: "Online media marketplace for creators, buyers, and digital content teams.",
+		description:
+			"MyBuma is an online media marketplace designed to help users discover, list, and transact around media-related services and assets. The product direction focuses on marketplace usability, vendor visibility, secure account flows, and a clear path from discovery to purchase inquiry.",
+		type: ["Marketplace", "Media"],
+		status: "live",
+		url: "https://mybuma.com",
+		tech: ["Next.js", "TypeScript", "Node.js", "Tailwind CSS", "API integration"],
+		role: "Full-stack implementation and product interface development",
+		features: [
+			"Marketplace-oriented information architecture",
+			"Responsive vendor and listing experience",
+			"Search-friendly pages for media services",
+			"Conversion-focused navigation and calls to action",
+		],
+	},
+	{
+		id: "hrm360",
+		name: "The HRM 360",
+		tagline: "HR management software for employee operations and business administration.",
+		description:
+			"The HRM 360 is an HR management software product built for teams that need a cleaner way to manage employee data, operational workflows, and HR administration. The platform is positioned around practical business use: helping teams centralize people operations instead of relying on disconnected spreadsheets and manual processes.",
+		type: ["SaaS", "HRTech"],
+		status: "live",
+		url: "https://thehrm360.com",
+		tech: ["Next.js", "React", "TypeScript", "Node.js", "Database design"],
+		role: "Full-stack product development and dashboard architecture",
+		features: [
+			"Employee management product structure",
+			"Dashboard-first user experience",
+			"Role-aware HR software positioning",
+			"Scalable foundation for HR workflows and reporting",
+		],
+	},
+	{
+		id: "business360",
+		name: "This Is Business 360",
+		tagline: "Digital magazine for business news, articles, and editorial publishing.",
+		description:
+			"This Is Business 360 is an online magazine built for publishing news, long-form articles, business insights, and magazine-style content. The platform emphasizes readability, editorial structure, SEO visibility, and a content experience that can grow with regular publishing.",
+		type: ["Publishing", "Media"],
+		status: "live",
+		url: "https://thisisbusiness360.com",
+		tech: ["Next.js", "React", "Sanity CMS", "SEO", "Tailwind CSS"],
+		role: "Frontend development, publishing workflow, and SEO-minded implementation",
+		features: [
+			"Article and magazine content structure",
+			"SEO-friendly routing and metadata patterns",
+			"Responsive editorial layouts",
+			"CMS-ready publishing workflow",
+		],
+	},
+	{
 		id: "gidswap",
 		name: "Gidswap Exchange",
-		tagline: "Move Money. No Friction.",
+		tagline: "Crypto swap and fiat access product for a cleaner exchange experience.",
 		description:
-			"A minimalist crypto exchange engineered for seamless on-ramping and off-ramping. Gidswap strips away the noise of traditional exchanges and delivers clean, fast, reliable liquidity access for the African market and beyond.",
+			"Gidswap Exchange is a crypto product focused on simple swap flows, on-ramp and off-ramp usability, and a less intimidating exchange interface. The work spans product architecture, API integration, rate handling, and Web3-oriented user experience.",
 		type: ["Web3", "FinTech"],
 		status: "live",
 		url: "https://gidswap.com",
-		tech: [
-			"Next.js",
-			"Node.js",
-			"MongoDB",
-			"FixedFloat API",
-			"Paycrest API",
-		],
+		tech: ["Next.js", "Node.js", "MongoDB", "FixedFloat API", "Paycrest API"],
+		role: "Technical lead across product architecture, frontend, and backend logic",
 		features: [
-			"Instant P2P crypto-to-fiat conversion",
-			"On-ramp & off-ramp support for African currencies",
-			"Minimalist UX built for speed and clarity",
-			"Automated swap routing via FixedFloat & Paycrest",
-			"Real-time exchange rate engine",
+			"Crypto-to-crypto and crypto-to-fiat swap flows",
+			"Third-party liquidity and payment API integration",
+			"Real-time rate-oriented product experience",
+			"Clean interface for non-technical crypto users",
 		],
-		index: 0,
-		xp: 2500,
 	},
 	{
 		id: "zigsniper",
 		name: "ZigSniper Bot",
-		tagline: "Snipe. Buy. Sell. Dominate.",
+		tagline: "Telegram-native Web3 automation for token buying and selling.",
 		description:
-			"A high-performance Telegram-native trading bot for ZigChain. ZigSniper gives users surgical precision when buying and selling tokens on-chain — from sniping new launches to executing exits, all from a chat interface.",
+			"ZigSniper is a Telegram bot concept for executing token actions from a chat interface. It reflects my interest in automation, Web3 product UX, and making chain interactions accessible without pushing users through heavy dashboards.",
 		type: ["Web3", "Automation"],
 		status: "live",
 		url: "https://t.me/zigSniper_bot",
-		tech: [
-			"Node.js",
-			"Telegram Bot API",
-			"ZigChain SDK",
-			"TypeScript",
-		],
+		tech: ["Node.js", "TypeScript", "Telegram Bot API", "ZigChain SDK"],
+		role: "Bot workflow development and Web3 automation implementation",
 		features: [
-			"Token sniping on new ZigChain launches",
-			"Buy & sell tokens directly from Telegram",
-			"Real-time on-chain data feeds",
-			"Multi-wallet session management",
-			"Slippage controls and gas optimization",
+			"Telegram-based token interaction flow",
+			"Buy and sell actions from a chat interface",
+			"Session-aware bot interaction patterns",
+			"Web3 automation experience design",
 		],
-		index: 1,
-		xp: 1800,
 	},
 	{
 		id: "dm360",
 		name: "DM360",
-		tagline: "One Platform. Total Marketing Control.",
+		tagline: "Marketing operations platform concept for agencies and growing brands.",
 		description:
-			"An end-to-end digital marketing platform combining design studio, SEO management, social scheduling, and email automation under one dashboard. DM360 is built for agencies and brands that refuse to juggle 15 tools simultaneously.",
+			"DM360 is a SaaS concept for unifying common marketing operations such as SEO management, campaign planning, reporting, and automation. The project highlights product thinking around multi-tool replacement and business workflow design.",
 		type: ["SaaS", "MarTech"],
-		status: "coming_soon",
+		status: "in_progress",
 		url: "https://thedm360.com",
-		tech: [
-			"Next.js",
-			"TypeScript",
-			"PostgreSQL",
-			"Redis",
-			"OpenAI API",
-			"Nodemailer",
-		],
+		tech: ["Next.js", "TypeScript", "PostgreSQL", "Redis", "OpenAI API"],
+		role: "Product architecture and full-stack implementation",
 		features: [
-			"Integrated design studio with brand kit management",
-			"SEO audit engine with actionable recommendations",
-			"Unified social media scheduler (X, LinkedIn, Instagram)",
-			"Email automation with behavioral triggers",
-			"Client analytics dashboard with white-label reporting",
+			"SEO and marketing workflow structure",
+			"Agency dashboard product direction",
+			"AI-assisted content and reporting concepts",
+			"Scalable SaaS architecture planning",
 		],
-		index: 2,
-		xp: 3200,
-	},
-	{
-		id: "emplorahq",
-		name: "EmploraHQ",
-		tagline: "employrahq.com",
-		description:
-			"An enterprise-grade HR management system engineered for the African context. EmploraHQ automates end-to-end HR operations — from payroll and KYC to performance tracking and KPI management — without the bloat of legacy HRMS platforms.",
-		type: ["SaaS", "Enterprise"],
-		status: "coming_soon",
-		url: "https://employrahq.com",
-		tech: [
-			"Next.js",
-			"Node.js",
-			"PostgreSQL",
-			"Dojah KYC API",
-			"TypeScript",
-			"Prisma",
-		],
-		features: [
-			"Automated multi-currency African payroll engine",
-			"KYC verification integrated via Dojah",
-			"Employee performance & KPI tracking dashboards",
-			"Leave management and onboarding automation",
-			"HR analytics with real-time reporting",
-		],
-		index: 3,
-		xp: 4500,
 	},
 ];
 
 const typeColors: Record<string, string> = {
-	Web3: "bg-purple-100 text-purple-700 border-purple-200",
-	FinTech: "bg-green-100 text-green-700 border-green-200",
-	Automation: "bg-orange-100 text-orange-700 border-orange-200",
-	SaaS: "bg-blue-100 text-blue-700 border-blue-200",
-	MarTech: "bg-pink-100 text-pink-700 border-pink-200",
-	Enterprise: "bg-slate-100 text-slate-700 border-slate-200",
+	Marketplace: "bg-emerald-50 text-emerald-700 border-emerald-200",
+	Media: "bg-sky-50 text-sky-700 border-sky-200",
+	SaaS: "bg-blue-50 text-blue-700 border-blue-200",
+	HRTech: "bg-indigo-50 text-indigo-700 border-indigo-200",
+	Publishing: "bg-amber-50 text-amber-700 border-amber-200",
+	Web3: "bg-violet-50 text-violet-700 border-violet-200",
+	FinTech: "bg-green-50 text-green-700 border-green-200",
+	Automation: "bg-orange-50 text-orange-700 border-orange-200",
+	MarTech: "bg-pink-50 text-pink-700 border-pink-200",
 };
 
 const ProjectCard = ({
@@ -147,16 +152,14 @@ const ProjectCard = ({
 }) => (
 	<button
 		onClick={onClick}
-		className={`w-full text-left p-6 md:p-8 border-b border-slate-200 transition-all duration-300 group relative overflow-hidden ${
-			isActive
-				? "bg-blue-50/50"
-				: "bg-white hover:bg-slate-50"
+		className={`w-full text-left p-5 md:p-6 border-b border-slate-200 transition-all duration-300 group relative overflow-hidden ${
+			isActive ? "bg-blue-50/70" : "bg-white hover:bg-slate-50"
 		}`}
 	>
 		{isActive && (
-			<motion.div 
-				layoutId="activeIndicator"
-				className="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-600 rounded-r-md"
+			<motion.div
+				layoutId='activeIndicator'
+				className='absolute left-0 top-0 bottom-0 w-1.5 bg-blue-600 rounded-r-md'
 			/>
 		)}
 		<div className='flex items-start justify-between gap-4'>
@@ -169,219 +172,170 @@ const ProjectCard = ({
 								: "bg-amber-100 text-amber-700"
 						}`}
 					>
-						<span className={`w-2 h-2 rounded-full ${project.status === "live" ? "bg-emerald-500 animate-pulse" : "bg-amber-500"}`}></span>
-						{project.status === "live" ? "Live" : "In Dev"}
+						<span className={`w-2 h-2 rounded-full ${project.status === "live" ? "bg-emerald-500" : "bg-amber-500"}`} />
+						{project.status === "live" ? "Live" : "In Progress"}
 					</span>
-					<span className="text-xs font-black text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">+{project.xp} XP</span>
 				</div>
-				<h3
-					className={`text-2xl font-bold mb-1 transition-colors ${
-						isActive ? "text-blue-700" : "text-slate-900 group-hover:text-blue-600"
-					}`}
-				>
+				<h3 className={`text-xl md:text-2xl font-bold mb-2 transition-colors ${isActive ? "text-blue-700" : "text-slate-900 group-hover:text-blue-600"}`}>
 					{project.name}
 				</h3>
-				<p className={`text-sm font-medium truncate ${isActive ? "text-slate-700" : "text-slate-500"}`}>
+				<p className={`text-sm font-medium leading-relaxed ${isActive ? "text-slate-700" : "text-slate-500"}`}>
 					{project.tagline}
 				</p>
 			</div>
-			<div className={`mt-2 w-10 h-10 rounded-full flex items-center justify-center transition-all ${isActive ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30' : 'bg-slate-100 text-slate-400 group-hover:bg-blue-100 group-hover:text-blue-600'}`}>
-				<Icon
-					icon='mdi:arrow-right'
-					className={`text-xl transition-transform ${isActive ? 'translate-x-0' : '-translate-x-0.5 group-hover:translate-x-0.5'}`}
-				/>
+			<div className={`mt-2 w-10 h-10 rounded-full flex items-center justify-center transition-all flex-shrink-0 ${isActive ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-400 group-hover:bg-blue-100 group-hover:text-blue-600"}`}>
+				<Icon icon='mdi:arrow-right' className='text-xl' />
 			</div>
 		</div>
 	</button>
 );
 
 const ProjectDetail = ({ project }: { project: Project }) => (
-	<motion.div 
+	<motion.div
 		key={project.id}
 		initial={{ opacity: 0, x: 20 }}
 		animate={{ opacity: 1, x: 0 }}
 		exit={{ opacity: 0, x: -20 }}
-		transition={{ duration: 0.4 }}
-		className='p-8 md:p-12 h-full flex flex-col bg-white'
+		transition={{ duration: 0.3 }}
+		className='p-6 md:p-8 bg-white'
 	>
-		{/* Header */}
-		<div className='mb-12'>
-			<div className='flex flex-wrap items-center gap-3 mb-6'>
+		<div className='mb-6'>
+			<div className='flex flex-wrap items-center gap-3 mb-5'>
 				{project.type.map((t) => (
 					<span
 						key={t}
-						className={`text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border ${typeColors[t]}`}
+						className={`text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border ${typeColors[t] ?? "bg-slate-50 text-slate-700 border-slate-200"}`}
 					>
 						{t}
 					</span>
 				))}
-				<span className="ml-auto flex items-center gap-1.5 text-sm font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-lg">
-					<Icon icon="mdi:star-four-points" className="text-amber-500" />
-					Difficulty: Hard
-				</span>
 			</div>
 
-			<h2 className='text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4'>
+			<h2 className='text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-3'>
 				{project.name}
 			</h2>
-			<p className='text-xl text-blue-600 font-medium mb-8'>
+			<p className='text-base md:text-lg text-blue-600 font-medium mb-4 leading-relaxed'>
 				{project.tagline}
 			</p>
-			<div className='w-full h-px bg-slate-100'></div>
+			<p className='text-xs font-bold tracking-widest uppercase text-slate-500 leading-relaxed'>
+				Role: {project.role}
+			</p>
 		</div>
 
-		{/* Description */}
-		<div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 mb-12 relative overflow-hidden">
-			<Icon icon="mdi:format-quote-open" className="absolute -top-4 -left-4 text-6xl text-slate-200" />
-			<p className='text-lg text-slate-600 font-medium leading-relaxed relative z-10'>
+		<div className='bg-slate-50 p-5 rounded-xl border border-slate-100 mb-7'>
+			<p className='text-sm md:text-base text-slate-600 font-medium leading-relaxed'>
 				{project.description}
 			</p>
 		</div>
 
-		{/* Features */}
-		<div className='mb-12'>
-			<h4 className='flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-slate-900 mb-6'>
-				<Icon icon="mdi:target" className="text-blue-500 text-lg" /> Mision Objectives
+		<div className='mb-7'>
+			<h4 className='flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-slate-900 mb-4'>
+				<Icon icon='mdi:check-circle-outline' className='text-blue-500 text-lg' />
+				Highlights
 			</h4>
-			<ul className='space-y-4'>
+			<ul className='grid grid-cols-1 md:grid-cols-2 gap-3'>
 				{project.features.map((feature, i) => (
-					<motion.li 
+					<motion.li
 						initial={{ opacity: 0, x: -10 }}
 						animate={{ opacity: 1, x: 0 }}
-						transition={{ delay: 0.1 * i }}
-						key={i} 
-						className='flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-100 hover:border-blue-200 hover:shadow-md transition-all'
+						transition={{ delay: 0.06 * i }}
+						key={feature}
+						className='flex items-start gap-3 p-3 rounded-xl bg-white border border-slate-100 min-h-[72px]'
 					>
-						<div className="mt-1 w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0">
-							<Icon icon="mdi:check" className="text-sm" />
+						<div className='mt-1 w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0'>
+							<Icon icon='mdi:check' className='text-xs' />
 						</div>
-						<span className='text-slate-700 font-medium'>
-							{feature}
-						</span>
+						<span className='text-sm text-slate-700 font-medium leading-relaxed'>{feature}</span>
 					</motion.li>
 				))}
 			</ul>
 		</div>
 
-		{/* Tech Stack */}
-		<div className='mb-12'>
-			<h4 className='flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-slate-900 mb-6'>
-				<Icon icon="mdi:cube-outline" className="text-blue-500 text-lg" /> Stack Loadout
+		<div className='mb-7'>
+			<h4 className='flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-slate-900 mb-4'>
+				<Icon icon='mdi:cube-outline' className='text-blue-500 text-lg' />
+				Stack
 			</h4>
-			<div className='flex flex-wrap gap-3'>
+			<div className='flex flex-wrap gap-2.5'>
 				{project.tech.map((t) => (
 					<span
 						key={t}
-						className='flex items-center gap-1.5 text-xs px-4 py-2 bg-slate-100 text-slate-700 font-bold tracking-wide rounded-lg hover:bg-blue-600 hover:text-white transition-all cursor-default shadow-sm'
+						className='text-xs px-3 py-2 bg-slate-100 text-slate-700 font-bold tracking-wide rounded-lg'
 					>
-						<Icon icon="mdi:code-tags" className="opacity-50" />
 						{t}
 					</span>
 				))}
 			</div>
 		</div>
 
-		{/* CTA */}
-		<div className='mt-auto pt-8 border-t border-slate-100 flex flex-wrap items-center gap-4'>
-			{project.status === "live" && project.url ? (
+		<div className='pt-6 border-t border-slate-100 flex flex-wrap items-center gap-4'>
+			{project.url && (
 				<a
 					href={project.url}
 					target='_blank'
 					rel='noopener noreferrer'
-					className='inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-bold tracking-wide shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/40 transition-all group'
+					className='inline-flex items-center gap-3 px-6 py-3.5 bg-blue-600 text-white rounded-xl font-bold tracking-wide shadow-lg shadow-blue-500/20 hover:bg-blue-700 transition-all group'
 				>
-					<span>Execute Mission</span>
-					<Icon
-						icon='mdi:rocket-launch'
-						className='text-xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform'
-					/>
+					<span>Visit Project</span>
+					<Icon icon='mdi:open-in-new' className='text-xl group-hover:translate-x-1 transition-transform' />
 				</a>
-			) : (
-				<div className='flex flex-wrap items-center gap-4 w-full'>
-					<div className='inline-flex items-center gap-3 px-6 py-4 bg-slate-100 rounded-xl text-slate-500 font-bold tracking-wide border border-slate-200'>
-						<Icon icon="mdi:clock-fast" className="text-xl animate-spin-slow" />
-						<span>Compiling Assets...</span>
-					</div>
-					{project.url && (
-						<a
-							href={project.url}
-							target='_blank'
-							rel='noopener noreferrer'
-							className='inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors ml-auto underline underline-offset-4'
-						>
-							<Icon icon='mdi:earth' className='text-xl' />
-							{project.url.replace("https://", "")}
-						</a>
-					)}
-				</div>
 			)}
 		</div>
 	</motion.div>
 );
 
 const ProjectsClient = () => {
-	const [activeProject, setActiveProject] = useState<Project>(
-		projects[0],
-	);
+	const [activeProject, setActiveProject] = useState<Project>(projects[0]);
 
 	return (
 		<div className='bg-slate-50 text-slate-900 min-h-screen relative overflow-hidden'>
-			{/* Gamified Background Grid */}
-			<div className='absolute inset-0 bg-[url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CiAgPGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiMzYjgyZjYiIG9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=")] pointer-events-none opacity-50 z-0'></div>
-			<div className='absolute top-0 right-0 w-[500px] h-[500px] bg-blue-400/10 blur-[120px] rounded-full pointer-events-none z-0'></div>
-			
-			{/* Header */}
-			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 md:pt-40 md:pb-24 relative z-10'>
-				<motion.div 
-					initial={{ opacity: 0, y: -20 }}
-					animate={{ opacity: 1, y: 0 }}
-					className='mb-6'
-				>
+			<div className='absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:48px_48px] opacity-35 pointer-events-none z-0' />
+
+			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pt-40 md:pb-20 relative z-10'>
+				<motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className='mb-6'>
 					<Link
 						href='/'
-						className='inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm hover:shadow-md'
+						className='inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm'
 					>
-						<Icon icon="mdi:arrow-left" />
-						Return to Main Base
+						<Icon icon='mdi:arrow-left' />
+						Back to Home
 					</Link>
 				</motion.div>
-				<motion.h1 
+				<motion.h1
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.1 }}
-					className='text-5xl md:text-8xl font-black tracking-tight text-slate-900 mb-6 flex items-center gap-4'
+					className='text-5xl md:text-7xl font-black tracking-tight text-slate-900 mb-6'
 				>
-					Mission <span className="text-blue-600">Control</span>
-					<Icon icon="mdi:radar" className="text-blue-500 text-5xl md:text-7xl animate-pulse" />
+					Selected <span className='text-blue-600'>Projects</span>
 				</motion.h1>
-				<motion.p 
+				<motion.p
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.2 }}
 					className='text-lg md:text-2xl text-slate-600 font-medium max-w-3xl leading-relaxed'
 				>
-					Classified systems built in production. Select a mission node to view tactical details and operational status.
+					Production websites, SaaS products, publishing platforms, marketplaces, and Web3-adjacent tools built with a practical full-stack mindset.
 				</motion.p>
 			</div>
 
-			{/* Stats Bar (Player HUD) */}
-			<motion.div 
+			<motion.div
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={{ delay: 0.3 }}
+				transition={{ delay: 0.25 }}
 				className='border-y border-slate-200 bg-white relative z-10'
 			>
 				<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
 					<div className='grid grid-cols-2 md:grid-cols-4 gap-8'>
 						{[
-							{ label: "Missions Completed", value: "4", icon: "mdi:trophy-outline" },
-							{ label: "Current Rank", value: "S-Tier", icon: "mdi:chevron-triple-up" },
-							{ label: "Active Nodes", value: "02", icon: "mdi:server-network" },
-							{ label: "Total XP Earned", value: "12k+", icon: "mdi:star-shooting-outline" },
-						].map((stat, i) => (
-							<div key={stat.label} className="flex items-center gap-4">
-								<div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
-									<Icon icon={stat.icon} className="text-2xl" />
+							{ label: "Featured projects", value: "6", icon: "mdi:folder-star-outline" },
+							{ label: "Live products", value: "5", icon: "mdi:web-check" },
+							{ label: "Primary stack", value: "JS/TS", icon: "mdi:language-typescript" },
+							{ label: "Focus", value: "Full-stack", icon: "mdi:layers-triple-outline" },
+						].map((stat) => (
+							<div key={stat.label} className='flex items-center gap-4'>
+								<div className='w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0'>
+									<Icon icon={stat.icon} className='text-2xl' />
 								</div>
 								<div>
 									<p className='text-2xl md:text-3xl font-black text-slate-900 mb-0.5'>
@@ -397,23 +351,21 @@ const ProjectsClient = () => {
 				</div>
 			</motion.div>
 
-			{/* Main Grid - Terminal Interface */}
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10'>
-				<div className='lg:grid lg:grid-cols-12 lg:gap-8'>
-					{/* Left: Quest List */}
-					<motion.div 
+				<div className='lg:grid lg:grid-cols-12 lg:gap-8 lg:items-start'>
+					<motion.div
 						initial={{ opacity: 0, x: -30 }}
 						animate={{ opacity: 1, x: 0 }}
-						transition={{ delay: 0.4 }}
+						transition={{ delay: 0.35 }}
 						className='lg:col-span-5 flex flex-col gap-4'
 					>
 						<div className='p-2 mb-2 flex items-center gap-2 text-slate-500'>
-							<Icon icon="mdi:format-list-bulleted-square" className="text-xl" />
+							<Icon icon='mdi:format-list-bulleted-square' className='text-xl' />
 							<p className='text-xs font-bold tracking-widest uppercase'>
-								Available Logs
+								Project Index
 							</p>
 						</div>
-						<div className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-[0_8px_30px_rgba(37,99,235,0.06)]">
+						<div className='bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-[0_8px_30px_rgba(37,99,235,0.06)]'>
 							{projects.map((project) => (
 								<ProjectCard
 									key={project.id}
@@ -425,27 +377,20 @@ const ProjectsClient = () => {
 						</div>
 					</motion.div>
 
-					{/* Right: Quest Detail */}
-					<motion.div 
+					<motion.div
 						initial={{ opacity: 0, x: 30 }}
 						animate={{ opacity: 1, x: 0 }}
-						transition={{ delay: 0.5 }}
-						className='lg:col-span-7 min-h-[700px] mt-8 lg:mt-0'
+						transition={{ delay: 0.45 }}
+						className='lg:col-span-7 mt-8 lg:mt-0'
 					>
-						<div className="h-full bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-[0_8px_30px_rgba(37,99,235,0.1)] relative">
-							<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-indigo-500"></div>
-							<div className='border-b border-slate-100 bg-slate-50 p-6 flex justify-between items-center'>
+						<div className='bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-[0_8px_30px_rgba(37,99,235,0.1)] relative'>
+							<div className='border-b border-slate-100 bg-slate-50 px-6 py-4 flex justify-between items-center'>
 								<p className='text-xs font-bold tracking-widest uppercase text-slate-600 flex items-center gap-2'>
-									<Icon icon="mdi:monitor-dashboard" className="text-lg text-blue-500" />
-									Mission Brief
+									<Icon icon='mdi:monitor-dashboard' className='text-lg text-blue-500' />
+									Project Details
 								</p>
-								<div className="flex gap-2">
-									<div className="w-3 h-3 rounded-full bg-rose-400"></div>
-									<div className="w-3 h-3 rounded-full bg-amber-400"></div>
-									<div className="w-3 h-3 rounded-full bg-emerald-400"></div>
-								</div>
 							</div>
-							<AnimatePresence mode="wait">
+							<AnimatePresence mode='wait'>
 								<ProjectDetail key={activeProject.id} project={activeProject} />
 							</AnimatePresence>
 						</div>
@@ -453,38 +398,24 @@ const ProjectsClient = () => {
 				</div>
 			</div>
 
-			{/* Bottom CTA Element */}
-			<div className='relative z-10 py-24'>
+			<div className='relative z-10 py-20'>
 				<div className='max-w-4xl mx-auto px-4 text-center'>
-					<motion.div 
-						initial={{ scale: 0.9, opacity: 0 }}
-						whileInView={{ scale: 1, opacity: 1 }}
-						viewport={{ once: true }}
-						className="bg-white p-12 rounded-[2.5rem] border border-blue-100 shadow-[0_20px_60px_-15px_rgba(37,99,235,0.15)] relative overflow-hidden"
-					>
-						<Icon icon="mdi:hexagram-outline" className="absolute -top-10 -right-10 text-[15rem] text-blue-50 rotate-45 pointer-events-none" />
-						
-						<div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-8 text-blue-600">
-							<Icon icon="mdi:sword-cross" className="text-4xl" />
-						</div>
+					<div className='bg-white p-10 md:p-12 rounded-2xl border border-blue-100 shadow-[0_20px_60px_-15px_rgba(37,99,235,0.15)]'>
 						<h3 className='text-4xl md:text-5xl font-black text-slate-900 mb-6'>
-							Start a New Co-op Session?
+							Looking for a developer who can work across the stack?
 						</h3>
 						<p className='text-lg text-slate-600 font-medium mb-10 max-w-xl mx-auto'>
-							I party up with elite teams to raid complex technical challenges. Drop your coordinates and let's craft something crazy.
+							I am interested in teams building web products, SaaS platforms, internal tools, marketplaces, and Web3 user experiences.
 						</p>
 						<a
 							href='mailto:tadeniji06@gmail.com'
-							className='inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-slate-900 text-white font-bold text-sm tracking-wide hover:bg-blue-600 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/30 transition-all group'
+							className='inline-flex items-center gap-3 px-10 py-5 rounded-xl bg-slate-900 text-white font-bold text-sm tracking-wide hover:bg-blue-600 transition-all group'
 						>
-							<Icon icon="mdi:handshake" className="text-2xl" />
-							<span>Form Party</span>
-							<Icon
-								icon='mdi:arrow-right-circle'
-								className='text-xl group-hover:translate-x-1 transition-transform'
-							/>
+							<Icon icon='mdi:email-outline' className='text-2xl' />
+							<span>Contact Me</span>
+							<Icon icon='mdi:arrow-right-circle' className='text-xl group-hover:translate-x-1 transition-transform' />
 						</a>
-					</motion.div>
+					</div>
 				</div>
 			</div>
 		</div>

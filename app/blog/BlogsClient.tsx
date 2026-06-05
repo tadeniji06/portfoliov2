@@ -101,7 +101,7 @@ const BlogsClient = () => {
 					className='w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full mb-6 relative z-10'
 				/>
 				<p className='text-xs font-bold tracking-[0.5em] uppercase text-blue-600 relative z-10 animate-pulse'>
-					Loading Data Pack...
+					Loading Articles...
 				</p>
 			</div>
 		);
@@ -122,17 +122,17 @@ const BlogsClient = () => {
 				>
 					<div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-xs tracking-widest uppercase mb-6'>
 						<Icon icon="mdi:brain" className="w-5 h-5 animate-pulse" />
-						Knowledge Base // Level 99
+						Technical Writing
 					</div>
 					<h1 className='text-5xl md:text-8xl font-black tracking-tight text-slate-900 mb-6'>
-						Brain <span className="text-blue-600">Uploads</span>
+						Engineering <span className="text-blue-600">Notes</span>
 					</h1>
 					<p className='text-lg md:text-2xl text-slate-600 font-medium max-w-3xl'>
-						Technical break-downs, engineering thoughts, and xp-gaining resources. Equip yourself with this intel.
+						Technical breakdowns, engineering thoughts, and practical notes from building software products.
 					</p>
 				</motion.div>
 
-				{/* Inventory / Filter Interface */}
+				{/* Search and filter controls */}
 				<motion.div 
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -147,7 +147,7 @@ const BlogsClient = () => {
 							/>
 							<input
 								type='text'
-								placeholder='SEARCH INVENTORY...'
+								placeholder='Search articles...'
 								value={searchTerm}
 								onChange={(e) => setSearchTerm(e.target.value)}
 								className='w-full pl-12 pr-4 py-4 bg-slate-50 text-slate-900 border border-slate-200 rounded-2xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all font-medium placeholder-slate-400'
@@ -166,7 +166,7 @@ const BlogsClient = () => {
 							}`}
 						>
 							<Icon icon="mdi:folder-multiple" />
-							All Intel ({posts.length})
+							All Articles ({posts.length})
 						</button>
 						{categories.map((category) => {
 							const count = posts.filter((post) =>
@@ -194,7 +194,7 @@ const BlogsClient = () => {
 				{filteredPosts.length === 0 ? (
 					<div className="py-20 text-center">
 						<Icon icon="mdi:ghost-outline" className="w-20 h-20 text-slate-300 mx-auto mb-4" />
-						<p className="text-xl text-slate-500 font-medium">No intel found for your search parameters.</p>
+						<p className="text-xl text-slate-500 font-medium">No articles found for your search.</p>
 					</div>
 				) : (
 					<motion.div 
@@ -221,7 +221,7 @@ const BlogsClient = () => {
 												{formatDate(post.publishedAt)}
 											</span>
 											<span className='px-2 py-1 bg-blue-100 text-blue-700 rounded-md text-[10px] font-black tracking-widest uppercase'>
-												XP +50
+												Article
 											</span>
 										</div>
 
@@ -237,7 +237,7 @@ const BlogsClient = () => {
 										href={`/blog/${post.slug.current}`}
 										className='relative z-10 w-full inline-flex justify-center items-center gap-2 bg-slate-50 hover:bg-blue-600 text-slate-700 hover:text-white font-bold py-4 rounded-xl transition-all duration-300'
 									>
-										Access Data 
+										Read Article
 										<Icon icon="mdi:arrow-right-circle" className="text-xl" />
 									</Link>
 								</motion.article>

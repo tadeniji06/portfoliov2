@@ -31,6 +31,24 @@ export const webApplications = [
 
 export const websiteProjects = [
 	{
+		title: "MyBuma",
+		desc: "Online media marketplace for creators, vendors, buyers, and digital content teams.",
+		url: "https://mybuma.com",
+		image: tech,
+	},
+	{
+		title: "The HRM 360",
+		desc: "HR management software for employee operations, people data, and business administration.",
+		url: "https://thehrm360.com",
+		image: m360,
+	},
+	{
+		title: "This Is Business 360",
+		desc: "Online magazine for business news, long-form articles, editorial content, and publishing.",
+		url: "https://thisisbusiness360.com",
+		image: b360,
+	},
+	{
 		title: "Opalite Properties, Lagos, Nigeria",
 		desc: "Website for a Real Estate & Consulting Firm in Lagos",
 		url: "https://opaliteproperties.com",

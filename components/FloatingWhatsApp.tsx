@@ -49,14 +49,13 @@ export default function FloatingWhatsApp() {
 					/>
 					<div className='flex flex-col'>
 						<span className='whitespace-nowrap text-[10px] text-slate-500 group-hover:text-blue-200 tracking-widest leading-none mb-1'>
-							Ping me now
+							Available
 						</span>
 						<span className='whitespace-nowrap text-sm leading-none font-black'>
-							Start Co-op
+							Contact Me
 						</span>
 					</div>
-					
-					{/* Gamified indicator dot */}
+
 					<div className="absolute -top-2 -right-2 w-4 h-4 bg-emerald-500 rounded-full border-4 border-white shadow-sm"></div>
 				</motion.a>
 			)}
