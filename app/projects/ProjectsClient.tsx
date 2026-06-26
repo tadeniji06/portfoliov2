@@ -116,7 +116,7 @@ const projects: Project[] = [
 			"Greener Bricks Solutions is a web platform for a green energy utility startup, focused on delivering sustainable energy solutions and infrastructure services.",
 		type: ["GreenTech", "Utility"],
 		status: "live",
-		url: "https://greenerbrickssolutions.com",
+		url: "https://www.greenerbrickssolution.com",
 		tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
 		role: "Full-stack development",
 		features: [
