@@ -92,6 +92,40 @@ const projects: Project[] = [
 		],
 	},
 	{
+		id: "imperiagroup",
+		name: "Imperia Group",
+		tagline: "A real estate company based in Kenya.",
+		description:
+			"Imperia Group is a digital platform for a real estate company based in Kenya, connecting clients with properties and real estate services across the region.",
+		type: ["Real Estate"],
+		status: "live",
+		url: "https://imperiagrouponline.com",
+		tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+		role: "Full-stack development",
+		features: [
+			"Real estate platform architecture",
+			"Responsive property listing interface",
+			"Client lead generation flows",
+		],
+	},
+	{
+		id: "greenerbricks",
+		name: "Greener Bricks Solutions",
+		tagline: "A green energy utility based startup.",
+		description:
+			"Greener Bricks Solutions is a web platform for a green energy utility startup, focused on delivering sustainable energy solutions and infrastructure services.",
+		type: ["GreenTech", "Utility"],
+		status: "live",
+		url: "https://greenerbrickssolutions.com",
+		tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+		role: "Full-stack development",
+		features: [
+			"Utility service information architecture",
+			"Responsive corporate website",
+			"Sustainable energy solution showcase",
+		],
+	},
+	{
 		id: "zigsniper",
 		name: "ZigSniper Bot",
 		tagline: "Telegram-native Web3 automation for token buying and selling.",
@@ -127,9 +161,13 @@ const projects: Project[] = [
 			"Scalable SaaS architecture planning",
 		],
 	},
+	
 ];
 
 const typeColors: Record<string, string> = {
+	"Real Estate": "bg-teal-50 text-teal-700 border-teal-200",
+	GreenTech: "bg-lime-50 text-lime-700 border-lime-200",
+	Utility: "bg-cyan-50 text-cyan-700 border-cyan-200",
 	Marketplace: "bg-emerald-50 text-emerald-700 border-emerald-200",
 	Media: "bg-sky-50 text-sky-700 border-sky-200",
 	SaaS: "bg-blue-50 text-blue-700 border-blue-200",
