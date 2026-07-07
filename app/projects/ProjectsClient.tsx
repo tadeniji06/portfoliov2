@@ -161,10 +161,28 @@ const projects: Project[] = [
 			"Scalable SaaS architecture planning",
 		],
 	},
-	
+	{
+		id: "splgroup",
+		name: "SPL Group",
+		tagline: "Real estate, home appliances, and interior decor.",
+		description:
+			"SPL Group is a multi-faceted platform offering real estate services, home appliance sales, and interior decor solutions. The platform connects customers with premium property and lifestyle products.",
+		type: ["Real Estate", "E-commerce", "Interior Decor"],
+		status: "live",
+		url: "https://splgroup.ng/",
+		tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+		role: "Full-stack development",
+		features: [
+			"Multi-category product and service listing",
+			"E-commerce flows for appliances",
+			"Real estate and decor portfolio showcase",
+		],
+	},
 ];
 
 const typeColors: Record<string, string> = {
+	"E-commerce": "bg-rose-50 text-rose-700 border-rose-200",
+	"Interior Decor": "bg-purple-50 text-purple-700 border-purple-200",
 	"Real Estate": "bg-teal-50 text-teal-700 border-teal-200",
 	GreenTech: "bg-lime-50 text-lime-700 border-lime-200",
 	Utility: "bg-cyan-50 text-cyan-700 border-cyan-200",
