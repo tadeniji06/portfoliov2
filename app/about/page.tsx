@@ -89,9 +89,9 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		images: [
 			{
-				url: "/pefp.jpeg",
-				width: 600,
-				height: 250,
+				url: "https://www.olutunmise.tech/pefp.jpeg",
+				width: 1200,
+				height: 630,
 				alt: "Tunmise E.A - Full-Stack Developer",
 				type: "image/jpeg",
 			},
@@ -105,7 +105,7 @@ export const metadata: Metadata = {
 		description:
 			"Full-stack and Web3 developer from Lagos, Nigeria specializing in React, Next.js, TypeScript, Node.js, and Solidity.",
 		creator: "@tade_niji06",
-		images: ["/pefp.jpeg"],
+		images: ["https://www.olutunmise.tech/pefp.jpeg"],
 	},
 
 	// Additional metadata

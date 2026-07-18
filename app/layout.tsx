@@ -16,9 +16,12 @@ export const metadata: Metadata = {
 		icon: "/favicon.ico",
 	},
 	alternates: {
-		canonical: "https://olutunmise.tech",
+		canonical: "https://www.olutunmise.tech",
 	},
-	metadataBase: new URL("https://olutunmise.tech"),
+	metadataBase: new URL("https://www.olutunmise.tech"),
+	authors: [{ name: "Tunmise E.A", url: "https://www.olutunmise.tech" }],
+	creator: "Tunmise E.A",
+	publisher: "Tunmise E.A",
 
 	keywords: [
 		"Website Developer Nigeria",
@@ -58,9 +61,10 @@ export const metadata: Metadata = {
 		images: [
 			{
 				url: "https://www.olutunmise.tech/pefp.jpeg",
-				width: 700,
-				height: 300,
+				width: 1200,
+				height: 630,
 				alt: "Tunmise E.A - Fullstack Developer in Nigeria",
+				type: "image/jpeg",
 			},
 		],
 		locale: "en_US",

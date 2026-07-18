@@ -19,19 +19,46 @@ export async function generateMetadata(props: {
 		title: `${post.title} | Tunmise E.A`,
 		description:
 			post.body?.[0]?.children?.[0]?.text ||
-			`Read ${post.title} on my blog.`,
+			`Read ${post.title} on Tunmise E.A's blog.`,
+		authors: [{ name: post.author?.name || "Tunmise E.A" }],
 		openGraph: {
 			title: post.title,
-			description: post.body?.[0]?.children?.[0]?.text || "",
+			description:
+				post.body?.[0]?.children?.[0]?.text ||
+				`Read ${post.title} on Tunmise E.A's blog.`,
+			url: `https://www.olutunmise.tech/blog/${post.slug?.current}`,
+			siteName: "Tunmise E.A",
+			locale: "en_US",
+			type: "article",
 			images: post.mainImage
-				? [{ url: urlFor(post.mainImage).url(), alt: post.title }]
-				: [],
+				? [
+						{
+							url: urlFor(post.mainImage).width(1200).height(630).url(),
+							width: 1200,
+							height: 630,
+							alt: post.title,
+							type: "image/jpeg",
+						},
+					]
+				: [
+						{
+							url: "https://www.olutunmise.tech/pefp.jpeg",
+							width: 1200,
+							height: 630,
+							alt: "Tunmise E.A Blog",
+							type: "image/jpeg",
+						},
+					],
 		},
 		twitter: {
 			card: "summary_large_image",
 			title: post.title,
-			description: post.body?.[0]?.children?.[0]?.text || "",
-			images: post.mainImage ? [urlFor(post.mainImage).url()] : [],
+			description: post.body?.[0]?.children?.[0]?.text || `Read ${post.title} on Tunmise E.A's blog.`,
+			creator: "@tade_niji06",
+			site: "@tade_niji06",
+			images: post.mainImage
+				? [urlFor(post.mainImage).width(1200).height(630).url()]
+				: ["https://www.olutunmise.tech/pefp.jpeg"],
 		},
 	};
 }
