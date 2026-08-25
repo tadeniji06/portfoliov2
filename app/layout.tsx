@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
@@ -7,7 +8,18 @@ import AnalyticsScript from "@/components/Analytics";
 import { Toaster } from "sonner";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
+const manrope = Manrope({
+	subsets: ["latin"],
+	variable: "--font-manrope",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+	subsets: ["latin"],
+	variable: "--font-plus-jakarta-sans",
+});
+
 export const metadata: Metadata = {
+// ... keeping existing metadata ...
 	title: "Tunmise E.A | Full-Stack & Web3 Developer",
 	description:
 		"Full-stack and Web3 developer in Lagos, Nigeria building production web applications, APIs, SaaS platforms, and blockchain-ready products with JavaScript, TypeScript, Node.js, React, Next.js, and Solidity.",
@@ -99,7 +111,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en'>
+		<html lang='en' className={`${manrope.variable} ${plusJakartaSans.variable}`}>
 			<head>
 				<script
 					type='application/ld+json'
@@ -126,7 +138,7 @@ export default function RootLayout({
 				/>
 			</head>
 
-			<body className='antialiased' cz-shortcut-listen='true'>
+			<body className='antialiased font-jakarta' cz-shortcut-listen='true'>
 				<Header />
 				{children}
 				<Footer />

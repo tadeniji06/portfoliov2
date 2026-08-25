@@ -7,7 +7,7 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { toast } from "sonner";
 import OneSignal from "react-onesignal";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
 	getBlogPost,
 	getRelatedPosts,
@@ -26,6 +26,14 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 	const [error, setError] = useState<string | null>(null);
 	const [readingProgress, setReadingProgress] = useState(0);
 	const [estimatedReadTime, setEstimatedReadTime] = useState(0);
+	const [showSharePopup, setShowSharePopup] = useState(false);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setShowSharePopup(true);
+		}, 5000);
+		return () => clearTimeout(timer);
+	}, []);
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -309,40 +317,40 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 			</div>
 
 			{/* Floating Share Buttons */}
-			<div className='fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block'>
-				<div className='border border-slate-200 p-2 space-y-2 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl shadow-slate-200/50'>
+			<div className='fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden xl:block'>
+				<div className='border border-slate-200/60 p-2 space-y-2 bg-white/70 backdrop-blur-2xl rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]'>
 					<button
 						onClick={() => sharePost("twitter")}
-						className='block p-3 rounded-xl text-slate-500 hover:bg-blue-50 hover:text-blue-600 transition-all tooltip group relative'
+						className='block p-3 rounded-xl text-slate-400 hover:bg-blue-50 hover:text-blue-600 transition-all group relative'
 						title='Share to X'
 					>
 						<Icon icon='mdi:twitter' className='text-xl' />
-						<span className="absolute left-full ml-4 px-2 py-1 bg-slate-900 text-white text-[10px] uppercase font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">X/Twitter</span>
+						<span className="absolute left-full ml-4 px-3 py-1.5 bg-slate-900 text-white text-[10px] uppercase font-bold tracking-widest rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">X/Twitter</span>
 					</button>
 					<button
 						onClick={() => sharePost("linkedin")}
-						className='block p-3 rounded-xl text-slate-500 hover:bg-blue-50 hover:text-blue-600 transition-all group relative'
+						className='block p-3 rounded-xl text-slate-400 hover:bg-blue-50 hover:text-blue-600 transition-all group relative'
 						title='Share to LinkedIn'
 					>
 						<Icon icon='mdi:linkedin' className='text-xl' />
-						<span className="absolute left-full ml-4 px-2 py-1 bg-slate-900 text-white text-[10px] uppercase font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">LinkedIn</span>
+						<span className="absolute left-full ml-4 px-3 py-1.5 bg-slate-900 text-white text-[10px] uppercase font-bold tracking-widest rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">LinkedIn</span>
 					</button>
 					<button
 						onClick={() => sharePost("whatsapp")}
-						className='block p-3 rounded-xl text-slate-500 hover:bg-blue-50 hover:text-blue-600 transition-all group relative'
+						className='block p-3 rounded-xl text-slate-400 hover:bg-blue-50 hover:text-blue-600 transition-all group relative'
 						title='Share via WhatsApp'
 					>
 						<Icon icon='mdi:whatsapp' className='text-xl' />
-						<span className="absolute left-full ml-4 px-2 py-1 bg-slate-900 text-white text-[10px] uppercase font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">WhatsApp</span>
+						<span className="absolute left-full ml-4 px-3 py-1.5 bg-slate-900 text-white text-[10px] uppercase font-bold tracking-widest rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">WhatsApp</span>
 					</button>
-					<div className="w-8 h-px bg-slate-200 mx-auto my-2"></div>
+					<div className="w-8 h-px bg-slate-200/60 mx-auto my-2"></div>
 					<button
 						onClick={copyToClipboard}
-						className='block p-3 rounded-xl text-slate-500 hover:bg-blue-50 hover:text-blue-600 transition-all group relative'
+						className='block p-3 rounded-xl text-slate-400 hover:bg-blue-50 hover:text-blue-600 transition-all group relative'
 						title='Copy Link'
 					>
 						<Icon icon='mdi:link-variant' className='text-xl' />
-						<span className="absolute left-full ml-4 px-2 py-1 bg-slate-900 text-white text-[10px] uppercase font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Copy Link</span>
+						<span className="absolute left-full ml-4 px-3 py-1.5 bg-slate-900 text-white text-[10px] uppercase font-bold tracking-widest rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">Copy Link</span>
 					</button>
 				</div>
 			</div>
@@ -356,9 +364,9 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 				>
 					<Link
 						href='/blog'
-						className='inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-full text-xs font-bold tracking-widest uppercase text-slate-500 hover:text-blue-600 hover:border-blue-200 shadow-sm transition-all'
+						className='inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-200 rounded-full text-xs font-bold tracking-widest uppercase text-slate-500 hover:text-blue-600 hover:border-blue-300 shadow-sm hover:shadow-md transition-all group'
 					>
-						<Icon icon="mdi:arrow-left" className="text-lg" />
+						<Icon icon="mdi:arrow-left" className="text-lg group-hover:-translate-x-1 transition-transform" />
 						Back to Blog
 					</Link>
 				</motion.div>
@@ -370,11 +378,11 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 						animate={{ opacity: 1, y: 0 }}
 						className='flex flex-wrap items-center gap-4 mb-8'
 					>
-						<div className='px-3 py-1 bg-blue-100 text-blue-700 rounded-md text-xs font-black tracking-widest uppercase flex items-center gap-2'>
-							<Icon icon="mdi:calendar-blank" /> Published: {formatDate(post.publishedAt)}
+						<div className='px-4 py-1.5 bg-slate-100 text-slate-600 rounded-lg text-[10px] font-bold tracking-widest uppercase flex items-center gap-2'>
+							<Icon icon="mdi:calendar-blank" className="text-sm" /> {formatDate(post.publishedAt)}
 						</div>
-						<div className='px-3 py-1 bg-blue-50 border border-blue-100 text-blue-600 rounded-md text-xs font-black tracking-widest uppercase flex items-center gap-2'>
-							<Icon icon="mdi:clock-outline" /> {estimatedReadTime} min read
+						<div className='px-4 py-1.5 bg-blue-50 text-blue-600 rounded-lg text-[10px] font-bold tracking-widest uppercase flex items-center gap-2'>
+							<Icon icon="mdi:clock-outline" className="text-sm" /> {estimatedReadTime} min read
 						</div>
 					</motion.div>
 
@@ -382,7 +390,7 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.1 }}
-						className='text-5xl md:text-7xl lg:text-[5.5rem] font-black text-slate-900 tracking-tighter mb-12 leading-none'
+						className='text-5xl md:text-6xl lg:text-[5rem] font-black text-slate-900 tracking-tighter mb-12 leading-[1.1] font-manrope'
 					>
 						{post.title}
 					</motion.h1>
@@ -391,16 +399,16 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ delay: 0.2 }}
-						className='flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-100 w-fit shadow-sm'
+						className='flex items-center gap-4 bg-white p-4 pr-8 rounded-full border border-slate-100 w-fit shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)]'
 					>
-						<div className="w-10 h-10 bg-slate-200 rounded-full overflow-hidden border-2 border-white shadow-sm flex items-center justify-center bg-blue-100">
-							<Icon icon="mdi:incognito" className="text-2xl text-blue-600" />
+						<div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-slate-100 border border-slate-200">
+							<Icon icon="mdi:account" className="text-2xl text-slate-400" />
 						</div>
 						<div>
-							<div className='text-[10px] font-black tracking-widest uppercase text-slate-400'>
-								Author
+							<div className='text-[10px] font-black tracking-widest uppercase text-slate-400 mb-0.5'>
+								Written By
 							</div>
-							<div className="text-sm font-bold text-slate-800">
+							<div className="text-sm font-bold text-slate-800 font-manrope">
 								{post.author?.name || "Tunmise E.A"}
 							</div>
 						</div>
@@ -410,13 +418,12 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 				{/* Featured Image */}
 				{post.mainImage && (
 					<motion.div 
-						initial={{ opacity: 0, scale: 0.95 }}
-						animate={{ opacity: 1, scale: 1 }}
+						initial={{ opacity: 0, y: 30 }}
+						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.3 }}
 						className='mb-24 relative group'
 					>
-						<div className="absolute -inset-4 bg-blue-500/10 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-						<div className='relative border-4 border-white rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-slate-100'>
+						<div className='relative rounded-3xl overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.15)] ring-1 ring-slate-200/50'>
 							<Image
 								src={urlFor(post.mainImage)
 									.width(1200)
@@ -483,6 +490,63 @@ const BlogPostClient = ({ slug }: BlogPostClientProps) => {
 					</div>
 				</div>
 			</article>
+
+			{/* Floating 5-Second Share Popup */}
+			<AnimatePresence>
+				{showSharePopup && (
+					<motion.div
+						initial={{ opacity: 0, y: 50, scale: 0.9 }}
+						animate={{ opacity: 1, y: 0, scale: 1 }}
+						exit={{ opacity: 0, y: 50, scale: 0.9 }}
+						transition={{ type: "spring", stiffness: 200, damping: 20 }}
+						className="fixed bottom-6 right-6 z-50 max-w-sm w-[calc(100%-3rem)] sm:w-auto"
+					>
+						<div className="bg-white/90 backdrop-blur-xl border border-slate-200/50 p-5 rounded-2xl shadow-[0_20px_40px_-15px_rgba(37,99,235,0.15)] relative overflow-hidden group">
+							<button 
+								onClick={() => setShowSharePopup(false)}
+								className="absolute top-2 right-2 p-1 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-colors"
+							>
+								<Icon icon="mdi:close" className="text-lg" />
+							</button>
+							<div className="flex items-center gap-4 mb-4">
+								<div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100 flex-shrink-0">
+									<Icon icon="mdi:share-variant" className="text-xl text-blue-600" />
+								</div>
+								<div>
+									<h4 className="text-sm font-bold text-slate-900 font-manrope">Enjoying this post?</h4>
+									<p className="text-xs text-slate-500 mt-0.5">Kindly share it to your socials!</p>
+								</div>
+							</div>
+							<div className="flex items-center justify-between gap-2">
+								<button
+									onClick={() => { sharePost("twitter"); setShowSharePopup(false); }}
+									className='flex-1 py-2 rounded-xl text-slate-500 hover:bg-blue-50 hover:text-blue-600 border border-slate-100 transition-all flex justify-center'
+								>
+									<Icon icon='mdi:twitter' className='text-lg' />
+								</button>
+								<button
+									onClick={() => { sharePost("linkedin"); setShowSharePopup(false); }}
+									className='flex-1 py-2 rounded-xl text-slate-500 hover:bg-blue-50 hover:text-blue-600 border border-slate-100 transition-all flex justify-center'
+								>
+									<Icon icon='mdi:linkedin' className='text-lg' />
+								</button>
+								<button
+									onClick={() => { sharePost("whatsapp"); setShowSharePopup(false); }}
+									className='flex-1 py-2 rounded-xl text-slate-500 hover:bg-blue-50 hover:text-blue-600 border border-slate-100 transition-all flex justify-center'
+								>
+									<Icon icon='mdi:whatsapp' className='text-lg' />
+								</button>
+								<button
+									onClick={() => { copyToClipboard(); setShowSharePopup(false); }}
+									className='flex-1 py-2 rounded-xl text-slate-500 hover:bg-blue-50 hover:text-blue-600 border border-slate-100 transition-all flex justify-center'
+								>
+									<Icon icon='mdi:link-variant' className='text-lg' />
+								</button>
+							</div>
+						</div>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</div>
 	);
 };
