@@ -23,7 +23,7 @@ const Hero = () => {
 			<div className='absolute top-0 right-0 w-1/2 h-full bg-blue-50/50 rounded-l-[100px] -z-10 hidden lg:block'></div>
 			<div className='absolute bottom-0 left-0 w-64 h-64 bg-slate-100 rounded-tr-[100px] -z-10 opacity-50'></div>
 
-			<div className='z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 mt-12'>
+			<div className='z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 mt-28 lg:mt-12'>
 				<div className='flex-1 flex flex-col items-center lg:items-start text-center lg:text-left'>
 					<motion.div
 						initial={{ opacity: 0, x: -20 }}
@@ -108,7 +108,7 @@ const Hero = () => {
 					initial={{ opacity: 0, scale: 0.9 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 1, delay: 0.4 }}
-					className="flex-1 w-full hidden lg:flex justify-center items-center"
+					className="flex-1 w-full flex justify-center items-center mt-12 lg:mt-0"
 				>
 					<div className="relative w-full max-w-lg">
 						<motion.div 
