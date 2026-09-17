@@ -239,9 +239,22 @@ const ProjectCard = ({
 					{project.tagline}
 				</p>
 			</div>
-			<div className={`mt-2 w-10 h-10 rounded-full flex items-center justify-center transition-all flex-shrink-0 ${isActive ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-400 group-hover:bg-blue-100 group-hover:text-blue-600"}`}>
-				<Icon icon='mdi:arrow-right' className='text-xl' />
-			</div>
+			{project.url ? (
+				<a
+					href={project.url}
+					target="_blank"
+					rel="noopener noreferrer"
+					onClick={(e) => e.stopPropagation()}
+					className={`mt-2 w-10 h-10 rounded-full flex items-center justify-center transition-all flex-shrink-0 hover:scale-110 ${isActive ? "bg-blue-600 text-white shadow-md shadow-blue-500/20" : "bg-slate-100 text-slate-500 hover:bg-blue-600 hover:text-white hover:shadow-md hover:shadow-blue-500/20 group-hover:bg-blue-50 group-hover:text-blue-600"}`}
+					title={`Visit ${project.name}`}
+				>
+					<Icon icon='mdi:arrow-top-right' className='text-xl' />
+				</a>
+			) : (
+				<div className={`mt-2 w-10 h-10 rounded-full flex items-center justify-center transition-all flex-shrink-0 ${isActive ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-400 group-hover:bg-blue-100 group-hover:text-blue-600"}`}>
+					<Icon icon='mdi:arrow-right' className='text-xl' />
+				</div>
+			)}
 		</div>
 	</button>
 );
